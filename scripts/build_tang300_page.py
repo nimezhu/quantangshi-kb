@@ -17,8 +17,10 @@ BOOK_DIR = DOCS_DIR / "tang300"
 
 
 def build_book(ordered):
-    """三百首独立成册：每首一页，按目录序前后翻页。"""
+    """三百首独立成册：每首一页，按目录序前后翻页。先清目录防陈页残留。"""
     BOOK_DIR.mkdir(parents=True, exist_ok=True)
+    for f in BOOK_DIR.glob("*.html"):
+        f.unlink()
     vol_cache = {}
     total = len(ordered)
     for n, f in enumerate(ordered):
@@ -48,6 +50,9 @@ def build_book(ordered):
         badges = ""
         if p["form"]:
             badges += f'<span class="badge badge-form">{esc(p["form"])}</span>'
+        if p.get("pilot"):
+            badges += ('<span class="badge badge-pilot" '
+                       'title="实体经逐字精标（试点）">精標</span>')
         tags = "、".join((p.get("t300") or [])[:3])
         lines = "\n".join(f'<div class="line">{h}</div>' for h in p["lines"])
         a_href = f"../authors/{quote(p['canonical'], safe='')}.html"
@@ -111,7 +116,7 @@ def main():
     body = ('<nav class="chapter-nav"><a class="nav-home" href="index.html">🏠 目录</a>'
             '<a href="search.html">🔍 搜索</a><a href="authors/index.html">诗人索引</a></nav>\n'
             f'<h1>唐诗三百首<span class="vol-count">{total} 首（御定命中）· 按诗体分组 · '
-            '独立成册可逐首翻阅</span></h1>\n'
+            '独立成册可逐首翻阅 · 全部实体精标</span></h1>\n'
             + "\n".join(sections))
     (DOCS_DIR / "tang300.html").write_text(
         page("唐诗三百首 - 全唐诗", body, css_prefix="", home="index.html"),

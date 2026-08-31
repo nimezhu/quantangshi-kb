@@ -10,13 +10,14 @@ from collections import defaultdict
 
 from config import POEM_ID_MAP, ANALYSIS_DIR
 from lib_qts import (iter_yuding, iter_tang_shards, canonical_author,
-                     strip_punct, poem_key, VARIANT_CHARS)
+                     strip_punct, poem_key, fold_t2s, VARIANT_CHARS)
 
 CN_NUM = re.compile(r"^[一二三四五六七八九十百]+$")
 
 
 def norm_text(s: str) -> str:
-    return strip_punct(s).translate(VARIANT_CHARS)
+    """匹配归一：去标点 + 简体折叠 + 异体折叠（嶽/岳、荊/荆 等经折叠等价）。"""
+    return fold_t2s(strip_punct(s)).translate(VARIANT_CHARS)
 
 
 def main():
@@ -36,7 +37,7 @@ def main():
             if len(parts) == 2 and CN_NUM.match(parts[1]):
                 by_group[(ac, norm_text(parts[0]))].append((parts[1], entry))
             if p["paragraphs"]:
-                by_first[(ac, strip_punct(p["paragraphs"][0])[:5])].append(entry)
+                by_first[(ac, norm_text(p["paragraphs"][0])[:5])].append(entry)
 
     # ---- 逐首匹配（必须用御定原始文本：本映射是 P9 文本修复的输入）----
     mapping = {}
@@ -54,7 +55,7 @@ def main():
                 if grp:
                     hit, how = [e for _, e in grp], "group"
             if not hit and p.get("paragraphs"):
-                first5 = strip_punct(p["paragraphs"][0])[:5]
+                first5 = norm_text(p["paragraphs"][0])[:5]
                 if len(first5) >= 4:
                     cand = by_first.get((ac, first5))
                     if cand:

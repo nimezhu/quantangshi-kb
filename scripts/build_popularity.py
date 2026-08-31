@@ -37,29 +37,58 @@ def main():
         if scores:
             poem_scores[key] = max(scores)
 
-    # 三百首锚定
+    # 御定索引（供三百首内容兜底匹配 + 元数据聚合）
+    from lib_qts import fold_t2s, strip_punct
+    rows = []                      # (key, title, author, canon)
+    title_idx = {}                 # (canon, 折叠题) -> key
+    author_texts = defaultdict(list)   # canon -> [(key, 折叠全文)]
+    for volume, poems in iter_yuding():
+        for i, p in enumerate(poems, start=1):
+            key = poem_key(volume, i)
+            ac = canonical_author(p["author"])
+            rows.append((key, p["title"], p["author"], ac))
+            title_idx.setdefault((ac, fold_t2s(strip_punct(p["title"]))), key)
+            author_texts[ac].append(
+                (key, fold_t2s(strip_punct("".join(p.get("paragraphs", []))))))
+
+    # 三百首锚定：① UUID join；② 兜底——同诗异抄本按（作者+折叠题）、
+    # 组诗子首按首句包含于御定合并全文
     t300 = json.loads(TANG300.read_text(encoding="utf-8"))
     tang300 = {}
     unmatched_300 = []
+    fallback_n = 0
     for e in t300:
         key = tang_id_to_key.get(e["id"])
+        if not key:
+            ac = canonical_author(e["author"])
+            key = title_idx.get((ac, fold_t2s(strip_punct(e["title"]))))
+            if not key and e.get("paragraphs"):
+                first = fold_t2s(strip_punct(e["paragraphs"][0]))[:8]
+                if len(first) >= 5:
+                    for k, txt in author_texts.get(ac, []):
+                        if first in txt:
+                            key = k
+                            break
+            if key:
+                fallback_n += 1
         if key:
-            tang300[key] = [t for t in e.get("tags", []) if t != "唐诗三百首"]
+            tags = [t for t in e.get("tags", []) if t != "唐诗三百首"]
+            if key in tang300:
+                tang300[key] = sorted(set(tang300[key]) | set(tags))
+            else:
+                tang300[key] = tags
         else:
             unmatched_300.append(f"{e['author']}《{e['title']}》")
 
     meta = {}
     poet_300 = defaultdict(int)
     poet_score = defaultdict(int)
-    for volume, poems in iter_yuding():
-        for i, p in enumerate(poems, start=1):
-            key = poem_key(volume, i)
-            if key in poem_scores or key in tang300:
-                meta[key] = (p["title"], p["author"])
-            ac = canonical_author(p["author"])
-            if key in tang300:
-                poet_300[ac] += 1
-            poet_score[ac] += poem_scores.get(key, 0)
+    for key, title, author, ac in rows:
+        if key in poem_scores or key in tang300:
+            meta[key] = (title, author)
+        if key in tang300:
+            poet_300[ac] += 1
+        poet_score[ac] += poem_scores.get(key, 0)
 
     famous = sorted(tang300, key=lambda k: -poem_scores.get(k, 0))
     poet_rank = sorted(poet_300, key=lambda a: (-poet_300[a], -poet_score[a]))
@@ -75,7 +104,7 @@ def main():
 
     lines = ["# P6 热度榜单", "",
              f"- rank 分数覆盖：{len(poem_scores)}/{len(id_map)} 首（仅作参考，见下）",
-             f"- 唐诗三百首命中御定：**{len(tang300)}**/366（未匹配 {len(unmatched_300)} 首）",
+             f"- 唐诗三百首命中御定：**{len(tang300)}** 键/366 条（内容兜底 {fallback_n}，未匹配 {len(unmatched_300)}）",
              "",
              "## ⚠️ 数据质量发现（本管线主要结论）", "",
              "搜索引擎命中数与诗篇知名度**不相关**：单字/短语题目（《雪》《月》《句》）与",

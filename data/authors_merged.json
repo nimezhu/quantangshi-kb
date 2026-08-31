@@ -7545,14 +7545,14 @@
   "yuding_names": [
    "楊敬述"
   ],
-  "tang_name": "楊敬述",
+  "tang_name": "楊敬述進",
   "volumes": [
    80
   ],
   "poem_count_yuding": 1,
-  "poem_count_tang": 1,
+  "poem_count_tang": 2,
   "biography": "",
-  "desc": "楊敬述，則天時右玉鈐衞郎將，左奉宸內供奉。詩一首。"
+  "desc": ""
  },
  "于季子": {
   "canonical": "于季子",
@@ -40857,17 +40857,6 @@
   "volumes": [],
   "poem_count_yuding": 0,
   "poem_count_tang": 10,
-  "biography": "",
-  "desc": ""
- },
- "楊敬述進": {
-  "canonical": "楊敬述進",
-  "display": "楊敬述進",
-  "yuding_names": [],
-  "tang_name": "楊敬述進",
-  "volumes": [],
-  "poem_count_yuding": 0,
-  "poem_count_tang": 1,
   "biography": "",
   "desc": ""
  },

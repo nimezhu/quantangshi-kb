@@ -29,6 +29,57 @@ def set_entity_lexicon(lex):
     _ENT_MAXLEN = max((len(k) for k in lex), default=0)
 
 
+# 实体精标试点（data/annotations/pilot_annotations.json；见其 _comment）
+_PILOT = {}
+
+
+def set_pilot_annotations(d):
+    global _PILOT
+    _PILOT = d
+
+
+_TYPE_LABEL = {"person": "人物", "place": "地名", "nation": "邦国族群", "time": "时节"}
+
+
+def _ent_html(surface, typ, target, note=None):
+    key = target or fold_t2s(surface)
+    tip = esc(note) if note else f"{_TYPE_LABEL.get(typ, typ)} · 精标"
+    attrs = f'class="ent ent-{typ}" data-note="{tip}"'
+    if key in _ENT_LEX:
+        ltyp = _ENT_LEX[key][0]
+        return (f'<a {attrs} '
+                f'href="../entities/{ltyp}_{quote(key, safe="")}.html">'
+                f'{esc(surface)}</a>')
+    return f'<span {attrs}>{esc(surface)}</span>'
+
+
+def apply_pilot(sents, entries):
+    """精标应用：条目按阅读序游标式定位（表面形逐句查找，命中即包）。
+    返回 (每句 html 列表, 未命中条目数)。"""
+    out = []
+    ei = 0
+    miss = 0
+    for sent in sents:
+        pos = 0
+        parts = []
+        while ei < len(entries):
+            e = entries[ei]
+            surface = e[0]
+            j = sent.find(surface, pos)
+            if j == -1:
+                break
+            parts.append(decorate_line(sent[pos:j]))
+            parts.append(_ent_html(surface, e[1],
+                                   e[2] if len(e) > 2 else None,
+                                   e[3] if len(e) > 3 else None))
+            pos = j + len(surface)
+            ei += 1
+        parts.append(decorate_line(sent[pos:]))
+        out.append("".join(parts))
+    miss = len(entries) - ei
+    return out, miss
+
+
 def wrap_entities(sent):
     """句内实体标注：最长匹配折叠空间，命中片段包成实体链接（原字展示）。"""
     if not _ENT_LEX:
@@ -131,10 +182,15 @@ def render_poem(volume, idx, p, forms, t300):
     if "mismatch_kept" in p.get("flags", []):
         badges += ('<span class="badge badge-review" '
                    'title="双源文本存疑，保留御定原文待审">文本待审</span>')
-    line_html = []
-    for para in p.get("paragraphs", []):
-        for sent in SENT.findall(para):
-            line_html.append(wrap_entities(sent))
+    sents = [s for para in p.get("paragraphs", []) for s in SENT.findall(para)]
+    if key in _PILOT:
+        line_html, miss = apply_pilot(sents, _PILOT[key])
+        if miss:
+            print(f"  ⚠ 精标 {key}: {miss} 条未命中")
+        badges += ('<span class="badge badge-pilot" '
+                   'title="实体经逐字精标（试点），非词表自动匹配">精標</span>')
+    else:
+        line_html = [wrap_entities(s) for s in sents]
     lines = "\n".join(f'<div class="line">{h}</div>' for h in line_html)
     block = (
         f'<div class="poem" id="{anchor}">\n'
@@ -148,7 +204,8 @@ def render_poem(volume, idx, p, forms, t300):
     pdata = {"key": key, "title": p["title"], "author": p["author"],
              "canonical": canonical_author(p["author"]),
              "lines": line_html, "form": form_name,
-             "t300": t300.get(key), "src": p.get("text_source", "yuding")}
+             "t300": t300.get(key), "src": p.get("text_source", "yuding"),
+             "pilot": key in _PILOT}
     return block, pdata
 
 

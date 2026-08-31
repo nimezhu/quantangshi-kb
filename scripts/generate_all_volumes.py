@@ -32,6 +32,14 @@ def _install_entity_lexicon():
                 lex[name] = (typ, name)
     set_entity_lexicon(lex)
     print(f"  entity highlight lexicon: {len(lex)} entries")
+    from render_volume import set_pilot_annotations
+    pilot_path = DATA_DIR / "annotations" / "pilot_annotations.json"
+    if pilot_path.exists():
+        pilot = {k: v for k, v in
+                 json.loads(pilot_path.read_text(encoding="utf-8")).items()
+                 if not k.startswith("_")}
+        set_pilot_annotations(pilot)
+        print(f"  pilot annotations: {len(pilot)} poems")
 
 
 def build_t2s_map():
@@ -97,6 +105,7 @@ def generate_index(vol_meta, t300):
 <a href="entities/index.html">实体索引</a>
 <a href="app/network/index.html">交游网络</a>
 <a href="app/timeline/index.html">诗人长河</a>
+<a href="app/map/index.html">诗中地图</a>
 </nav>
 <div class="hero">
 <h1>全唐詩</h1>

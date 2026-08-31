@@ -53,6 +53,8 @@
 
         var badges = '';
         if (p.form) badges += '<span class="badge badge-form">' + esc(p.form) + '</span>';
+        if (p.pilot) badges += '<span class="badge badge-pilot" ' +
+            'title="实体经逐字精标（试点）">精標</span>';
         var tags = (p.t300 || []).slice(0, 3).join('、');
 
         document.getElementById('content').innerHTML =

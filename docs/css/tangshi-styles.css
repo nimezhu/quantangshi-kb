@@ -769,3 +769,33 @@ details.tail-fold[open] summary { margin-bottom: 0.6em; }
     .famous-list { columns: 1; }
     .poem-body { padding-left: 0.4em; }
 }
+
+/* 实体精标试点徽章 */
+.badge-pilot {
+    color: #fff;
+    background-color: #7a5a00;
+}
+
+/* 精标注释：悬停即显的样式化注解气泡（data-note） */
+.ent[data-note] { position: relative; }
+
+.ent[data-note]:hover::after {
+    content: attr(data-note);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.75em;
+    background: #fffdf5;
+    border: 1px solid #d9c98a;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 0.72em;
+    line-height: 1.7;
+    color: #5a4632;
+    width: max-content;
+    max-width: 280px;
+    white-space: normal;
+    z-index: 30;
+    box-shadow: 0 2px 8px rgba(90, 74, 42, 0.18);
+    pointer-events: none;
+}

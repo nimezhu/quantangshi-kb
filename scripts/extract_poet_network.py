@@ -45,6 +45,10 @@ def find_names(title_n, names):
     for h in hits:
         if not any(o != h and o[0] <= h[0] and h[1] <= o[1] for o in hits):
             pruned.append(h)
+    # 官称假阳性：「X明府/X少府/X使君…」是官职敬称，非人名（送鄭明府 ≠ 鄭明）
+    OFFICIAL_NEXT = ("府", "君", "曹", "尹", "丞", "簿", "尉")
+    pruned = [h for h in pruned
+              if not (h[1] < len(title_n) and title_n[h[1]] in OFFICIAL_NEXT)]
     return pruned
 
 

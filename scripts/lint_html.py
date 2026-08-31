@@ -113,7 +113,7 @@ def main():
               "data/authors/李白.json",
               "search.html", "data/search_index.json", "data/strains/001.json", "data/strains/900.json",
               "app/network/index.html", "app/network/network.js", "app/network/data.json",
-              "app/timeline/index.html",
+              "app/timeline/index.html", "app/map/index.html",
               *(f"data/fulltext_{g}.json" for g in range(9))):
         if not (DOCS_DIR / a).exists():
             errors.append(f"缺少资产 {a}")

@@ -13,4 +13,5 @@ $PY build_entity_pages.py
 $PY build_tang300_page.py
 $PY build_strains_data.py
 $PY build_viz.py
+$PY build_map.py
 $PY lint_html.py

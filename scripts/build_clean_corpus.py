@@ -31,6 +31,17 @@ def head_agree(a, b, n=5, need=3):
     return sum(x == y for x, y in zip(a, b)) >= need
 
 
+def text_agree(yd_paras, tg_paras):
+    """内容认同兜底：御定首列亦可能丢失（正文起于中段），首句闸会误拒。
+    取御定文首/中/尾三个 4 字样片，≥2 片按序出现在 tang 文中即认作同诗。"""
+    y = norm(strip_punct("".join(yd_paras)))
+    t = norm(strip_punct("".join(tg_paras)))
+    if len(y) < 8:
+        return False
+    picks = [y[:4], y[len(y) // 2:len(y) // 2 + 4], y[-4:]]
+    return sum(1 for c in picks if len(c) == 4 and c in t) >= 2
+
+
 JUNK = re.compile(r"[A-Za-z][A-Za-z0-9]*|\d+")
 CLEAN = re.compile(r"[A-Za-z0-9]")
 
@@ -160,7 +171,8 @@ def main():
                 tg_len = len(strip_punct("".join(tg_paras)))
                 if tg_len > yd_len and tg_paras:
                     gate = (m["match"] == "firstline"
-                            or head_agree("".join(yd_paras), "".join(tg_paras)))
+                            or head_agree("".join(yd_paras), "".join(tg_paras))
+                            or text_agree(yd_paras, tg_paras))
                     if gate:
                         which = ("patched_firstline" if m["match"] == "firstline"
                                  else "patched")
