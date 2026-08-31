@@ -12,7 +12,21 @@
     var LS_STRAIN = 'qts-strains'; // 平仄显示（默认关，仅卷页）
     var originals = new Map();   // Text node -> 原繁体文本
     var strainData = null;       // 本卷平仄数据缓存
-    var isVolumePage = /\/volumes\/\d{3}\.html/.test(location.pathname);
+
+    // 诗文语境识别：卷页 / 单诗页 / 三百首成册页 —— 三者均支持平仄逐字标注
+    var poemCtx = (function () {
+        var m = /\/volumes\/(\d{3})\.html/.exec(location.pathname);
+        if (m) return { vol: m[1], prefix: '../' };
+        m = /\/tang300\/(\d{3})-\d{2,3}\.html/.exec(location.pathname);
+        if (m) return { vol: m[1], prefix: '../' };
+        if (/\/poem\.html$/.test(location.pathname)) {
+            m = /^(\d{3})-\d{2,3}$/.exec(
+                new URLSearchParams(location.search).get('id') || '');
+            if (m) return { vol: m[1], prefix: '' };
+        }
+        return null;
+    })();
+    var isVolumePage = !!poemCtx;
 
     function convertT2S(enable) {
         if (typeof window.T2S_MAP === 'undefined') return;
@@ -50,39 +64,85 @@
         document.body.classList.toggle('no-ent', !on);
     }
 
-    function removeStrains() {
-        document.querySelectorAll('.strain-marks').forEach(function (n) { n.remove(); });
+    /* ---- 平仄逐字对位（ruby 注于字下）---- */
+
+    var CJK = /[㐀-䶿一-鿿豈-﫿]/;
+
+    function cacheLines() {
+        // 载入时缓存服务端原始（繁体）行 HTML，作为一切重建的基准
+        document.querySelectorAll('.poem-body .line').forEach(function (l) {
+            if (l.dataset.so === undefined) l.dataset.so = l.innerHTML;
+        });
     }
 
-    function applyStrains(on) {
-        if (!isVolumePage) return;
-        if (!on) { removeStrains(); return; }
-        var vol = location.pathname.match(/(\d{3})\.html/)[1];
-        var draw = function () {
-            removeStrains();
-            Object.keys(strainData).forEach(function (pid) {
-                var poem = document.getElementById(pid);
-                if (!poem) return;
-                var lines = poem.querySelectorAll('.poem-body .line');
-                strainData[pid].forEach(function (marks, i) {
-                    if (!marks || !lines[i]) return;
-                    var sp = document.createElement('span');
-                    sp.className = 'strain-marks';
-                    // 偶数行末字为韵脚位，标红
-                    if ((i + 1) % 2 === 0 && marks.length) {
-                        sp.innerHTML = marks.slice(0, -1) +
-                            '<b class="rhyme-mark">' + marks.slice(-1) + '</b>';
+    function restoreLines() {
+        document.querySelectorAll('.poem-body .line').forEach(function (l) {
+            if (l.dataset.so !== undefined) l.innerHTML = l.dataset.so;
+        });
+    }
+
+    function rubyLine(line, marks, isEven) {
+        var mi = 0;
+        function walk(node) {
+            if (node.nodeType === 3) {
+                var frag = document.createDocumentFragment();
+                var text = node.nodeValue;
+                for (var c = 0; c < text.length; c++) {
+                    var ch = text[c];
+                    if (CJK.test(ch) && mi < marks.length) {
+                        var r = document.createElement('ruby');
+                        r.appendChild(document.createTextNode(ch));
+                        var rt = document.createElement('rt');
+                        rt.textContent = marks[mi];
+                        rt.className = 'strain-rt' +
+                            (isEven && mi === marks.length - 1 ? ' rhyme-rt' : '');
+                        r.appendChild(rt);
+                        frag.appendChild(r);
+                        mi++;
                     } else {
-                        sp.textContent = marks;
+                        frag.appendChild(document.createTextNode(ch));
                     }
-                    lines[i].appendChild(sp);
-                });
+                }
+                node.parentNode.replaceChild(frag, node);
+            } else if (node.nodeType === 1 && node.tagName !== 'RT') {
+                Array.prototype.slice.call(node.childNodes).forEach(walk);
+            }
+        }
+        Array.prototype.slice.call(line.childNodes).forEach(walk);
+    }
+
+    function decorateStrains() {
+        Object.keys(strainData).forEach(function (pid) {
+            var poem = document.getElementById(pid);
+            if (!poem) return;
+            var lines = poem.querySelectorAll('.poem-body .line');
+            strainData[pid].forEach(function (marks, i) {
+                // 渲染行为整联（上句，下句。），行末即韵脚位
+                if (marks && lines[i]) rubyLine(lines[i], marks, true);
             });
-        };
-        if (strainData) { draw(); return; }
-        fetch('../data/strains/' + vol + '.json')
+        });
+    }
+
+    function rebuildLines(strainOn, simplified) {
+        // 统一重建：原始繁体 → （可选）逐字 ruby → （可选）简体折叠
+        restoreLines();
+        document.body.classList.toggle('strains-on', !!strainOn);
+        if (strainOn && strainData) decorateStrains();
+        if (simplified) convertT2S(true);
+    }
+
+    function applyStrains(on, simplified) {
+        if (!isVolumePage) return;
+        if (!on || strainData) {
+            rebuildLines(on, simplified);
+            return;
+        }
+        fetch(poemCtx.prefix + 'data/strains/' + poemCtx.vol + '.json')
             .then(function (r) { return r.json(); })
-            .then(function (d) { strainData = d; draw(); })
+            .then(function (d) {
+                strainData = d;
+                rebuildLines(true, simplified);
+            })
             .catch(function () { strainData = {}; });
     }
 
@@ -91,10 +151,11 @@
         var fontScale = load(LS_FONT) || '1';
         var entOn = load(LS_ENT) !== '0';
         var strainOn = load(LS_STRAIN) === '1';
+        if (isVolumePage) cacheLines();
         applyFont(fontScale);
         applyEnt(entOn);
         if (simplified) convertT2S(true);
-        if (strainOn) applyStrains(true);
+        if (strainOn && isVolumePage) applyStrains(true, simplified);
 
         var gear = document.createElement('button');
         gear.className = 'settings-toggle';
@@ -137,7 +198,13 @@
             var b = e.target;
             if (b.dataset.simp !== undefined) {
                 simplified = b.dataset.simp === '1';
-                convertT2S(simplified);
+                if (isVolumePage) {
+                    // 诗行统一从原始繁体重建（叠加平仄 ruby），避免转换缓存失效
+                    convertT2S(false);
+                    rebuildLines(strainOn, simplified);
+                } else {
+                    convertT2S(simplified);
+                }
                 save(LS_SIMP, simplified ? '1' : '0');
             } else if (b.dataset.font !== undefined) {
                 fontScale = b.dataset.font;
@@ -149,7 +216,7 @@
                 save(LS_ENT, entOn ? '1' : '0');
             } else if (b.dataset.strain !== undefined) {
                 strainOn = b.dataset.strain === '1';
-                applyStrains(strainOn);
+                applyStrains(strainOn, simplified);
                 save(LS_STRAIN, strainOn ? '1' : '0');
             }
             refresh();
@@ -158,5 +225,27 @@
         refresh();
         document.body.appendChild(gear);
         document.body.appendChild(panel);
+
+        // 供动态注入内容的页面（单诗页/成册页 SPA）在渲染后按已存偏好重新装饰。
+        // SPA 跨卷翻页时同步平仄数据的卷号（换卷即失效重取）。
+        window.QTS_REFRESH = function () {
+            if (poemCtx) {
+                var vol = null;
+                var m = /\/tang300\/(\d{3})-\d{2,3}\.html$/.exec(location.pathname);
+                if (m) vol = m[1];
+                else if (/\/poem\.html$/.test(location.pathname)) {
+                    m = /^(\d{3})-\d{2,3}$/.exec(
+                        new URLSearchParams(location.search).get('id') || '');
+                    if (m) vol = m[1];
+                }
+                if (vol && vol !== poemCtx.vol) {
+                    poemCtx.vol = vol;
+                    strainData = null;
+                }
+            }
+            cacheLines();
+            if (strainOn && isVolumePage) applyStrains(true, simplified);
+            else if (simplified) convertT2S(true);
+        };
     });
 })();

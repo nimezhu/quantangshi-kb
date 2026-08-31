@@ -22,10 +22,17 @@ def author_href(canonical, prefix=""):
 
 def main():
     AUTHORS_DIR.mkdir(parents=True, exist_ok=True)
+    seq_dir = DOCS_DIR / "data" / "authors"
+    seq_dir.mkdir(parents=True, exist_ok=True)
     merged = json.loads(AUTHORS_MERGED.read_text(encoding="utf-8"))
     net = json.loads((ANALYSIS_DIR / "poet_network.json").read_text(encoding="utf-8"))
     pop = json.loads((ANALYSIS_DIR / "popularity.json").read_text(encoding="utf-8"))
     t300 = pop["tang300"]
+
+    from config import DATA_DIR
+    from lib_qts import canonical_author as _ca
+    years_raw = json.loads((DATA_DIR / "poet_years.json").read_text(encoding="utf-8"))
+    years = {_ca(k): v for k, v in years_raw.items() if not k.startswith("_")}
 
     # 逐卷收集每位诗人的作品（key, title, volume）
     works = defaultdict(list)
@@ -50,6 +57,19 @@ def main():
         n300 = sum(1 for k, _, _ in wl if k in t300)
         names = "、".join(n for n in rec["yuding_names"] if n != rec["display"])
         alias_line = f'<div class="poem-author">又作：{esc(names)}</div>' if names else ""
+
+        # 逐首阅读序列（按卷序）
+        (seq_dir / f"{key}.json").write_text(
+            json.dumps({"display": rec["display"],
+                        "poems": [k for k, _, _ in wl]}, ensure_ascii=False),
+            encoding="utf-8")
+        reader_href = (f'../poem.html?id={wl[0][0]}&author={quote(key, safe="")}'
+                       if wl else "")
+
+        y = years.get(key)
+        life = ""
+        if y:
+            life = (f'{"约 " if y[2] else ""}{y[0] or "?"}–{y[1] or "?"}')
 
         bio = ""
         if rec["biography"]:
@@ -77,21 +97,28 @@ def main():
         by_vol = defaultdict(list)
         for k, t, v in wl:
             by_vol[v].append((k, t))
+        author_q = quote(key, safe="")
         vol_blocks = []
         for v in sorted(by_vol):
             items = " ".join(
-                f'<a href="../volumes/{v:03d}.html#p{k[4:]}">{esc(t)}</a>'
+                f'<a class="para-num wl-pn" href="../volumes/{v:03d}.html#p{k[4:]}" '
+                f'title="在卷中查看">（{k[4:]}）</a>'
+                f'<a href="../poem.html?id={k}&author={author_q}">{esc(t)}</a>'
                 + ('<span class="badge badge-300">三百首</span>' if k in t300 else "")
                 for k, t in by_vol[v])
             vol_blocks.append(f'<div class="line"><span class="vg-num">卷{v:03d}</span>{items}</div>')
 
-        stats = (f'{rec["poem_count_yuding"]} 首 · 见于 {len(by_vol)} 卷'
+        stats = ((f"{life} · " if life else "")
+                 + f'{rec["poem_count_yuding"]} 首 · 见于 {len(by_vol)} 卷'
                  + (f' · 三百首入选 {n300}' if n300 else ""))
+        reader_btn = (f'<a href="{reader_href}">▶ 逐首阅读</a>' if reader_href else "")
         body = (f'<nav class="chapter-nav"><a class="nav-home" href="../index.html">🏠 目录</a>'
-                f'<a href="index.html">诗人索引</a></nav>\n'
+                f'<a href="index.html">诗人索引</a>{reader_btn}</nav>\n'
                 f'<h1>{esc(rec["display"])}<span class="vol-count">{stats}</span></h1>\n'
                 f'{alias_line}{bio}{contact_html}\n'
-                f'<h2 class="section-title">作品</h2>\n<div class="poem-body">\n'
+                f'<h2 class="section-title">作品'
+                f'<span class="vol-count">题目进逐首阅读，（编号）进卷中上下文</span></h2>\n'
+                f'<div class="poem-body worklist">\n'
                 + "\n".join(vol_blocks) + "\n</div>")
         (AUTHORS_DIR / f"{key}.html").write_text(
             page(f"{rec['display']} - 全唐诗", body), encoding="utf-8")

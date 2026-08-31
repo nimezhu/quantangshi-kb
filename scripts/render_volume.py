@@ -117,30 +117,39 @@ def decorate_line(sent):
 
 
 def render_poem(volume, idx, p, forms, t300):
+    """返回 (卷页诗块 HTML, 单诗数据 dict)。单诗数据供独立诗页/三百首成册复用。"""
     key = poem_key(volume, idx)
     anchor = f"p{idx:02d}"
     badges = ""
     form = forms.get(key)
-    if form and form[0] != "無正文":
-        badges += f'<span class="badge badge-form">{esc(form[0])}</span>'
+    form_name = form[0] if form and form[0] != "無正文" else ""
+    if form_name:
+        badges += f'<span class="badge badge-form">{esc(form_name)}</span>'
     if key in t300:
         tags = "、".join(t300[key][:3])
         badges += f'<span class="badge badge-300" title="{esc(tags)}">三百首</span>'
     if "mismatch_kept" in p.get("flags", []):
         badges += ('<span class="badge badge-review" '
                    'title="双源文本存疑，保留御定原文待审">文本待审</span>')
-    lines = []
+    line_html = []
     for para in p.get("paragraphs", []):
         for sent in SENT.findall(para):
-            lines.append(f'<div class="line">{wrap_entities(sent)}</div>')
-    return (
+            line_html.append(wrap_entities(sent))
+    lines = "\n".join(f'<div class="line">{h}</div>' for h in line_html)
+    block = (
         f'<div class="poem" id="{anchor}">\n'
         f'<h3 class="poem-title"><a class="para-num" href="#{anchor}">（{key}）</a>'
-        f'{esc(p["title"])}{badges}</h3>\n'
+        f'{esc(p["title"])}{badges}'
+        f'<a class="solo-link" href="../poem.html?id={key}" title="单独页查看">❐</a></h3>\n'
         f'<div class="poem-author">{author_link(p["author"])}</div>\n'
         "{bio}"
-        f'<div class="poem-body">\n' + "\n".join(lines) + "\n</div>\n</div>"
+        f'<div class="poem-body">\n{lines}\n</div>\n</div>'
     )
+    pdata = {"key": key, "title": p["title"], "author": p["author"],
+             "canonical": canonical_author(p["author"]),
+             "lines": line_html, "form": form_name,
+             "t300": t300.get(key), "src": p.get("text_source", "yuding")}
+    return block, pdata
 
 
 def render_volume(volume, forms, t300, vol_names):
@@ -148,8 +157,12 @@ def render_volume(volume, forms, t300, vol_names):
     vol_name = poems[0].get("volume", f"卷{volume}") if poems else f"卷{volume}"
     seen_bio = set()
     blocks = []
+    vol_json = {}
     for i, p in enumerate(poems, start=1):
-        blk = render_poem(volume, i, p, forms, t300)
+        blk, pdata = render_poem(volume, i, p, forms, t300)
+        pdata["prev"] = poem_key(volume, i - 1) if i > 1 else None
+        pdata["next"] = poem_key(volume, i + 1) if i < len(poems) else None
+        vol_json[f"p{i:02d}"] = pdata
         bio = ""
         author = p["author"].strip()
         if author not in seen_bio and p.get("biography", "").strip():
@@ -157,6 +170,12 @@ def render_volume(volume, forms, t300, vol_names):
             bio = (f'<details class="biography"><summary>{esc(author)} · 小传</summary>'
                    f'<p>{esc(p["biography"].strip())}</p></details>\n')
         blocks.append(blk.replace("{bio}", bio))
+
+    vol_data_dir = VOLUMES_DIR.parent / "data" / "volumes"
+    vol_data_dir.mkdir(parents=True, exist_ok=True)
+    (vol_data_dir / f"{volume:03d}.json").write_text(
+        json.dumps({"vol_name": vol_name, "poems": vol_json}, ensure_ascii=False),
+        encoding="utf-8")
 
     nav = nav_bar(volume, vol_names)
     title = f"御定全唐詩·{vol_name}"

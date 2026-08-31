@@ -57,13 +57,20 @@ def main():
     if not (authors_dir / "index.html").exists():
         errors.append("缺少 authors/index.html")
 
-    # 三百首页与搜索页
+    # 三百首页（目录 → 成册页）与搜索页
     t300 = (DOCS_DIR / "tang300.html")
     if t300.exists():
         t = t300.read_text(encoding="utf-8")
-        for vol, anchor in re.findall(r'href="volumes/(\d{3})\.html#(p\d+)"', t):
-            if f'id="{anchor}"' not in (VOLUMES_DIR / f"{vol}.html").read_text(encoding="utf-8"):
-                errors.append(f"tang300 链接失效: {vol}.html#{anchor}")
+        book_links = re.findall(r'href="tang300/(\d{3}-\d{2,3})\.html"', t)
+        if not book_links:
+            errors.append("tang300.html 无成册页链接")
+        for k in book_links:
+            if not (DOCS_DIR / "tang300" / f"{k}.html").exists():
+                errors.append(f"tang300 成册页缺失: {k}.html")
+        n_book = len(list((DOCS_DIR / "tang300").glob("*.html"))) \
+            if (DOCS_DIR / "tang300").exists() else 0
+        if n_book != len(set(book_links)):
+            errors.append(f"成册页数 {n_book} ≠ 目录链接数 {len(set(book_links))}")
     else:
         errors.append("缺少 tang300.html")
 
@@ -101,6 +108,9 @@ def main():
     for a in ("css/tangshi-styles.css", "css/chapter-nav.css", "js/purple-numbers.js",
               "js/t2s-map.js", "js/tangshi-settings.js", "js/tangshi-search.js",
               "js/tangshi-home.js", "data/tang300_poems.json",
+              "poem.html", "js/tangshi-poem.js", "js/tangshi-book.js", "data/tang300_order.json",
+              "data/volumes/001.json", "data/volumes/900.json",
+              "data/authors/李白.json",
               "search.html", "data/search_index.json", "data/strains/001.json", "data/strains/900.json",
               "app/network/index.html", "app/network/network.js", "app/network/data.json",
               "app/timeline/index.html",

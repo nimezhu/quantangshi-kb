@@ -63,7 +63,7 @@ def generate_index(vol_meta, t300):
 
     # 名篇（三百首锚定，见 P6）
     famous = "\n".join(
-        f'<li><a href="volumes/{f["poem"][:3]}.html#p{f["poem"][4:]}">{esc(f["title"])}</a>'
+        f'<li><a href="tang300/{f["poem"]}.html">{esc(f["title"])}</a>'
         f'<span class="fp-author">{esc(f["author"])}</span></li>'
         for f in pop["famous_poems"][:24])
 

@@ -61,7 +61,8 @@ def snippet(paragraphs_json, q, width=14):
 
 def row_poem(r, full=False):
     d = {"key": r["key"], "volume": r["volume"], "title": r["title"],
-         "author": r["author"], "form": r["form"]}
+         "author": r["author"], "canonical": r["author_canonical"],
+         "form": r["form"]}
     if r["tang300"]:
         d["tang300_tags"] = json.loads(r["tang300"])
     if full:

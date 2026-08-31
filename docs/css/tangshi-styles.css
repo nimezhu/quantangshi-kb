@@ -3,6 +3,19 @@
 
 /* ============ 基础 ============ */
 
+/* 页面切换平滑过渡（View Transitions；不支持的浏览器自然降级为普通跳转） */
+@view-transition { navigation: auto; }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.16s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) { animation: none; }
+}
+
 body {
     font-family: "Noto Serif TC", "Noto Serif SC", "Source Han Serif TC", serif;
     line-height: 2;
@@ -182,20 +195,63 @@ body.no-ent .ent {
     border-bottom: none;
 }
 
-/* 平仄标注（Phase 4）：行末缀 ○平 ●仄 ◌未定，偶句末位标红为韵脚位 */
-.strain-marks {
-    margin-left: 0.9em;
-    color: #c9b87c;
-    font-size: 0.78em;
-    letter-spacing: 0.22em;
-    user-select: none;
-    white-space: nowrap;
+/* 平仄标注（Phase 4）：逐字对位，○平 ●仄 ◌未定 注于字下（ruby），
+   偶句末字为韵脚位标红。开启时行距放宽容纳注文。 */
+body.strains-on .poem-body .line {
+    line-height: 3.1;
 }
 
-.strain-marks .rhyme-mark {
+.poem-body .line ruby {
+    ruby-position: under;
+    -webkit-ruby-position: after;
+    ruby-align: center;
+}
+
+.poem-body .line rt.strain-rt {
+    font-size: 0.68em;
+    color: #b09550;
+    letter-spacing: 0;
+    user-select: none;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    transform: translateY(-2px);
+}
+
+.poem-body .line rt.rhyme-rt {
     color: #a5453b;
     font-weight: bold;
 }
+
+/* ============ 单诗页 / 三百首成册 ============ */
+
+.solo-link {
+    font-size: 0.62em;
+    margin-left: 8px;
+    color: #d0bd8a;
+    text-decoration: none;
+    vertical-align: 0.15em;
+}
+
+.solo-link:hover { color: #B8860B; }
+
+h1.solo-title {
+    border-bottom: none;
+    color: #B8860B;
+    font-size: 1.55em;
+    margin-bottom: 0.1em;
+}
+
+.solo-vol { color: #999; font-size: 0.85em; }
+
+.poem-body.solo-body {
+    font-size: 1.18em;
+    margin-top: 1.2em;
+    padding-left: 0.6em;
+}
+
+.poem-body.solo-body .line { line-height: 2.5; }
+
+body.strains-on .poem-body.solo-body .line { line-height: 3.4; }
 
 /* 作者小传 / 校注（折叠） */
 details.biography, details.notes {
@@ -545,12 +601,21 @@ details.tail-fold[open] summary { margin-bottom: 0.6em; }
 
 /* 竖排诗卡：writing-mode 右起竖排、去标点，仿御定刻本书叶 */
 .daily-card {
-    width: 264px;
+    width: fit-content;
+    min-width: 250px;
+    max-width: 348px;
     background: #fbf8ee;
     border: 1px solid #dccfa5;
     border-radius: 3px;
     box-shadow: 2px 3px 0 rgba(90, 74, 42, 0.07);
     padding: 14px 16px;
+}
+
+.dp-wrap {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 0.2em;
 }
 
 .dp-head {
@@ -583,9 +648,7 @@ details.tail-fold[open] summary { margin-bottom: 0.6em; }
     display: block;
     writing-mode: vertical-rl;
     height: 320px;
-    max-width: 100%;
     overflow: hidden;
-    margin: 0 auto;
     text-decoration: none;
     color: #2c2c2c;
     line-height: 1;
@@ -593,6 +656,8 @@ details.tail-fold[open] summary { margin-bottom: 0.6em; }
 }
 
 .dp-body:hover .dp-line { color: #6b4a20; }
+
+.dp-colophon:hover .dp-author { color: #8B0000; }
 
 .dp-line {
     display: block;

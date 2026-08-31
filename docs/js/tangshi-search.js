@@ -21,8 +21,10 @@
         return out;
     }
 
-    function poemHref(key) {
-        return 'volumes/' + key.slice(0, 3) + '.html#p' + key.slice(4);
+    function poemHref(key, canon) {
+        // 默认进单诗页，带作者作品序（可继续逐首读该诗人）；卷中上下文单诗页内一键达
+        return 'poem.html?id=' + key +
+            (canon ? '&author=' + encodeURIComponent(canon) : '');
     }
 
     function el(id) { return document.getElementById(id); }
@@ -30,11 +32,13 @@
     function status(msg) { el('status').textContent = msg; }
 
     function render(hits, q) {
+        // hit: [key, title, author, form, snippet, canonical]
         var html = hits.slice(0, MAX_SHOW).map(function (h) {
             var badge = h[3] ? '<span class="badge badge-form">' + h[3] + '</span>' : '';
             var snippet = h[4] ? '<div class="search-snippet">' + h[4] + '</div>' : '';
-            return '<div class="search-hit"><a class="para-num" href="' + poemHref(h[0]) + '">（' + h[0] + '）</a>' +
-                '<a href="' + poemHref(h[0]) + '">' + h[1] + '</a>' + badge +
+            var href = poemHref(h[0], h[5] || h[2]);
+            return '<div class="search-hit"><a class="para-num" href="' + href + '">（' + h[0] + '）</a>' +
+                '<a href="' + href + '">' + h[1] + '</a>' + badge +
                 '<span class="fp-author">' + h[2] + '</span>' + snippet + '</div>';
         }).join('');
         el('results').innerHTML = html;
@@ -45,9 +49,9 @@
     function searchPrimary(qf) {
         var hits = [];
         for (var i = 0; i < primary.length; i++) {
-            var e = primary[i];
-            if (e[4].indexOf(qf) !== -1 || e[5].indexOf(qf) !== -1) {
-                hits.push([e[0], e[1], e[2], e[3], '']);
+            var e = primary[i];   // [key,title,author,form,canon,titleF,authorF]
+            if (e[5].indexOf(qf) !== -1 || e[6].indexOf(qf) !== -1) {
+                hits.push([e[0], e[1], e[2], e[3], '', e[4]]);
             }
         }
         return hits;
@@ -70,7 +74,7 @@
                         var e = entries[i];
                         var snip = snippetAround(e[2], qf, e[5]);
                         if (snip !== null || e[3].indexOf(qf) !== -1 || e[4].indexOf(qf) !== -1) {
-                            hits.push([e[0], e[1], e[6], '', snip || '']);
+                            hits.push([e[0], e[1], e[6], '', snip || '', e[7]]);
                         }
                     }
                     if (--pending === 0) done(hits);
@@ -79,9 +83,10 @@
                 if (shards[g]) { setTimeout(function () { scan(shards[g]); }, 0); return; }
                 fetch('data/fulltext_' + g + '.json').then(function (r) { return r.json(); })
                     .then(function (raw) {
-                        // 折叠一次缓存：[key,title,text,titleF,authorF,textF,author]
+                        // 折叠一次缓存：[key,title,text,titleF,authorF,textF,author,canon]
                         shards[g] = raw.map(function (e) {
-                            return [e[0], e[1], e[3], fold(e[1]), fold(e[2]), fold(e[3]), e[2]];
+                            return [e[0], e[1], e[3], fold(e[1]), fold(e[2]),
+                                    fold(e[3]), e[2], e[4] || ''];
                         });
                         scan(shards[g]);
                     });
@@ -96,7 +101,8 @@
             .then(function (d) {
                 if (el('q').value.trim() !== q) return; // 过期响应丢弃
                 render(d.hits.map(function (h) {
-                    return [h.key, h.title, h.author, h.form || '', h.snippet || ''];
+                    return [h.key, h.title, h.author, h.form || '',
+                            h.snippet || '', h.canonical || h.author];
                 }), q);
                 status('命中 ' + d.total + ' 首' +
                     (d.total > d.hits.length ? '（显示前 ' + d.hits.length + '）' : '') +
@@ -129,7 +135,8 @@
         fetch('data/search_index.json').then(function (r) { return r.json(); })
             .then(function (raw) {
                 primary = raw.map(function (e) {
-                    return [e[0], e[1], e[2], e[3], fold(e[1]), fold(e[2])];
+                    return [e[0], e[1], e[2], e[3], e[4] || '',
+                            fold(e[1]), fold(e[2])];
                 });
                 status('');
                 then();

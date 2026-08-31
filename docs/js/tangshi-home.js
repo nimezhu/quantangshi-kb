@@ -18,33 +18,55 @@
 
     /* ---------- 今日一诗 ---------- */
 
-    function clauses(paragraphs, cap) {
+    var MAX_COLS = 8;   // 竖排最多列数（含题目/落款各一列时正文 ≤8 行全显）
+
+    function clauses(paragraphs) {
         var text = paragraphs.join('');
-        var parts = text.split(/[，。！？；：、\s]+/).filter(Boolean);
-        return parts.slice(0, cap || 6);
+        return text.split(/[，。！？；：、\s]+/).filter(Boolean);
     }
 
     function esc(s) {
         return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
+    function seasonChar(month) {
+        if (month >= 3 && month <= 5) return '春';
+        if (month >= 6 && month <= 8) return '夏';
+        if (month >= 9 && month <= 11) return '秋';
+        return '冬';
+    }
+
     function renderDaily(p, dateLabel) {
         var card = el('daily-card');
         if (!card) return;
-        var href = 'volumes/' + p.key.slice(0, 3) + '.html#p' + p.key.slice(4);
+        var href = 'poem.html?id=' + p.key;
         var title = p.title.length > 8 ? p.title.slice(0, 8) + '…' : p.title;
-        var cols = clauses(p.paragraphs).map(function (c) {
+        var all = clauses(p.paragraphs);
+        // 整联截取：全诗 ≤8 行全显，否则取前 8 行（偶数，保联完整）并标「节选」
+        var shown = all.length <= MAX_COLS ? all : all.slice(0, MAX_COLS);
+        var partial = shown.length < all.length;
+        var cols = shown.map(function (c) {
             return '<span class="dp-line">' + esc(c) + '</span>';
         }).join('');
+        // 列高随内容：以最长列（题/句/落款+低起）定高，短诗紧凑、长句从容
+        var maxLen = Math.max.apply(null, [title.length, p.author.length + 2]
+            .concat(shown.map(function (c) { return c.length; })));
+        var bodyH = Math.min(Math.max(maxLen * 20 + 16, 120), 320);
+        var foot2 = [p.form ? esc(p.form) : null, partial ? '节选' : null]
+            .filter(Boolean).join(' · ');
         card.innerHTML =
             '<div class="dp-head"><span class="dp-seal">今日<br>一詩</span>' +
             '<span class="dp-date">' + dateLabel + '</span></div>' +
-            '<a class="dp-body" href="' + href + '" title="读全诗">' +
+            '<div class="dp-wrap">' +
+            '<a class="dp-body" style="height:' + bodyH + 'px" href="' + href + '" title="读全诗">' +
             '<span class="dp-line dp-title">' + esc(title) + '</span>' +
-            cols +
-            '<span class="dp-line dp-author">' + esc(p.author) + '</span>' +
-            '</a>' +
+            cols + '</a>' +
+            '<a class="dp-body dp-colophon" style="height:' + bodyH + 'px" href="authors/' +
+            encodeURIComponent(p.canonical || p.author) + '.html" title="诗人页">' +
+            '<span class="dp-line dp-author">' + esc(p.author) + '</span></a>' +
+            '</div>' +
             '<div class="dp-foot"><a href="' + href + '">读全诗（' + p.key + '）</a>' +
+            (foot2 ? ' · ' + foot2 : '') +
             ' · <button type="button" id="dp-again">换一首</button></div>';
         el('dp-again').addEventListener('click', function () {
             showPoem(Math.floor(Math.random() * t300.length), '偶得一首');
@@ -53,18 +75,7 @@
 
     function showPoem(idx, label) {
         currentIdx = idx;
-        var baked = t300[idx];
-        if (apiMode) {
-            fetch('/api/poem/' + baked.key)
-                .then(function (r) { return r.json(); })
-                .then(function (d) {
-                    renderDaily({key: d.key, title: d.title, author: d.author,
-                                 paragraphs: d.paragraphs}, label);
-                })
-                .catch(function () { renderDaily(baked, label); });
-        } else {
-            renderDaily(baked, label);
-        }
+        renderDaily(t300[idx], label);
     }
 
     function initDaily() {
@@ -75,8 +86,19 @@
                 var now = new Date();
                 var start = new Date(now.getFullYear(), 0, 0);
                 var doy = Math.floor((now - start) / 86400000);
-                showPoem(doy % t300.length,
-                         (now.getMonth() + 1) + '月' + now.getDate() + '日');
+                // 应季优先：标签含当季字的诗构成候选池（如秋日选"秋"诗），按日确定
+                var s = seasonChar(now.getMonth() + 1);
+                var pool = [];
+                for (var i = 0; i < t300.length; i++) {
+                    var tg = (t300[i].tags || []).join('');
+                    if (tg.indexOf(s) !== -1) pool.push(i);
+                }
+                var label = (now.getMonth() + 1) + '月' + now.getDate() + '日';
+                if (pool.length >= 5) {
+                    showPoem(pool[doy % pool.length], label + ' · 应' + s);
+                } else {
+                    showPoem(doy % t300.length, label);
+                }
             })
             .catch(function () {
                 var card = el('daily-card');
@@ -103,7 +125,8 @@
                     if (input.value.trim() !== q) return;
                     if (!d.hits || !d.hits.length) { hide(); return; }
                     box.innerHTML = d.hits.map(function (h) {
-                        var href = 'volumes/' + h.key.slice(0, 3) + '.html#p' + h.key.slice(4);
+                        var href = 'poem.html?id=' + h.key + '&author=' +
+                            encodeURIComponent(h.canonical || h.author);
                         return '<a href="' + href + '"><b>' + esc(h.title) + '</b>' +
                             (h.form ? '<span class="badge badge-form">' + h.form + '</span>' : '') +
                             '<span class="fp-author">' + esc(h.author) + '</span></a>';

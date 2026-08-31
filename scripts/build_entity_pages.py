@@ -43,8 +43,8 @@ def main():
                     t, a = meta.get(k, ("?", "?"))
                     rows.append(
                         f'<div class="search-hit"><a class="para-num" '
-                        f'href="../volumes/{k[:3]}.html#p{k[4:]}">（{k}）</a>'
-                        f'<a href="../volumes/{k[:3]}.html#p{k[4:]}">{esc(t)}</a>'
+                        f'href="../volumes/{k[:3]}.html#p{k[4:]}" title="在卷中查看">（{k}）</a>'
+                        f'<a href="../poem.html?id={k}">{esc(t)}</a>'
                         f'<span class="fp-author">{esc(a)}</span></div>')
                 more = (f'<p class="search-status">（共 {e["poem_count"]} 首，'
                         f'仅列前 {MAX_LIST}）</p>' if e["poem_count"] > MAX_LIST else "")

@@ -11,7 +11,7 @@ T2S_MAP 逐字折叠成简体后比较，简繁输入均可命中。
 import json
 
 from config import ANALYSIS_DIR, DOCS_DIR
-from lib_qts import iter_yuding, poem_key
+from lib_qts import canonical_author, iter_yuding, poem_key
 from render_volume import page
 
 DATA_OUT = DOCS_DIR / "data"
@@ -27,9 +27,13 @@ def main():
         for i, p in enumerate(poems, start=1):
             key = poem_key(volume, i)
             form = forms.get(key, ["", ""])[0]
-            primary.append([key, p["title"], p["author"], form])
+            # 第 5 位：规范作者名（用于诗人作品序链接）；与显示名相同则省略（省体积）
+            canon = canonical_author(p["author"])
+            c = canon if canon != p["author"] else ""
+            primary.append([key, p["title"], p["author"], form, c])
             shards[(volume - 1) // 100].append(
-                [key, p["title"], p["author"], "\n".join(p.get("paragraphs", []))])
+                [key, p["title"], p["author"],
+                 "\n".join(p.get("paragraphs", [])), c])
 
     (DATA_OUT / "search_index.json").write_text(
         json.dumps(primary, ensure_ascii=False), encoding="utf-8")
