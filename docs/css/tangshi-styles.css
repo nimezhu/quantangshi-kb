@@ -1,0 +1,298 @@
+/* 全唐诗阅读器样式 v1.0 —— 视觉基调沿用 shiji-kb（纸色底/衬线/深红标题/紫色段号），
+   版式为诗体重写；实体高亮类留待标注阶段（Phase 5）再引入。 */
+
+/* ============ 基础 ============ */
+
+body {
+    font-family: "Noto Serif TC", "Noto Serif SC", "Source Han Serif TC", serif;
+    line-height: 2;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fdfdf8;
+    color: #2c2c2c;
+    font-size: calc(1rem * var(--font-scale, 1));
+}
+
+h1 {
+    color: #8B0000;
+    border-bottom: 3px solid #8B0000;
+    padding-bottom: 10px;
+    font-size: 1.7em;
+}
+
+h1 .vol-count {
+    font-size: 0.5em;
+    color: #888;
+    font-weight: normal;
+    margin-left: 12px;
+}
+
+a { color: #8B4513; }
+
+footer {
+    margin-top: 50px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
+}
+
+/* ============ 诗块 ============ */
+
+.poem {
+    margin: 2.2em 0;
+    padding-bottom: 1.6em;
+    border-bottom: 1px dashed #e8e2d0;
+}
+
+.poem:last-of-type { border-bottom: none; }
+
+.poem-title {
+    color: #B8860B;
+    font-size: 1.15em;
+    font-weight: 600;
+    margin: 0 0 0.2em 0;
+}
+
+.poem-author {
+    color: #8B4513;
+    font-size: 0.95em;
+    margin-bottom: 0.6em;
+}
+
+.poem-body { padding-left: 1.2em; }
+
+.poem-body .line {
+    line-height: 2.15;
+    margin: 0;
+    letter-spacing: 0.04em;
+}
+
+/* Purple Numbers（诗编号，致敬 Doug Engelbart / shiji-kb） */
+.para-num {
+    color: #C8A8FF;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.72em;
+    font-weight: bold;
+    margin-right: 0.5em;
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    vertical-align: 0.1em;
+}
+
+.para-num:hover {
+    color: #9370DB;
+    text-decoration: underline;
+}
+
+/* 徽章：诗体 / 三百首 */
+.badge {
+    display: inline-block;
+    font-size: 0.62em;
+    font-weight: normal;
+    padding: 1px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: 0.15em;
+    letter-spacing: 0.05em;
+}
+
+.badge-form {
+    color: #7a6520;
+    border: 1px solid #d9c98a;
+    background-color: #fdf9ea;
+}
+
+.badge-300 {
+    color: #fff;
+    background-color: #a5453b;
+}
+
+/* 作者小传 / 校注（折叠） */
+details.biography, details.notes {
+    background-color: #fffef0;
+    border: 1px solid #e6e0c0;
+    border-radius: 5px;
+    padding: 8px 14px;
+    margin: 0.6em 0 1em 0;
+    font-size: 0.88em;
+    line-height: 1.9;
+    color: #555;
+}
+
+details.biography summary, details.notes summary {
+    cursor: pointer;
+    color: #8B7500;
+    font-size: 0.95em;
+    user-select: none;
+}
+
+details.biography p { margin: 0.5em 0 0.2em 0; }
+
+/* ============ 首页 ============ */
+
+.hero {
+    text-align: center;
+    padding: 30px 0 10px 0;
+}
+
+.hero h1 {
+    border-bottom: none;
+    font-size: 2.3em;
+    letter-spacing: 0.15em;
+}
+
+.hero .subtitle {
+    color: #8B4513;
+    margin-top: 0.2em;
+}
+
+.hero .stats {
+    color: #888;
+    font-size: 0.85em;
+    margin-top: 0.8em;
+}
+
+.section-title {
+    color: #8B4513;
+    border-left: 5px solid #8B4513;
+    padding-left: 15px;
+    margin-top: 40px;
+    font-size: 1.2em;
+}
+
+.famous-list {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: 2.5em;
+}
+
+.famous-list li {
+    margin: 0.35em 0;
+    break-inside: avoid;
+}
+
+.famous-list .fp-author {
+    color: #999;
+    font-size: 0.85em;
+    margin-left: 0.6em;
+}
+
+.poet-chips { line-height: 2.6; }
+
+.poet-chips .chip {
+    display: inline-block;
+    padding: 2px 12px;
+    margin-right: 8px;
+    border: 1px solid #d9c98a;
+    border-radius: 14px;
+    background-color: #fdf9ea;
+    color: #7a5a00;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.poet-chips .chip small { color: #b09a50; margin-left: 4px; }
+
+details.vol-group {
+    margin: 0.6em 0;
+    border: 1px solid #e8e2d0;
+    border-radius: 6px;
+    padding: 6px 14px;
+    background: #fffdf5;
+}
+
+details.vol-group summary {
+    cursor: pointer;
+    color: #8B4513;
+    font-weight: 600;
+    padding: 4px 0;
+    user-select: none;
+}
+
+.volume-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    padding: 10px 0;
+}
+
+.volume-grid a {
+    display: block;
+    padding: 6px 10px;
+    border: 1px solid #eee4cc;
+    border-radius: 4px;
+    background: #fff;
+    text-decoration: none;
+    font-size: 0.85em;
+    color: #555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.volume-grid a:hover { border-color: #B8860B; color: #8B4513; }
+
+.volume-grid .vg-num { color: #B8860B; font-weight: 600; margin-right: 6px; }
+
+/* ============ 设置面板 ============ */
+
+.settings-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.settings-panel {
+    position: fixed;
+    top: 62px;
+    right: 16px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    font-size: 0.9em;
+    display: none;
+}
+
+.settings-panel.open { display: block; }
+
+.settings-panel .row { margin: 6px 0; }
+
+.settings-panel button {
+    padding: 2px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f8f8f8;
+    cursor: pointer;
+}
+
+.settings-panel button.active {
+    background: #8B4513;
+    color: #fff;
+    border-color: #8B4513;
+}
+
+/* ============ 响应式 ============ */
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .famous-list { columns: 1; }
+    .poem-body { padding-left: 0.4em; }
+}

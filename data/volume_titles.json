@@ -1,0 +1,4502 @@
+{
+ "1": {
+  "name": "卷一",
+  "poems": 88,
+  "top_author": "李世民"
+ },
+ "2": {
+  "name": "卷二",
+  "poems": 16,
+  "top_author": "李治"
+ },
+ "3": {
+  "name": "卷三",
+  "poems": 64,
+  "top_author": "李隆基"
+ },
+ "4": {
+  "name": "卷四",
+  "poems": 31,
+  "top_author": "李適"
+ },
+ "5": {
+  "name": "卷五",
+  "poems": 62,
+  "top_author": "武則天"
+ },
+ "6": {
+  "name": "卷六",
+  "poems": 4,
+  "top_author": "李賢"
+ },
+ "7": {
+  "name": "卷七",
+  "poems": 9,
+  "top_author": "鮑君徽"
+ },
+ "8": {
+  "name": "卷八",
+  "poems": 35,
+  "top_author": "李煜"
+ },
+ "9": {
+  "name": "卷九",
+  "poems": 16,
+  "top_author": "徐氏"
+ },
+ "10": {
+  "name": "卷一十",
+  "poems": 62,
+  "top_author": "不詳"
+ },
+ "11": {
+  "name": "卷一十一",
+  "poems": 57,
+  "top_author": "不詳"
+ },
+ "12": {
+  "name": "卷一十二",
+  "poems": 88,
+  "top_author": "不詳"
+ },
+ "13": {
+  "name": "卷一十三",
+  "poems": 73,
+  "top_author": "不詳"
+ },
+ "14": {
+  "name": "卷一十四",
+  "poems": 41,
+  "top_author": "不詳"
+ },
+ "15": {
+  "name": "卷一十五",
+  "poems": 52,
+  "top_author": "不詳"
+ },
+ "16": {
+  "name": "卷一十六",
+  "poems": 70,
+  "top_author": "不詳"
+ },
+ "17": {
+  "name": "卷一十七",
+  "poems": 55,
+  "top_author": "柳宗元"
+ },
+ "18": {
+  "name": "卷一十八",
+  "poems": 91,
+  "top_author": "盧照鄰"
+ },
+ "19": {
+  "name": "卷一十九",
+  "poems": 134,
+  "top_author": "李白"
+ },
+ "20": {
+  "name": "卷二十",
+  "poems": 120,
+  "top_author": "李白"
+ },
+ "21": {
+  "name": "卷二十一",
+  "poems": 99,
+  "top_author": "李白"
+ },
+ "22": {
+  "name": "卷二十二",
+  "poems": 21,
+  "top_author": "李白"
+ },
+ "23": {
+  "name": "卷二十三",
+  "poems": 67,
+  "top_author": "韓愈"
+ },
+ "24": {
+  "name": "卷二十四",
+  "poems": 76,
+  "top_author": "李白"
+ },
+ "25": {
+  "name": "卷二十五",
+  "poems": 69,
+  "top_author": "李白"
+ },
+ "26": {
+  "name": "卷二十六",
+  "poems": 110,
+  "top_author": "李白"
+ },
+ "27": {
+  "name": "卷二十七",
+  "poems": 124,
+  "top_author": "不詳"
+ },
+ "28": {
+  "name": "卷二十八",
+  "poems": 74,
+  "top_author": "李賀"
+ },
+ "29": {
+  "name": "卷二十九",
+  "poems": 41,
+  "top_author": "李白"
+ },
+ "30": {
+  "name": "卷三十",
+  "poems": 21,
+  "top_author": "陳叔達"
+ },
+ "31": {
+  "name": "卷三十一",
+  "poems": 35,
+  "top_author": "魏征"
+ },
+ "32": {
+  "name": "卷三十二",
+  "poems": 33,
+  "top_author": "褚亮"
+ },
+ "33": {
+  "name": "卷三十三",
+  "poems": 27,
+  "top_author": "劉孝孫"
+ },
+ "34": {
+  "name": "卷三十四",
+  "poems": 20,
+  "top_author": "楊師道"
+ },
+ "35": {
+  "name": "卷三十五",
+  "poems": 33,
+  "top_author": "許敬宗"
+ },
+ "36": {
+  "name": "卷三十六",
+  "poems": 31,
+  "top_author": "虞世南"
+ },
+ "37": {
+  "name": "卷三十七",
+  "poems": 42,
+  "top_author": "王績"
+ },
+ "38": {
+  "name": "卷三十八",
+  "poems": 26,
+  "top_author": "孔紹安"
+ },
+ "39": {
+  "name": "卷三十九",
+  "poems": 33,
+  "top_author": "陳子良"
+ },
+ "40": {
+  "name": "卷四十",
+  "poems": 19,
+  "top_author": "上官儀"
+ },
+ "41": {
+  "name": "卷四十一",
+  "poems": 39,
+  "top_author": "盧照鄰"
+ },
+ "42": {
+  "name": "卷四十二",
+  "poems": 55,
+  "top_author": "盧照鄰"
+ },
+ "43": {
+  "name": "卷四十三",
+  "poems": 26,
+  "top_author": "李百藥"
+ },
+ "44": {
+  "name": "卷四十四",
+  "poems": 31,
+  "top_author": "任希古"
+ },
+ "45": {
+  "name": "卷四十五",
+  "poems": 12,
+  "top_author": "陳元光"
+ },
+ "46": {
+  "name": "卷四十六",
+  "poems": 30,
+  "top_author": "崔日用"
+ },
+ "47": {
+  "name": "卷四十七",
+  "poems": 51,
+  "top_author": "張九齡"
+ },
+ "48": {
+  "name": "卷四十八",
+  "poems": 79,
+  "top_author": "張九齡"
+ },
+ "49": {
+  "name": "卷四十九",
+  "poems": 62,
+  "top_author": "張九齡"
+ },
+ "50": {
+  "name": "卷五十",
+  "poems": 33,
+  "top_author": "楊炯"
+ },
+ "51": {
+  "name": "卷五十一",
+  "poems": 48,
+  "top_author": "宋之問"
+ },
+ "52": {
+  "name": "卷五十二",
+  "poems": 76,
+  "top_author": "宋之問"
+ },
+ "53": {
+  "name": "卷五十三",
+  "poems": 63,
+  "top_author": "宋之問"
+ },
+ "54": {
+  "name": "卷五十四",
+  "poems": 38,
+  "top_author": "崔湜"
+ },
+ "55": {
+  "name": "卷五十五",
+  "poems": 13,
+  "top_author": "王勃"
+ },
+ "56": {
+  "name": "卷五十六",
+  "poems": 63,
+  "top_author": "王勃"
+ },
+ "57": {
+  "name": "卷五十七",
+  "poems": 13,
+  "top_author": "李嶠"
+ },
+ "58": {
+  "name": "卷五十八",
+  "poems": 42,
+  "top_author": "李嶠"
+ },
+ "59": {
+  "name": "卷五十九",
+  "poems": 58,
+  "top_author": "李嶠"
+ },
+ "60": {
+  "name": "卷六十",
+  "poems": 62,
+  "top_author": "李嶠"
+ },
+ "61": {
+  "name": "卷六十一",
+  "poems": 31,
+  "top_author": "李嶠"
+ },
+ "62": {
+  "name": "卷六十二",
+  "poems": 39,
+  "top_author": "杜審言"
+ },
+ "63": {
+  "name": "卷六十三",
+  "poems": 23,
+  "top_author": "董思恭"
+ },
+ "64": {
+  "name": "卷六十四",
+  "poems": 13,
+  "top_author": "姚崇"
+ },
+ "65": {
+  "name": "卷六十五",
+  "poems": 15,
+  "top_author": "蘇味道"
+ },
+ "66": {
+  "name": "卷六十六",
+  "poems": 18,
+  "top_author": "郭震"
+ },
+ "67": {
+  "name": "卷六十七",
+  "poems": 15,
+  "top_author": "王無競"
+ },
+ "68": {
+  "name": "卷六十八",
+  "poems": 17,
+  "top_author": "崔融1"
+ },
+ "69": {
+  "name": "卷六十九",
+  "poems": 25,
+  "top_author": "閻朝隱"
+ },
+ "70": {
+  "name": "卷七十",
+  "poems": 17,
+  "top_author": "李適"
+ },
+ "71": {
+  "name": "卷七十一",
+  "poems": 26,
+  "top_author": "劉憲"
+ },
+ "72": {
+  "name": "卷七十二",
+  "poems": 35,
+  "top_author": "韓仲宣"
+ },
+ "73": {
+  "name": "卷七十三",
+  "poems": 56,
+  "top_author": "蘇頲"
+ },
+ "74": {
+  "name": "卷七十四",
+  "poems": 43,
+  "top_author": "蘇頲"
+ },
+ "75": {
+  "name": "卷七十五",
+  "poems": 12,
+  "top_author": "徐晶"
+ },
+ "76": {
+  "name": "卷七十六",
+  "poems": 31,
+  "top_author": "徐彥伯"
+ },
+ "77": {
+  "name": "卷七十七",
+  "poems": 19,
+  "top_author": "駱賓王"
+ },
+ "78": {
+  "name": "卷七十八",
+  "poems": 54,
+  "top_author": "駱賓王"
+ },
+ "79": {
+  "name": "卷七十九",
+  "poems": 47,
+  "top_author": "駱賓王"
+ },
+ "80": {
+  "name": "卷八十",
+  "poems": 29,
+  "top_author": "武三思"
+ },
+ "81": {
+  "name": "卷八十一",
+  "poems": 21,
+  "top_author": "喬知之"
+ },
+ "82": {
+  "name": "卷八十二",
+  "poems": 28,
+  "top_author": "劉希夷"
+ },
+ "83": {
+  "name": "卷八十三",
+  "poems": 33,
+  "top_author": "陳子昂"
+ },
+ "84": {
+  "name": "卷八十四",
+  "poems": 56,
+  "top_author": "陳子昂"
+ },
+ "85": {
+  "name": "卷八十五",
+  "poems": 28,
+  "top_author": "張說"
+ },
+ "86": {
+  "name": "卷八十六",
+  "poems": 74,
+  "top_author": "張說"
+ },
+ "87": {
+  "name": "卷八十七",
+  "poems": 94,
+  "top_author": "張說"
+ },
+ "88": {
+  "name": "卷八十八",
+  "poems": 59,
+  "top_author": "張說"
+ },
+ "89": {
+  "name": "卷八十九",
+  "poems": 38,
+  "top_author": "張說"
+ },
+ "90": {
+  "name": "卷九十",
+  "poems": 7,
+  "top_author": "張均"
+ },
+ "91": {
+  "name": "卷九十一",
+  "poems": 17,
+  "top_author": "韋嗣立"
+ },
+ "92": {
+  "name": "卷九十二",
+  "poems": 42,
+  "top_author": "李乂"
+ },
+ "93": {
+  "name": "卷九十三",
+  "poems": 39,
+  "top_author": "薛稷"
+ },
+ "94": {
+  "name": "卷九十四",
+  "poems": 24,
+  "top_author": "吳少微"
+ },
+ "95": {
+  "name": "卷九十五",
+  "poems": 30,
+  "top_author": "沈佺期"
+ },
+ "96": {
+  "name": "卷九十六",
+  "poems": 77,
+  "top_author": "沈佺期"
+ },
+ "97": {
+  "name": "卷九十七",
+  "poems": 45,
+  "top_author": "沈佺期"
+ },
+ "98": {
+  "name": "卷九十八",
+  "poems": 30,
+  "top_author": "趙冬曦"
+ },
+ "99": {
+  "name": "卷九十九",
+  "poems": 29,
+  "top_author": "盧僎"
+ },
+ "100": {
+  "name": "卷一百",
+  "poems": 15,
+  "top_author": "李崇嗣"
+ },
+ "101": {
+  "name": "卷一百零一",
+  "poems": 10,
+  "top_author": "宋務光"
+ },
+ "102": {
+  "name": "卷一百零二",
+  "poems": 15,
+  "top_author": "武平一"
+ },
+ "103": {
+  "name": "卷一百零三",
+  "poems": 21,
+  "top_author": "趙彥昭"
+ },
+ "104": {
+  "name": "卷一百零四",
+  "poems": 28,
+  "top_author": "蕭至忠"
+ },
+ "105": {
+  "name": "卷一百零五",
+  "poems": 14,
+  "top_author": "張錫"
+ },
+ "106": {
+  "name": "卷一百零六",
+  "poems": 24,
+  "top_author": "鄭愔"
+ },
+ "107": {
+  "name": "卷一百零七",
+  "poems": 14,
+  "top_author": "徐堅"
+ },
+ "108": {
+  "name": "卷一百零八",
+  "poems": 30,
+  "top_author": "胡皓"
+ },
+ "109": {
+  "name": "卷一百零九",
+  "poems": 10,
+  "top_author": "李泌"
+ },
+ "110": {
+  "name": "卷一百一十",
+  "poems": 18,
+  "top_author": "張諤"
+ },
+ "111": {
+  "name": "卷一百一十一",
+  "poems": 37,
+  "top_author": "袁暉"
+ },
+ "112": {
+  "name": "卷一百一十二",
+  "poems": 19,
+  "top_author": "賀知章"
+ },
+ "113": {
+  "name": "卷一百一十三",
+  "poems": 12,
+  "top_author": "裴耀卿"
+ },
+ "114": {
+  "name": "卷一百一十四",
+  "poems": 57,
+  "top_author": "丁仙芝"
+ },
+ "115": {
+  "name": "卷一百一十五",
+  "poems": 24,
+  "top_author": "王灣"
+ },
+ "116": {
+  "name": "卷一百一十六",
+  "poems": 17,
+  "top_author": "張子容"
+ },
+ "117": {
+  "name": "卷一百一十七",
+  "poems": 23,
+  "top_author": "賀朝"
+ },
+ "118": {
+  "name": "卷一百一十八",
+  "poems": 60,
+  "top_author": "孫逖"
+ },
+ "119": {
+  "name": "卷一百一十九",
+  "poems": 37,
+  "top_author": "崔國輔"
+ },
+ "120": {
+  "name": "卷一百二十",
+  "poems": 15,
+  "top_author": "楊浚"
+ },
+ "121": {
+  "name": "卷一百二十一",
+  "poems": 13,
+  "top_author": "李林甫"
+ },
+ "122": {
+  "name": "卷一百二十二",
+  "poems": 25,
+  "top_author": "盧象"
+ },
+ "123": {
+  "name": "卷一百二十三",
+  "poems": 10,
+  "top_author": "盧鴻一"
+ },
+ "124": {
+  "name": "卷一百二十四",
+  "poems": 24,
+  "top_author": "徐安貞"
+ },
+ "125": {
+  "name": "卷一百二十五",
+  "poems": 119,
+  "top_author": "王維"
+ },
+ "126": {
+  "name": "卷一百二十六",
+  "poems": 93,
+  "top_author": "王維"
+ },
+ "127": {
+  "name": "卷一百二十七",
+  "poems": 40,
+  "top_author": "王維"
+ },
+ "128": {
+  "name": "卷一百二十八",
+  "poems": 89,
+  "top_author": "王維"
+ },
+ "129": {
+  "name": "卷一百二十九",
+  "poems": 58,
+  "top_author": "裴迪"
+ },
+ "130": {
+  "name": "卷一百三十",
+  "poems": 39,
+  "top_author": "崔顥"
+ },
+ "131": {
+  "name": "卷一百三十一",
+  "poems": 36,
+  "top_author": "祖詠"
+ },
+ "132": {
+  "name": "卷一百三十二",
+  "poems": 41,
+  "top_author": "李頎"
+ },
+ "133": {
+  "name": "卷一百三十三",
+  "poems": 36,
+  "top_author": "李頎"
+ },
+ "134": {
+  "name": "卷一百三十四",
+  "poems": 47,
+  "top_author": "李頎"
+ },
+ "135": {
+  "name": "卷一百三十五",
+  "poems": 26,
+  "top_author": "綦毋潛"
+ },
+ "136": {
+  "name": "卷一百三十六",
+  "poems": 45,
+  "top_author": "儲光羲"
+ },
+ "137": {
+  "name": "卷一百三十七",
+  "poems": 33,
+  "top_author": "儲光羲"
+ },
+ "138": {
+  "name": "卷一百三十八",
+  "poems": 40,
+  "top_author": "儲光羲"
+ },
+ "139": {
+  "name": "卷一百三十九",
+  "poems": 53,
+  "top_author": "儲光羲"
+ },
+ "140": {
+  "name": "卷一百四十",
+  "poems": 36,
+  "top_author": "王昌齡"
+ },
+ "141": {
+  "name": "卷一百四十一",
+  "poems": 34,
+  "top_author": "王昌齡"
+ },
+ "142": {
+  "name": "卷一百四十二",
+  "poems": 20,
+  "top_author": "王昌齡"
+ },
+ "143": {
+  "name": "卷一百四十三",
+  "poems": 71,
+  "top_author": "王昌齡"
+ },
+ "144": {
+  "name": "卷一百四十四",
+  "poems": 51,
+  "top_author": "常建"
+ },
+ "145": {
+  "name": "卷一百四十五",
+  "poems": 30,
+  "top_author": "萬楚"
+ },
+ "146": {
+  "name": "卷一百四十六",
+  "poems": 17,
+  "top_author": "陶翰"
+ },
+ "147": {
+  "name": "卷一百四十七",
+  "poems": 143,
+  "top_author": "劉長卿"
+ },
+ "148": {
+  "name": "卷一百四十八",
+  "poems": 124,
+  "top_author": "劉長卿"
+ },
+ "149": {
+  "name": "卷一百四十九",
+  "poems": 77,
+  "top_author": "劉長卿"
+ },
+ "150": {
+  "name": "卷一百五十",
+  "poems": 59,
+  "top_author": "劉長卿"
+ },
+ "151": {
+  "name": "卷一百五十一",
+  "poems": 96,
+  "top_author": "劉長卿"
+ },
+ "152": {
+  "name": "卷一百五十二",
+  "poems": 9,
+  "top_author": "顏真卿"
+ },
+ "153": {
+  "name": "卷一百五十三",
+  "poems": 14,
+  "top_author": "李華"
+ },
+ "154": {
+  "name": "卷一百五十四",
+  "poems": 16,
+  "top_author": "蕭穎士"
+ },
+ "155": {
+  "name": "卷一百五十五",
+  "poems": 15,
+  "top_author": "崔曙"
+ },
+ "156": {
+  "name": "卷一百五十六",
+  "poems": 13,
+  "top_author": "王翰"
+ },
+ "157": {
+  "name": "卷一百五十七",
+  "poems": 17,
+  "top_author": "孟雲卿"
+ },
+ "158": {
+  "name": "卷一百五十八",
+  "poems": 14,
+  "top_author": "張巡"
+ },
+ "159": {
+  "name": "卷一百五十九",
+  "poems": 64,
+  "top_author": "孟浩然"
+ },
+ "160": {
+  "name": "卷一百六十",
+  "poems": 203,
+  "top_author": "孟浩然"
+ },
+ "161": {
+  "name": "卷一百六十一",
+  "poems": 1,
+  "top_author": "李白"
+ },
+ "162": {
+  "name": "卷一百六十二",
+  "poems": 26,
+  "top_author": "李白"
+ },
+ "163": {
+  "name": "卷一百六十三",
+  "poems": 32,
+  "top_author": "李白"
+ },
+ "164": {
+  "name": "卷一百六十四",
+  "poems": 25,
+  "top_author": "李白"
+ },
+ "165": {
+  "name": "卷一百六十五",
+  "poems": 38,
+  "top_author": "李白"
+ },
+ "166": {
+  "name": "卷一百六十六",
+  "poems": 23,
+  "top_author": "李白"
+ },
+ "167": {
+  "name": "卷一百六十七",
+  "poems": 18,
+  "top_author": "李白"
+ },
+ "168": {
+  "name": "卷一百六十八",
+  "poems": 39,
+  "top_author": "李白"
+ },
+ "169": {
+  "name": "卷一百六十九",
+  "poems": 22,
+  "top_author": "李白"
+ },
+ "170": {
+  "name": "卷一百七十",
+  "poems": 27,
+  "top_author": "李白"
+ },
+ "171": {
+  "name": "卷一百七十一",
+  "poems": 23,
+  "top_author": "李白"
+ },
+ "172": {
+  "name": "卷一百七十二",
+  "poems": 25,
+  "top_author": "李白"
+ },
+ "173": {
+  "name": "卷一百七十三",
+  "poems": 23,
+  "top_author": "李白"
+ },
+ "174": {
+  "name": "卷一百七十四",
+  "poems": 33,
+  "top_author": "李白"
+ },
+ "175": {
+  "name": "卷一百七十五",
+  "poems": 21,
+  "top_author": "李白"
+ },
+ "176": {
+  "name": "卷一百七十六",
+  "poems": 37,
+  "top_author": "李白"
+ },
+ "177": {
+  "name": "卷一百七十七",
+  "poems": 33,
+  "top_author": "李白"
+ },
+ "178": {
+  "name": "卷一百七十八",
+  "poems": 32,
+  "top_author": "李白"
+ },
+ "179": {
+  "name": "卷一百七十九",
+  "poems": 44,
+  "top_author": "李白"
+ },
+ "180": {
+  "name": "卷一百八十",
+  "poems": 35,
+  "top_author": "李白"
+ },
+ "181": {
+  "name": "卷一百八十一",
+  "poems": 51,
+  "top_author": "李白"
+ },
+ "182": {
+  "name": "卷一百八十二",
+  "poems": 40,
+  "top_author": "李白"
+ },
+ "183": {
+  "name": "卷一百八十三",
+  "poems": 39,
+  "top_author": "李白"
+ },
+ "184": {
+  "name": "卷一百八十四",
+  "poems": 63,
+  "top_author": "李白"
+ },
+ "185": {
+  "name": "卷一百八十五",
+  "poems": 26,
+  "top_author": "李白"
+ },
+ "186": {
+  "name": "卷一百八十六",
+  "poems": 26,
+  "top_author": "韋應物"
+ },
+ "187": {
+  "name": "卷一百八十七",
+  "poems": 61,
+  "top_author": "韋應物"
+ },
+ "188": {
+  "name": "卷一百八十八",
+  "poems": 63,
+  "top_author": "韋應物"
+ },
+ "189": {
+  "name": "卷一百八十九",
+  "poems": 68,
+  "top_author": "韋應物"
+ },
+ "190": {
+  "name": "卷一百九十",
+  "poems": 67,
+  "top_author": "韋應物"
+ },
+ "191": {
+  "name": "卷一百九十一",
+  "poems": 59,
+  "top_author": "韋應物"
+ },
+ "192": {
+  "name": "卷一百九十二",
+  "poems": 73,
+  "top_author": "韋應物"
+ },
+ "193": {
+  "name": "卷一百九十三",
+  "poems": 76,
+  "top_author": "韋應物"
+ },
+ "194": {
+  "name": "卷一百九十四",
+  "poems": 21,
+  "top_author": "韋應物"
+ },
+ "195": {
+  "name": "卷一百九十五",
+  "poems": 26,
+  "top_author": "韋應物"
+ },
+ "196": {
+  "name": "卷一百九十六",
+  "poems": 13,
+  "top_author": "劉灣"
+ },
+ "197": {
+  "name": "卷一百九十七",
+  "poems": 40,
+  "top_author": "張謂"
+ },
+ "198": {
+  "name": "卷一百九十八",
+  "poems": 101,
+  "top_author": "岑參"
+ },
+ "199": {
+  "name": "卷一百九十九",
+  "poems": 51,
+  "top_author": "岑參"
+ },
+ "200": {
+  "name": "卷二百",
+  "poems": 161,
+  "top_author": "岑參"
+ },
+ "201": {
+  "name": "卷二百零一",
+  "poems": 73,
+  "top_author": "岑參"
+ },
+ "202": {
+  "name": "卷二百零二",
+  "poems": 39,
+  "top_author": "梁鍠"
+ },
+ "203": {
+  "name": "卷二百零三",
+  "poems": 44,
+  "top_author": "徐九皋"
+ },
+ "204": {
+  "name": "卷二百零四",
+  "poems": 13,
+  "top_author": "陳季"
+ },
+ "205": {
+  "name": "卷二百零五",
+  "poems": 38,
+  "top_author": "包佶"
+ },
+ "206": {
+  "name": "卷二百零六",
+  "poems": 84,
+  "top_author": "李嘉佑"
+ },
+ "207": {
+  "name": "卷二百零七",
+  "poems": 49,
+  "top_author": "李嘉佑"
+ },
+ "208": {
+  "name": "卷二百零八",
+  "poems": 19,
+  "top_author": "包何"
+ },
+ "209": {
+  "name": "卷二百零九",
+  "poems": 10,
+  "top_author": "賈邕"
+ },
+ "210": {
+  "name": "卷二百一十",
+  "poems": 48,
+  "top_author": "皇甫曾"
+ },
+ "211": {
+  "name": "卷二百一十一",
+  "poems": 42,
+  "top_author": "高適"
+ },
+ "212": {
+  "name": "卷二百一十二",
+  "poems": 43,
+  "top_author": "高適"
+ },
+ "213": {
+  "name": "卷二百一十三",
+  "poems": 31,
+  "top_author": "高適"
+ },
+ "214": {
+  "name": "卷二百一十四",
+  "poems": 87,
+  "top_author": "高適"
+ },
+ "215": {
+  "name": "卷二百一十五",
+  "poems": 16,
+  "top_author": "馮著"
+ },
+ "216": {
+  "name": "卷二百一十六",
+  "poems": 47,
+  "top_author": "杜甫"
+ },
+ "217": {
+  "name": "卷二百一十七",
+  "poems": 39,
+  "top_author": "杜甫"
+ },
+ "218": {
+  "name": "卷二百一十八",
+  "poems": 44,
+  "top_author": "杜甫"
+ },
+ "219": {
+  "name": "卷二百一十九",
+  "poems": 33,
+  "top_author": "杜甫"
+ },
+ "220": {
+  "name": "卷二百二十",
+  "poems": 52,
+  "top_author": "杜甫"
+ },
+ "221": {
+  "name": "卷二百二十一",
+  "poems": 50,
+  "top_author": "杜甫"
+ },
+ "222": {
+  "name": "卷二百二十二",
+  "poems": 43,
+  "top_author": "杜甫"
+ },
+ "223": {
+  "name": "卷二百二十三",
+  "poems": 43,
+  "top_author": "杜甫"
+ },
+ "224": {
+  "name": "卷二百二十四",
+  "poems": 65,
+  "top_author": "杜甫"
+ },
+ "225": {
+  "name": "卷二百二十五",
+  "poems": 90,
+  "top_author": "杜甫"
+ },
+ "226": {
+  "name": "卷二百二十六",
+  "poems": 95,
+  "top_author": "杜甫"
+ },
+ "227": {
+  "name": "卷二百二十七",
+  "poems": 88,
+  "top_author": "杜甫"
+ },
+ "228": {
+  "name": "卷二百二十八",
+  "poems": 68,
+  "top_author": "杜甫"
+ },
+ "229": {
+  "name": "卷二百二十九",
+  "poems": 84,
+  "top_author": "杜甫"
+ },
+ "230": {
+  "name": "卷二百三十",
+  "poems": 78,
+  "top_author": "杜甫"
+ },
+ "231": {
+  "name": "卷二百三十一",
+  "poems": 77,
+  "top_author": "杜甫"
+ },
+ "232": {
+  "name": "卷二百三十二",
+  "poems": 51,
+  "top_author": "杜甫"
+ },
+ "233": {
+  "name": "卷二百三十三",
+  "poems": 54,
+  "top_author": "杜甫"
+ },
+ "234": {
+  "name": "卷二百三十四",
+  "poems": 48,
+  "top_author": "杜甫"
+ },
+ "235": {
+  "name": "卷二百三十五",
+  "poems": 41,
+  "top_author": "賈至"
+ },
+ "236": {
+  "name": "卷二百三十六",
+  "poems": 96,
+  "top_author": "錢起"
+ },
+ "237": {
+  "name": "卷二百三十七",
+  "poems": 139,
+  "top_author": "錢起"
+ },
+ "238": {
+  "name": "卷二百三十八",
+  "poems": 86,
+  "top_author": "錢起"
+ },
+ "239": {
+  "name": "卷二百三十九",
+  "poems": 108,
+  "top_author": "錢起"
+ },
+ "240": {
+  "name": "卷二百四十",
+  "poems": 45,
+  "top_author": "元結"
+ },
+ "241": {
+  "name": "卷二百四十一",
+  "poems": 44,
+  "top_author": "元結"
+ },
+ "242": {
+  "name": "卷二百四十二",
+  "poems": 48,
+  "top_author": "張繼"
+ },
+ "243": {
+  "name": "卷二百四十三",
+  "poems": 35,
+  "top_author": "韓翃"
+ },
+ "244": {
+  "name": "卷二百四十四",
+  "poems": 66,
+  "top_author": "韓翃"
+ },
+ "245": {
+  "name": "卷二百四十五",
+  "poems": 62,
+  "top_author": "韓翃"
+ },
+ "246": {
+  "name": "卷二百四十六",
+  "poems": 28,
+  "top_author": "獨孤及"
+ },
+ "247": {
+  "name": "卷二百四十七",
+  "poems": 53,
+  "top_author": "獨孤及"
+ },
+ "248": {
+  "name": "卷二百四十八",
+  "poems": 71,
+  "top_author": "郎士元"
+ },
+ "249": {
+  "name": "卷二百四十九",
+  "poems": 103,
+  "top_author": "皇甫冉"
+ },
+ "250": {
+  "name": "卷二百五十",
+  "poems": 129,
+  "top_author": "皇甫冉"
+ },
+ "251": {
+  "name": "卷二百五十一",
+  "poems": 24,
+  "top_author": "劉方平"
+ },
+ "252": {
+  "name": "卷二百五十二",
+  "poems": 33,
+  "top_author": "李紓"
+ },
+ "253": {
+  "name": "卷二百五十三",
+  "poems": 37,
+  "top_author": "薛據"
+ },
+ "254": {
+  "name": "卷二百五十四",
+  "poems": 13,
+  "top_author": "常袞"
+ },
+ "255": {
+  "name": "卷二百五十五",
+  "poems": 11,
+  "top_author": "畢耀"
+ },
+ "256": {
+  "name": "卷二百五十六",
+  "poems": 16,
+  "top_author": "劉昚虛"
+ },
+ "257": {
+  "name": "卷二百五十七",
+  "poems": 19,
+  "top_author": "柳中庸"
+ },
+ "258": {
+  "name": "卷二百五十八",
+  "poems": 24,
+  "top_author": "蔣冽"
+ },
+ "259": {
+  "name": "卷二百五十九",
+  "poems": 29,
+  "top_author": "王季友1"
+ },
+ "260": {
+  "name": "卷二百六十",
+  "poems": 38,
+  "top_author": "秦系"
+ },
+ "261": {
+  "name": "卷二百六十一",
+  "poems": 15,
+  "top_author": "嚴武"
+ },
+ "262": {
+  "name": "卷二百六十二",
+  "poems": 18,
+  "top_author": "鄭錫"
+ },
+ "263": {
+  "name": "卷二百六十三",
+  "poems": 65,
+  "top_author": "嚴維"
+ },
+ "264": {
+  "name": "卷二百六十四",
+  "poems": 43,
+  "top_author": "顧況"
+ },
+ "265": {
+  "name": "卷二百六十五",
+  "poems": 41,
+  "top_author": "顧況"
+ },
+ "266": {
+  "name": "卷二百六十六",
+  "poems": 36,
+  "top_author": "顧況"
+ },
+ "267": {
+  "name": "卷二百六十七",
+  "poems": 97,
+  "top_author": "顧況"
+ },
+ "268": {
+  "name": "卷二百六十八",
+  "poems": 109,
+  "top_author": "耿湋"
+ },
+ "269": {
+  "name": "卷二百六十九",
+  "poems": 64,
+  "top_author": "耿湋"
+ },
+ "270": {
+  "name": "卷二百七十",
+  "poems": 114,
+  "top_author": "戎昱"
+ },
+ "271": {
+  "name": "卷二百七十一",
+  "poems": 138,
+  "top_author": "竇鞏"
+ },
+ "272": {
+  "name": "卷二百七十二",
+  "poems": 36,
+  "top_author": "陳潤"
+ },
+ "273": {
+  "name": "卷二百七十三",
+  "poems": 154,
+  "top_author": "戴叔倫"
+ },
+ "274": {
+  "name": "卷二百七十四",
+  "poems": 128,
+  "top_author": "戴叔倫"
+ },
+ "275": {
+  "name": "卷二百七十五",
+  "poems": 23,
+  "top_author": "于良史"
+ },
+ "276": {
+  "name": "卷二百七十六",
+  "poems": 78,
+  "top_author": "盧綸"
+ },
+ "277": {
+  "name": "卷二百七十七",
+  "poems": 51,
+  "top_author": "盧綸"
+ },
+ "278": {
+  "name": "卷二百七十八",
+  "poems": 55,
+  "top_author": "盧綸"
+ },
+ "279": {
+  "name": "卷二百七十九",
+  "poems": 72,
+  "top_author": "盧綸"
+ },
+ "280": {
+  "name": "卷二百八十",
+  "poems": 61,
+  "top_author": "盧綸"
+ },
+ "281": {
+  "name": "卷二百八十一",
+  "poems": 34,
+  "top_author": "章八元"
+ },
+ "282": {
+  "name": "卷二百八十二",
+  "poems": 45,
+  "top_author": "李益"
+ },
+ "283": {
+  "name": "卷二百八十三",
+  "poems": 115,
+  "top_author": "李益"
+ },
+ "284": {
+  "name": "卷二百八十四",
+  "poems": 39,
+  "top_author": "李端"
+ },
+ "285": {
+  "name": "卷二百八十五",
+  "poems": 142,
+  "top_author": "李端"
+ },
+ "286": {
+  "name": "卷二百八十六",
+  "poems": 75,
+  "top_author": "李端"
+ },
+ "287": {
+  "name": "卷二百八十七",
+  "poems": 16,
+  "top_author": "暢當"
+ },
+ "288": {
+  "name": "卷二百八十八",
+  "poems": 19,
+  "top_author": "陸贄"
+ },
+ "289": {
+  "name": "卷二百八十九",
+  "poems": 19,
+  "top_author": "楊憑"
+ },
+ "290": {
+  "name": "卷二百九十",
+  "poems": 39,
+  "top_author": "楊凝"
+ },
+ "291": {
+  "name": "卷二百九十一",
+  "poems": 20,
+  "top_author": "楊淩"
+ },
+ "292": {
+  "name": "卷二百九十二",
+  "poems": 90,
+  "top_author": "司空曙"
+ },
+ "293": {
+  "name": "卷二百九十三",
+  "poems": 83,
+  "top_author": "司空曙"
+ },
+ "294": {
+  "name": "卷二百九十四",
+  "poems": 48,
+  "top_author": "崔峒"
+ },
+ "295": {
+  "name": "卷二百九十五",
+  "poems": 18,
+  "top_author": "王烈"
+ },
+ "296": {
+  "name": "卷二百九十六",
+  "poems": 27,
+  "top_author": "張南史"
+ },
+ "297": {
+  "name": "卷二百九十七",
+  "poems": 42,
+  "top_author": "王建"
+ },
+ "298": {
+  "name": "卷二百九十八",
+  "poems": 69,
+  "top_author": "王建"
+ },
+ "299": {
+  "name": "卷二百九十九",
+  "poems": 49,
+  "top_author": "王建"
+ },
+ "300": {
+  "name": "卷三百",
+  "poems": 86,
+  "top_author": "王建"
+ },
+ "301": {
+  "name": "卷三百零一",
+  "poems": 122,
+  "top_author": "王建"
+ },
+ "302": {
+  "name": "卷三百零二",
+  "poems": 2,
+  "top_author": "王建"
+ },
+ "303": {
+  "name": "卷三百零三",
+  "poems": 43,
+  "top_author": "劉商"
+ },
+ "304": {
+  "name": "卷三百零四",
+  "poems": 66,
+  "top_author": "劉商"
+ },
+ "305": {
+  "name": "卷三百零五",
+  "poems": 38,
+  "top_author": "劉複"
+ },
+ "306": {
+  "name": "卷三百零六",
+  "poems": 23,
+  "top_author": "朱灣"
+ },
+ "307": {
+  "name": "卷三百零七",
+  "poems": 40,
+  "top_author": "丘丹"
+ },
+ "308": {
+  "name": "卷三百零八",
+  "poems": 9,
+  "top_author": "張志和"
+ },
+ "309": {
+  "name": "卷三百零九",
+  "poems": 11,
+  "top_author": "李約"
+ },
+ "310": {
+  "name": "卷三百一十",
+  "poems": 66,
+  "top_author": "於鵠"
+ },
+ "311": {
+  "name": "卷三百一十一",
+  "poems": 18,
+  "top_author": "陳存"
+ },
+ "312": {
+  "name": "卷三百一十二",
+  "poems": 10,
+  "top_author": "劉迥"
+ },
+ "313": {
+  "name": "卷三百一十三",
+  "poems": 28,
+  "top_author": "張登"
+ },
+ "314": {
+  "name": "卷三百一十四",
+  "poems": 20,
+  "top_author": "韋渠牟"
+ },
+ "315": {
+  "name": "卷三百一十五",
+  "poems": 26,
+  "top_author": "朱放"
+ },
+ "316": {
+  "name": "卷三百一十六",
+  "poems": 71,
+  "top_author": "武元衡"
+ },
+ "317": {
+  "name": "卷三百一十七",
+  "poems": 120,
+  "top_author": "武元衡"
+ },
+ "318": {
+  "name": "卷三百一十八",
+  "poems": 31,
+  "top_author": "鄭絪"
+ },
+ "319": {
+  "name": "卷三百一十九",
+  "poems": 45,
+  "top_author": "麹信陵"
+ },
+ "320": {
+  "name": "卷三百二十",
+  "poems": 36,
+  "top_author": "權德輿"
+ },
+ "321": {
+  "name": "卷三百二十一",
+  "poems": 31,
+  "top_author": "權德輿"
+ },
+ "322": {
+  "name": "卷三百二十二",
+  "poems": 35,
+  "top_author": "權德輿"
+ },
+ "323": {
+  "name": "卷三百二十三",
+  "poems": 34,
+  "top_author": "權德輿"
+ },
+ "324": {
+  "name": "卷三百二十四",
+  "poems": 42,
+  "top_author": "權德輿"
+ },
+ "325": {
+  "name": "卷三百二十五",
+  "poems": 43,
+  "top_author": "權德輿"
+ },
+ "326": {
+  "name": "卷三百二十六",
+  "poems": 26,
+  "top_author": "權德輿"
+ },
+ "327": {
+  "name": "卷三百二十七",
+  "poems": 33,
+  "top_author": "權德輿"
+ },
+ "328": {
+  "name": "卷三百二十八",
+  "poems": 15,
+  "top_author": "權德輿"
+ },
+ "329": {
+  "name": "卷三百二十九",
+  "poems": 43,
+  "top_author": "權德輿"
+ },
+ "330": {
+  "name": "卷三百三十",
+  "poems": 18,
+  "top_author": "張薦"
+ },
+ "331": {
+  "name": "卷三百三十一",
+  "poems": 14,
+  "top_author": "段文昌"
+ },
+ "332": {
+  "name": "卷三百三十二",
+  "poems": 95,
+  "top_author": "羊士諤"
+ },
+ "333": {
+  "name": "卷三百三十三",
+  "poems": 142,
+  "top_author": "楊巨源"
+ },
+ "334": {
+  "name": "卷三百三十四",
+  "poems": 44,
+  "top_author": "令狐楚"
+ },
+ "335": {
+  "name": "卷三百三十五",
+  "poems": 19,
+  "top_author": "裴度"
+ },
+ "336": {
+  "name": "卷三百三十六",
+  "poems": 21,
+  "top_author": "韓愈"
+ },
+ "337": {
+  "name": "卷三百三十七",
+  "poems": 28,
+  "top_author": "韓愈"
+ },
+ "338": {
+  "name": "卷三百三十八",
+  "poems": 26,
+  "top_author": "韓愈"
+ },
+ "339": {
+  "name": "卷三百三十九",
+  "poems": 27,
+  "top_author": "韓愈"
+ },
+ "340": {
+  "name": "卷三百四十",
+  "poems": 32,
+  "top_author": "韓愈"
+ },
+ "341": {
+  "name": "卷三百四十一",
+  "poems": 18,
+  "top_author": "韓愈"
+ },
+ "342": {
+  "name": "卷三百四十二",
+  "poems": 24,
+  "top_author": "韓愈"
+ },
+ "343": {
+  "name": "卷三百四十三",
+  "poems": 77,
+  "top_author": "韓愈"
+ },
+ "344": {
+  "name": "卷三百四十四",
+  "poems": 71,
+  "top_author": "韓愈"
+ },
+ "345": {
+  "name": "卷三百四十五",
+  "poems": 24,
+  "top_author": "韓愈"
+ },
+ "346": {
+  "name": "卷三百四十六",
+  "poems": 24,
+  "top_author": "王涯"
+ },
+ "347": {
+  "name": "卷三百四十七",
+  "poems": 24,
+  "top_author": "李正封"
+ },
+ "348": {
+  "name": "卷三百四十八",
+  "poems": 60,
+  "top_author": "陳羽"
+ },
+ "349": {
+  "name": "卷三百四十九",
+  "poems": 78,
+  "top_author": "歐陽詹"
+ },
+ "350": {
+  "name": "卷三百五十",
+  "poems": 16,
+  "top_author": "柳宗元"
+ },
+ "351": {
+  "name": "卷三百五十一",
+  "poems": 39,
+  "top_author": "柳宗元"
+ },
+ "352": {
+  "name": "卷三百五十二",
+  "poems": 58,
+  "top_author": "柳宗元"
+ },
+ "353": {
+  "name": "卷三百五十三",
+  "poems": 40,
+  "top_author": "柳宗元"
+ },
+ "354": {
+  "name": "卷三百五十四",
+  "poems": 45,
+  "top_author": "劉禹錫"
+ },
+ "355": {
+  "name": "卷三百五十五",
+  "poems": 58,
+  "top_author": "劉禹錫"
+ },
+ "356": {
+  "name": "卷三百五十六",
+  "poems": 46,
+  "top_author": "劉禹錫"
+ },
+ "357": {
+  "name": "卷三百五十七",
+  "poems": 66,
+  "top_author": "劉禹錫"
+ },
+ "358": {
+  "name": "卷三百五十八",
+  "poems": 78,
+  "top_author": "劉禹錫"
+ },
+ "359": {
+  "name": "卷三百五十九",
+  "poems": 65,
+  "top_author": "劉禹錫"
+ },
+ "360": {
+  "name": "卷三百六十",
+  "poems": 69,
+  "top_author": "劉禹錫"
+ },
+ "361": {
+  "name": "卷三百六十一",
+  "poems": 46,
+  "top_author": "劉禹錫"
+ },
+ "362": {
+  "name": "卷三百六十二",
+  "poems": 32,
+  "top_author": "劉禹錫"
+ },
+ "363": {
+  "name": "卷三百六十三",
+  "poems": 15,
+  "top_author": "劉禹錫"
+ },
+ "364": {
+  "name": "卷三百六十四",
+  "poems": 35,
+  "top_author": "劉禹錫"
+ },
+ "365": {
+  "name": "卷三百六十五",
+  "poems": 121,
+  "top_author": "劉禹錫"
+ },
+ "366": {
+  "name": "卷三百六十六",
+  "poems": 12,
+  "top_author": "張賈"
+ },
+ "367": {
+  "name": "卷三百六十七",
+  "poems": 23,
+  "top_author": "張仲素"
+ },
+ "368": {
+  "name": "卷三百六十八",
+  "poems": 31,
+  "top_author": "崔護"
+ },
+ "369": {
+  "name": "卷三百六十九",
+  "poems": 26,
+  "top_author": "皇甫松"
+ },
+ "370": {
+  "name": "卷三百七十",
+  "poems": 32,
+  "top_author": "呂溫"
+ },
+ "371": {
+  "name": "卷三百七十一",
+  "poems": 70,
+  "top_author": "呂溫"
+ },
+ "372": {
+  "name": "卷三百七十二",
+  "poems": 49,
+  "top_author": "孟郊"
+ },
+ "373": {
+  "name": "卷三百七十三",
+  "poems": 37,
+  "top_author": "孟郊"
+ },
+ "374": {
+  "name": "卷三百七十四",
+  "poems": 48,
+  "top_author": "孟郊"
+ },
+ "375": {
+  "name": "卷三百七十五",
+  "poems": 21,
+  "top_author": "孟郊"
+ },
+ "376": {
+  "name": "卷三百七十六",
+  "poems": 28,
+  "top_author": "孟郊"
+ },
+ "377": {
+  "name": "卷三百七十七",
+  "poems": 45,
+  "top_author": "孟郊"
+ },
+ "378": {
+  "name": "卷三百七十八",
+  "poems": 42,
+  "top_author": "孟郊"
+ },
+ "379": {
+  "name": "卷三百七十九",
+  "poems": 41,
+  "top_author": "孟郊"
+ },
+ "380": {
+  "name": "卷三百八十",
+  "poems": 48,
+  "top_author": "孟郊"
+ },
+ "381": {
+  "name": "卷三百八十一",
+  "poems": 22,
+  "top_author": "孟郊"
+ },
+ "382": {
+  "name": "卷三百八十二",
+  "poems": 70,
+  "top_author": "張籍"
+ },
+ "383": {
+  "name": "卷三百八十三",
+  "poems": 28,
+  "top_author": "張籍"
+ },
+ "384": {
+  "name": "卷三百八十四",
+  "poems": 133,
+  "top_author": "張籍"
+ },
+ "385": {
+  "name": "卷三百八十五",
+  "poems": 80,
+  "top_author": "張籍"
+ },
+ "386": {
+  "name": "卷三百八十六",
+  "poems": 123,
+  "top_author": "張籍"
+ },
+ "387": {
+  "name": "卷三百八十七",
+  "poems": 47,
+  "top_author": "盧仝"
+ },
+ "388": {
+  "name": "卷三百八十八",
+  "poems": 26,
+  "top_author": "盧仝"
+ },
+ "389": {
+  "name": "卷三百八十九",
+  "poems": 17,
+  "top_author": "盧仝"
+ },
+ "390": {
+  "name": "卷三百九十",
+  "poems": 45,
+  "top_author": "李賀"
+ },
+ "391": {
+  "name": "卷三百九十一",
+  "poems": 25,
+  "top_author": "李賀"
+ },
+ "392": {
+  "name": "卷三百九十二",
+  "poems": 48,
+  "top_author": "李賀"
+ },
+ "393": {
+  "name": "卷三百九十三",
+  "poems": 50,
+  "top_author": "李賀"
+ },
+ "394": {
+  "name": "卷三百九十四",
+  "poems": 20,
+  "top_author": "李賀"
+ },
+ "395": {
+  "name": "卷三百九十五",
+  "poems": 27,
+  "top_author": "劉叉"
+ },
+ "396": {
+  "name": "卷三百九十六",
+  "poems": 14,
+  "top_author": "元稹"
+ },
+ "397": {
+  "name": "卷三百九十七",
+  "poems": 10,
+  "top_author": "元稹"
+ },
+ "398": {
+  "name": "卷三百九十八",
+  "poems": 13,
+  "top_author": "元稹"
+ },
+ "399": {
+  "name": "卷三百九十九",
+  "poems": 16,
+  "top_author": "元稹"
+ },
+ "400": {
+  "name": "卷四百",
+  "poems": 20,
+  "top_author": "元稹"
+ },
+ "401": {
+  "name": "卷四百零一",
+  "poems": 20,
+  "top_author": "元稹"
+ },
+ "402": {
+  "name": "卷四百零二",
+  "poems": 9,
+  "top_author": "元稹"
+ },
+ "403": {
+  "name": "卷四百零三",
+  "poems": 25,
+  "top_author": "元稹"
+ },
+ "404": {
+  "name": "卷四百零四",
+  "poems": 28,
+  "top_author": "元稹"
+ },
+ "405": {
+  "name": "卷四百零五",
+  "poems": 5,
+  "top_author": "元稹"
+ },
+ "406": {
+  "name": "卷四百零六",
+  "poems": 11,
+  "top_author": "元稹"
+ },
+ "407": {
+  "name": "卷四百零七",
+  "poems": 6,
+  "top_author": "元稹"
+ },
+ "408": {
+  "name": "卷四百零八",
+  "poems": 11,
+  "top_author": "元稹"
+ },
+ "409": {
+  "name": "卷四百零九",
+  "poems": 36,
+  "top_author": "元稹"
+ },
+ "410": {
+  "name": "卷四百一十",
+  "poems": 30,
+  "top_author": "元稹"
+ },
+ "411": {
+  "name": "卷四百一十一",
+  "poems": 36,
+  "top_author": "元稹"
+ },
+ "412": {
+  "name": "卷四百一十二",
+  "poems": 38,
+  "top_author": "元稹"
+ },
+ "413": {
+  "name": "卷四百一十三",
+  "poems": 24,
+  "top_author": "元稹"
+ },
+ "414": {
+  "name": "卷四百一十四",
+  "poems": 28,
+  "top_author": "元稹"
+ },
+ "415": {
+  "name": "卷四百一十五",
+  "poems": 32,
+  "top_author": "元稹"
+ },
+ "416": {
+  "name": "卷四百一十六",
+  "poems": 27,
+  "top_author": "元稹"
+ },
+ "417": {
+  "name": "卷四百一十七",
+  "poems": 26,
+  "top_author": "元稹"
+ },
+ "418": {
+  "name": "卷四百一十八",
+  "poems": 19,
+  "top_author": "元稹"
+ },
+ "419": {
+  "name": "卷四百一十九",
+  "poems": 14,
+  "top_author": "元稹"
+ },
+ "420": {
+  "name": "卷四百二十",
+  "poems": 4,
+  "top_author": "元稹"
+ },
+ "421": {
+  "name": "卷四百二十一",
+  "poems": 17,
+  "top_author": "元稹"
+ },
+ "422": {
+  "name": "卷四百二十二",
+  "poems": 39,
+  "top_author": "元稹"
+ },
+ "423": {
+  "name": "卷四百二十三",
+  "poems": 25,
+  "top_author": "元稹"
+ },
+ "424": {
+  "name": "卷四百二十四",
+  "poems": 59,
+  "top_author": "白居易"
+ },
+ "425": {
+  "name": "卷四百二十五",
+  "poems": 29,
+  "top_author": "白居易"
+ },
+ "426": {
+  "name": "卷四百二十六",
+  "poems": 20,
+  "top_author": "白居易"
+ },
+ "427": {
+  "name": "卷四百二十七",
+  "poems": 30,
+  "top_author": "白居易"
+ },
+ "428": {
+  "name": "卷四百二十八",
+  "poems": 38,
+  "top_author": "白居易"
+ },
+ "429": {
+  "name": "卷四百二十九",
+  "poems": 45,
+  "top_author": "白居易"
+ },
+ "430": {
+  "name": "卷四百三十",
+  "poems": 55,
+  "top_author": "白居易"
+ },
+ "431": {
+  "name": "卷四百三十一",
+  "poems": 55,
+  "top_author": "白居易"
+ },
+ "432": {
+  "name": "卷四百三十二",
+  "poems": 55,
+  "top_author": "白居易"
+ },
+ "433": {
+  "name": "卷四百三十三",
+  "poems": 68,
+  "top_author": "白居易"
+ },
+ "434": {
+  "name": "卷四百三十四",
+  "poems": 49,
+  "top_author": "白居易"
+ },
+ "435": {
+  "name": "卷四百三十五",
+  "poems": 29,
+  "top_author": "白居易"
+ },
+ "436": {
+  "name": "卷四百三十六",
+  "poems": 99,
+  "top_author": "白居易"
+ },
+ "437": {
+  "name": "卷四百三十七",
+  "poems": 95,
+  "top_author": "白居易"
+ },
+ "438": {
+  "name": "卷四百三十八",
+  "poems": 89,
+  "top_author": "白居易"
+ },
+ "439": {
+  "name": "卷四百三十九",
+  "poems": 95,
+  "top_author": "白居易"
+ },
+ "440": {
+  "name": "卷四百四十",
+  "poems": 96,
+  "top_author": "白居易"
+ },
+ "441": {
+  "name": "卷四百四十一",
+  "poems": 85,
+  "top_author": "白居易"
+ },
+ "442": {
+  "name": "卷四百四十二",
+  "poems": 99,
+  "top_author": "白居易"
+ },
+ "443": {
+  "name": "卷四百四十三",
+  "poems": 96,
+  "top_author": "白居易"
+ },
+ "444": {
+  "name": "卷四百四十四",
+  "poems": 48,
+  "top_author": "白居易"
+ },
+ "445": {
+  "name": "卷四百四十五",
+  "poems": 55,
+  "top_author": "白居易"
+ },
+ "446": {
+  "name": "卷四百四十六",
+  "poems": 98,
+  "top_author": "白居易"
+ },
+ "447": {
+  "name": "卷四百四十七",
+  "poems": 91,
+  "top_author": "白居易"
+ },
+ "448": {
+  "name": "卷四百四十八",
+  "poems": 96,
+  "top_author": "白居易"
+ },
+ "449": {
+  "name": "卷四百四十九",
+  "poems": 73,
+  "top_author": "白居易"
+ },
+ "450": {
+  "name": "卷四百五十",
+  "poems": 72,
+  "top_author": "白居易"
+ },
+ "451": {
+  "name": "卷四百五十一",
+  "poems": 93,
+  "top_author": "白居易"
+ },
+ "452": {
+  "name": "卷四百五十二",
+  "poems": 49,
+  "top_author": "白居易"
+ },
+ "453": {
+  "name": "卷四百五十三",
+  "poems": 43,
+  "top_author": "白居易"
+ },
+ "454": {
+  "name": "卷四百五十四",
+  "poems": 78,
+  "top_author": "白居易"
+ },
+ "455": {
+  "name": "卷四百五十五",
+  "poems": 73,
+  "top_author": "白居易"
+ },
+ "456": {
+  "name": "卷四百五十六",
+  "poems": 88,
+  "top_author": "白居易"
+ },
+ "457": {
+  "name": "卷四百五十七",
+  "poems": 72,
+  "top_author": "白居易"
+ },
+ "458": {
+  "name": "卷四百五十八",
+  "poems": 90,
+  "top_author": "白居易"
+ },
+ "459": {
+  "name": "卷四百五十九",
+  "poems": 90,
+  "top_author": "白居易"
+ },
+ "460": {
+  "name": "卷四百六十",
+  "poems": 43,
+  "top_author": "白居易"
+ },
+ "461": {
+  "name": "卷四百六十一",
+  "poems": 11,
+  "top_author": "白居易"
+ },
+ "462": {
+  "name": "卷四百六十二",
+  "poems": 56,
+  "top_author": "白居易"
+ },
+ "463": {
+  "name": "卷四百六十三",
+  "poems": 22,
+  "top_author": "盧拱"
+ },
+ "464": {
+  "name": "卷四百六十四",
+  "poems": 23,
+  "top_author": "王起"
+ },
+ "465": {
+  "name": "卷四百六十五",
+  "poems": 58,
+  "top_author": "楊衡"
+ },
+ "466": {
+  "name": "卷四百六十六",
+  "poems": 61,
+  "top_author": "薛存誠"
+ },
+ "467": {
+  "name": "卷四百六十七",
+  "poems": 62,
+  "top_author": "牟融"
+ },
+ "468": {
+  "name": "卷四百六十八",
+  "poems": 69,
+  "top_author": "劉言史"
+ },
+ "469": {
+  "name": "卷四百六十九",
+  "poems": 30,
+  "top_author": "長孫佐輔"
+ },
+ "470": {
+  "name": "卷四百七十",
+  "poems": 28,
+  "top_author": "盧殷"
+ },
+ "471": {
+  "name": "卷四百七十一",
+  "poems": 30,
+  "top_author": "雍裕之"
+ },
+ "472": {
+  "name": "卷四百七十二",
+  "poems": 43,
+  "top_author": "李赤"
+ },
+ "473": {
+  "name": "卷四百七十三",
+  "poems": 28,
+  "top_author": "李逢吉"
+ },
+ "474": {
+  "name": "卷四百七十四",
+  "poems": 92,
+  "top_author": "徐凝"
+ },
+ "475": {
+  "name": "卷四百七十五",
+  "poems": 136,
+  "top_author": "李德裕"
+ },
+ "476": {
+  "name": "卷四百七十六",
+  "poems": 30,
+  "top_author": "熊孺登"
+ },
+ "477": {
+  "name": "卷四百七十七",
+  "poems": 102,
+  "top_author": "李涉"
+ },
+ "478": {
+  "name": "卷四百七十八",
+  "poems": 36,
+  "top_author": "陸暢"
+ },
+ "479": {
+  "name": "卷四百七十九",
+  "poems": 51,
+  "top_author": "張又新"
+ },
+ "480": {
+  "name": "卷四百八十",
+  "poems": 27,
+  "top_author": "李紳"
+ },
+ "481": {
+  "name": "卷四百八十一",
+  "poems": 42,
+  "top_author": "李紳"
+ },
+ "482": {
+  "name": "卷四百八十二",
+  "poems": 31,
+  "top_author": "李紳"
+ },
+ "483": {
+  "name": "卷四百八十三",
+  "poems": 26,
+  "top_author": "李紳"
+ },
+ "484": {
+  "name": "卷四百八十四",
+  "poems": 16,
+  "top_author": "楊汝士"
+ },
+ "485": {
+  "name": "卷四百八十五",
+  "poems": 54,
+  "top_author": "鮑溶"
+ },
+ "486": {
+  "name": "卷四百八十六",
+  "poems": 75,
+  "top_author": "鮑溶"
+ },
+ "487": {
+  "name": "卷四百八十七",
+  "poems": 47,
+  "top_author": "鮑溶"
+ },
+ "488": {
+  "name": "卷四百八十八",
+  "poems": 12,
+  "top_author": "唐扶"
+ },
+ "489": {
+  "name": "卷四百八十九",
+  "poems": 6,
+  "top_author": "舒元輿"
+ },
+ "490": {
+  "name": "卷四百九十",
+  "poems": 21,
+  "top_author": "陳去疾"
+ },
+ "491": {
+  "name": "卷四百九十一",
+  "poems": 38,
+  "top_author": "王初"
+ },
+ "492": {
+  "name": "卷四百九十二",
+  "poems": 78,
+  "top_author": "殷堯藩"
+ },
+ "493": {
+  "name": "卷四百九十三",
+  "poems": 23,
+  "top_author": "沈亞之"
+ },
+ "494": {
+  "name": "卷四百九十四",
+  "poems": 185,
+  "top_author": "施肩吾"
+ },
+ "495": {
+  "name": "卷四百九十五",
+  "poems": 15,
+  "top_author": "費冠卿"
+ },
+ "496": {
+  "name": "卷四百九十六",
+  "poems": 96,
+  "top_author": "姚合"
+ },
+ "497": {
+  "name": "卷四百九十七",
+  "poems": 97,
+  "top_author": "姚合"
+ },
+ "498": {
+  "name": "卷四百九十八",
+  "poems": 54,
+  "top_author": "姚合"
+ },
+ "499": {
+  "name": "卷四百九十九",
+  "poems": 50,
+  "top_author": "姚合"
+ },
+ "500": {
+  "name": "卷五百",
+  "poems": 49,
+  "top_author": "姚合"
+ },
+ "501": {
+  "name": "卷五百零一",
+  "poems": 62,
+  "top_author": "姚合"
+ },
+ "502": {
+  "name": "卷五百零二",
+  "poems": 49,
+  "top_author": "姚合"
+ },
+ "503": {
+  "name": "卷五百零三",
+  "poems": 93,
+  "top_author": "周賀"
+ },
+ "504": {
+  "name": "卷五百零四",
+  "poems": 29,
+  "top_author": "鄭巢"
+ },
+ "505": {
+  "name": "卷五百零五",
+  "poems": 32,
+  "top_author": "王睿"
+ },
+ "506": {
+  "name": "卷五百零六",
+  "poems": 67,
+  "top_author": "章孝標"
+ },
+ "507": {
+  "name": "卷五百零七",
+  "poems": 18,
+  "top_author": "蔣防"
+ },
+ "508": {
+  "name": "卷五百零八",
+  "poems": 46,
+  "top_author": "陳標"
+ },
+ "509": {
+  "name": "卷五百零九",
+  "poems": 72,
+  "top_author": "顧非熊"
+ },
+ "510": {
+  "name": "卷五百一十",
+  "poems": 162,
+  "top_author": "張祜"
+ },
+ "511": {
+  "name": "卷五百一十一",
+  "poems": 164,
+  "top_author": "張祜"
+ },
+ "512": {
+  "name": "卷五百一十二",
+  "poems": 12,
+  "top_author": "歐陽袞"
+ },
+ "513": {
+  "name": "卷五百一十三",
+  "poems": 53,
+  "top_author": "裴夷直"
+ },
+ "514": {
+  "name": "卷五百一十四",
+  "poems": 79,
+  "top_author": "朱慶餘"
+ },
+ "515": {
+  "name": "卷五百一十五",
+  "poems": 89,
+  "top_author": "朱慶餘"
+ },
+ "516": {
+  "name": "卷五百一十六",
+  "poems": 25,
+  "top_author": "厲玄"
+ },
+ "517": {
+  "name": "卷五百一十七",
+  "poems": 22,
+  "top_author": "楊發"
+ },
+ "518": {
+  "name": "卷五百一十八",
+  "poems": 123,
+  "top_author": "雍陶"
+ },
+ "519": {
+  "name": "卷五百一十九",
+  "poems": 36,
+  "top_author": "李遠"
+ },
+ "520": {
+  "name": "卷五百二十",
+  "poems": 27,
+  "top_author": "杜牧"
+ },
+ "521": {
+  "name": "卷五百二十一",
+  "poems": 58,
+  "top_author": "杜牧"
+ },
+ "522": {
+  "name": "卷五百二十二",
+  "poems": 80,
+  "top_author": "杜牧"
+ },
+ "523": {
+  "name": "卷五百二十三",
+  "poems": 73,
+  "top_author": "杜牧"
+ },
+ "524": {
+  "name": "卷五百二十四",
+  "poems": 118,
+  "top_author": "杜牧"
+ },
+ "525": {
+  "name": "卷五百二十五",
+  "poems": 57,
+  "top_author": "杜牧"
+ },
+ "526": {
+  "name": "卷五百二十六",
+  "poems": 61,
+  "top_author": "杜牧"
+ },
+ "527": {
+  "name": "卷五百二十七",
+  "poems": 13,
+  "top_author": "杜牧"
+ },
+ "528": {
+  "name": "卷五百二十八",
+  "poems": 44,
+  "top_author": "許渾"
+ },
+ "529": {
+  "name": "卷五百二十九",
+  "poems": 41,
+  "top_author": "許渾"
+ },
+ "530": {
+  "name": "卷五百三十",
+  "poems": 46,
+  "top_author": "許渾"
+ },
+ "531": {
+  "name": "卷五百三十一",
+  "poems": 43,
+  "top_author": "許渾"
+ },
+ "532": {
+  "name": "卷五百三十二",
+  "poems": 48,
+  "top_author": "許渾"
+ },
+ "533": {
+  "name": "卷五百三十三",
+  "poems": 43,
+  "top_author": "許渾"
+ },
+ "534": {
+  "name": "卷五百三十四",
+  "poems": 42,
+  "top_author": "許渾"
+ },
+ "535": {
+  "name": "卷五百三十五",
+  "poems": 48,
+  "top_author": "許渾"
+ },
+ "536": {
+  "name": "卷五百三十六",
+  "poems": 72,
+  "top_author": "許渾"
+ },
+ "537": {
+  "name": "卷五百三十七",
+  "poems": 19,
+  "top_author": "許渾"
+ },
+ "538": {
+  "name": "卷五百三十八",
+  "poems": 60,
+  "top_author": "許渾"
+ },
+ "539": {
+  "name": "卷五百三十九",
+  "poems": 214,
+  "top_author": "李商隱"
+ },
+ "540": {
+  "name": "卷五百四十",
+  "poems": 218,
+  "top_author": "李商隱"
+ },
+ "541": {
+  "name": "卷五百四十一",
+  "poems": 118,
+  "top_author": "李商隱"
+ },
+ "542": {
+  "name": "卷五百四十二",
+  "poems": 42,
+  "top_author": "薛瑩"
+ },
+ "543": {
+  "name": "卷五百四十三",
+  "poems": 64,
+  "top_author": "喻鳧"
+ },
+ "544": {
+  "name": "卷五百四十四",
+  "poems": 94,
+  "top_author": "劉得仁"
+ },
+ "545": {
+  "name": "卷五百四十五",
+  "poems": 40,
+  "top_author": "劉得仁"
+ },
+ "546": {
+  "name": "卷五百四十六",
+  "poems": 16,
+  "top_author": "祝元膺"
+ },
+ "547": {
+  "name": "卷五百四十七",
+  "poems": 25,
+  "top_author": "朱景玄"
+ },
+ "548": {
+  "name": "卷五百四十八",
+  "poems": 90,
+  "top_author": "薛逢"
+ },
+ "549": {
+  "name": "卷五百四十九",
+  "poems": 130,
+  "top_author": "趙嘏"
+ },
+ "550": {
+  "name": "卷五百五十",
+  "poems": 108,
+  "top_author": "趙嘏"
+ },
+ "551": {
+  "name": "卷五百五十一",
+  "poems": 28,
+  "top_author": "盧肇"
+ },
+ "552": {
+  "name": "卷五百五十二",
+  "poems": 36,
+  "top_author": "林滋"
+ },
+ "553": {
+  "name": "卷五百五十三",
+  "poems": 33,
+  "top_author": "姚鵠"
+ },
+ "554": {
+  "name": "卷五百五十四",
+  "poems": 98,
+  "top_author": "項斯"
+ },
+ "555": {
+  "name": "卷五百五十五",
+  "poems": 72,
+  "top_author": "馬戴"
+ },
+ "556": {
+  "name": "卷五百五十六",
+  "poems": 93,
+  "top_author": "馬戴"
+ },
+ "557": {
+  "name": "卷五百五十七",
+  "poems": 43,
+  "top_author": "孟遲"
+ },
+ "558": {
+  "name": "卷五百五十八",
+  "poems": 53,
+  "top_author": "薛能"
+ },
+ "559": {
+  "name": "卷五百五十九",
+  "poems": 51,
+  "top_author": "薛能"
+ },
+ "560": {
+  "name": "卷五百六十",
+  "poems": 77,
+  "top_author": "薛能"
+ },
+ "561": {
+  "name": "卷五百六十一",
+  "poems": 78,
+  "top_author": "薛能"
+ },
+ "562": {
+  "name": "卷五百六十二",
+  "poems": 32,
+  "top_author": "劉威"
+ },
+ "563": {
+  "name": "卷五百六十三",
+  "poems": 31,
+  "top_author": "裴休"
+ },
+ "564": {
+  "name": "卷五百六十四",
+  "poems": 18,
+  "top_author": "楊牢"
+ },
+ "565": {
+  "name": "卷五百六十五",
+  "poems": 24,
+  "top_author": "韓琮"
+ },
+ "566": {
+  "name": "卷五百六十六",
+  "poems": 23,
+  "top_author": "韋蟾"
+ },
+ "567": {
+  "name": "卷五百六十七",
+  "poems": 15,
+  "top_author": "崔櫓"
+ },
+ "568": {
+  "name": "卷五百六十八",
+  "poems": 53,
+  "top_author": "李群玉"
+ },
+ "569": {
+  "name": "卷五百六十九",
+  "poems": 97,
+  "top_author": "李群玉"
+ },
+ "570": {
+  "name": "卷五百七十",
+  "poems": 85,
+  "top_author": "李群玉"
+ },
+ "571": {
+  "name": "卷五百七十一",
+  "poems": 61,
+  "top_author": "賈島"
+ },
+ "572": {
+  "name": "卷五百七十二",
+  "poems": 107,
+  "top_author": "賈島"
+ },
+ "573": {
+  "name": "卷五百七十三",
+  "poems": 130,
+  "top_author": "賈島"
+ },
+ "574": {
+  "name": "卷五百七十四",
+  "poems": 104,
+  "top_author": "賈島"
+ },
+ "575": {
+  "name": "卷五百七十五",
+  "poems": 25,
+  "top_author": "溫庭筠"
+ },
+ "576": {
+  "name": "卷五百七十六",
+  "poems": 27,
+  "top_author": "溫庭筠"
+ },
+ "577": {
+  "name": "卷五百七十七",
+  "poems": 33,
+  "top_author": "溫庭筠"
+ },
+ "578": {
+  "name": "卷五百七十八",
+  "poems": 57,
+  "top_author": "溫庭筠"
+ },
+ "579": {
+  "name": "卷五百七十九",
+  "poems": 27,
+  "top_author": "溫庭筠"
+ },
+ "580": {
+  "name": "卷五百八十",
+  "poems": 6,
+  "top_author": "溫庭筠"
+ },
+ "581": {
+  "name": "卷五百八十一",
+  "poems": 37,
+  "top_author": "溫庭筠"
+ },
+ "582": {
+  "name": "卷五百八十二",
+  "poems": 38,
+  "top_author": "溫庭筠"
+ },
+ "583": {
+  "name": "卷五百八十三",
+  "poems": 62,
+  "top_author": "溫庭筠"
+ },
+ "584": {
+  "name": "卷五百八十四",
+  "poems": 31,
+  "top_author": "段成式"
+ },
+ "585": {
+  "name": "卷五百八十五",
+  "poems": 68,
+  "top_author": "劉駕"
+ },
+ "586": {
+  "name": "卷五百八十六",
+  "poems": 102,
+  "top_author": "劉滄"
+ },
+ "587": {
+  "name": "卷五百八十七",
+  "poems": 70,
+  "top_author": "李頻"
+ },
+ "588": {
+  "name": "卷五百八十八",
+  "poems": 67,
+  "top_author": "李頻"
+ },
+ "589": {
+  "name": "卷五百八十九",
+  "poems": 65,
+  "top_author": "李頻"
+ },
+ "590": {
+  "name": "卷五百九十",
+  "poems": 61,
+  "top_author": "李郢"
+ },
+ "591": {
+  "name": "卷五百九十一",
+  "poems": 11,
+  "top_author": "崔玨"
+ },
+ "592": {
+  "name": "卷五百九十二",
+  "poems": 61,
+  "top_author": "曹鄴"
+ },
+ "593": {
+  "name": "卷五百九十三",
+  "poems": 45,
+  "top_author": "曹鄴"
+ },
+ "594": {
+  "name": "卷五百九十四",
+  "poems": 39,
+  "top_author": "儲嗣宗"
+ },
+ "595": {
+  "name": "卷五百九十五",
+  "poems": 49,
+  "top_author": "于武陵"
+ },
+ "596": {
+  "name": "卷五百九十六",
+  "poems": 39,
+  "top_author": "司馬紮"
+ },
+ "597": {
+  "name": "卷五百九十七",
+  "poems": 34,
+  "top_author": "霍總"
+ },
+ "598": {
+  "name": "卷五百九十八",
+  "poems": 48,
+  "top_author": "高駢"
+ },
+ "599": {
+  "name": "卷五百九十九",
+  "poems": 45,
+  "top_author": "於濆"
+ },
+ "600": {
+  "name": "卷六百",
+  "poems": 48,
+  "top_author": "翁綬"
+ },
+ "601": {
+  "name": "卷六百零一",
+  "poems": 34,
+  "top_author": "李昌符"
+ },
+ "602": {
+  "name": "卷六百零二",
+  "poems": 60,
+  "top_author": "汪遵"
+ },
+ "603": {
+  "name": "卷六百零三",
+  "poems": 68,
+  "top_author": "許棠"
+ },
+ "604": {
+  "name": "卷六百零四",
+  "poems": 70,
+  "top_author": "許棠"
+ },
+ "605": {
+  "name": "卷六百零五",
+  "poems": 32,
+  "top_author": "邵謁"
+ },
+ "606": {
+  "name": "卷六百零六",
+  "poems": 33,
+  "top_author": "林寬"
+ },
+ "607": {
+  "name": "卷六百零七",
+  "poems": 19,
+  "top_author": "李騭"
+ },
+ "608": {
+  "name": "卷六百零八",
+  "poems": 26,
+  "top_author": "皮日休"
+ },
+ "609": {
+  "name": "卷六百零九",
+  "poems": 15,
+  "top_author": "皮日休"
+ },
+ "610": {
+  "name": "卷六百一十",
+  "poems": 20,
+  "top_author": "皮日休"
+ },
+ "611": {
+  "name": "卷六百一十一",
+  "poems": 57,
+  "top_author": "皮日休"
+ },
+ "612": {
+  "name": "卷六百一十二",
+  "poems": 28,
+  "top_author": "皮日休"
+ },
+ "613": {
+  "name": "卷六百一十三",
+  "poems": 66,
+  "top_author": "皮日休"
+ },
+ "614": {
+  "name": "卷六百一十四",
+  "poems": 56,
+  "top_author": "皮日休"
+ },
+ "615": {
+  "name": "卷六百一十五",
+  "poems": 49,
+  "top_author": "皮日休"
+ },
+ "616": {
+  "name": "卷六百一十六",
+  "poems": 25,
+  "top_author": "皮日休"
+ },
+ "617": {
+  "name": "卷六百一十七",
+  "poems": 8,
+  "top_author": "陸龜蒙"
+ },
+ "618": {
+  "name": "卷六百一十八",
+  "poems": 27,
+  "top_author": "陸龜蒙"
+ },
+ "619": {
+  "name": "卷六百一十九",
+  "poems": 19,
+  "top_author": "陸龜蒙"
+ },
+ "620": {
+  "name": "卷六百二十",
+  "poems": 56,
+  "top_author": "陸龜蒙"
+ },
+ "621": {
+  "name": "卷六百二十一",
+  "poems": 23,
+  "top_author": "陸龜蒙"
+ },
+ "622": {
+  "name": "卷六百二十二",
+  "poems": 29,
+  "top_author": "陸龜蒙"
+ },
+ "623": {
+  "name": "卷六百二十三",
+  "poems": 14,
+  "top_author": "陸龜蒙"
+ },
+ "624": {
+  "name": "卷六百二十四",
+  "poems": 42,
+  "top_author": "陸龜蒙"
+ },
+ "625": {
+  "name": "卷六百二十五",
+  "poems": 38,
+  "top_author": "陸龜蒙"
+ },
+ "626": {
+  "name": "卷六百二十六",
+  "poems": 41,
+  "top_author": "陸龜蒙"
+ },
+ "627": {
+  "name": "卷六百二十七",
+  "poems": 45,
+  "top_author": "陸龜蒙"
+ },
+ "628": {
+  "name": "卷六百二十八",
+  "poems": 49,
+  "top_author": "陸龜蒙"
+ },
+ "629": {
+  "name": "卷六百二十九",
+  "poems": 78,
+  "top_author": "陸龜蒙"
+ },
+ "630": {
+  "name": "卷六百三十",
+  "poems": 30,
+  "top_author": "陸龜蒙"
+ },
+ "631": {
+  "name": "卷六百三十一",
+  "poems": 31,
+  "top_author": "張賁"
+ },
+ "632": {
+  "name": "卷六百三十二",
+  "poems": 81,
+  "top_author": "司空圖"
+ },
+ "633": {
+  "name": "卷六百三十三",
+  "poems": 80,
+  "top_author": "司空圖"
+ },
+ "634": {
+  "name": "卷六百三十四",
+  "poems": 58,
+  "top_author": "司空圖"
+ },
+ "635": {
+  "name": "卷六百三十五",
+  "poems": 22,
+  "top_author": "周繇"
+ },
+ "636": {
+  "name": "卷六百三十六",
+  "poems": 32,
+  "top_author": "聶夷中"
+ },
+ "637": {
+  "name": "卷六百三十七",
+  "poems": 7,
+  "top_author": "顧雲"
+ },
+ "638": {
+  "name": "卷六百三十八",
+  "poems": 99,
+  "top_author": "張喬"
+ },
+ "639": {
+  "name": "卷六百三十九",
+  "poems": 69,
+  "top_author": "張喬"
+ },
+ "640": {
+  "name": "卷六百四十",
+  "poems": 37,
+  "top_author": "曹唐"
+ },
+ "641": {
+  "name": "卷六百四十一",
+  "poems": 4,
+  "top_author": "曹唐"
+ },
+ "642": {
+  "name": "卷六百四十二",
+  "poems": 29,
+  "top_author": "來鵠"
+ },
+ "643": {
+  "name": "卷六百四十三",
+  "poems": 78,
+  "top_author": "李山甫"
+ },
+ "644": {
+  "name": "卷六百四十四",
+  "poems": 46,
+  "top_author": "李鹹用"
+ },
+ "645": {
+  "name": "卷六百四十五",
+  "poems": 71,
+  "top_author": "李鹹用"
+ },
+ "646": {
+  "name": "卷六百四十六",
+  "poems": 60,
+  "top_author": "李鹹用"
+ },
+ "647": {
+  "name": "卷六百四十七",
+  "poems": 162,
+  "top_author": "胡曾"
+ },
+ "648": {
+  "name": "卷六百四十八",
+  "poems": 40,
+  "top_author": "方幹"
+ },
+ "649": {
+  "name": "卷六百四十九",
+  "poems": 68,
+  "top_author": "方幹"
+ },
+ "650": {
+  "name": "卷六百五十",
+  "poems": 55,
+  "top_author": "方幹"
+ },
+ "651": {
+  "name": "卷六百五十一",
+  "poems": 53,
+  "top_author": "方幹"
+ },
+ "652": {
+  "name": "卷六百五十二",
+  "poems": 65,
+  "top_author": "方幹"
+ },
+ "653": {
+  "name": "卷六百五十三",
+  "poems": 55,
+  "top_author": "方幹"
+ },
+ "654": {
+  "name": "卷六百五十四",
+  "poems": 143,
+  "top_author": "羅鄴"
+ },
+ "655": {
+  "name": "卷六百五十五",
+  "poems": 38,
+  "top_author": "羅隱"
+ },
+ "656": {
+  "name": "卷六百五十六",
+  "poems": 40,
+  "top_author": "羅隱"
+ },
+ "657": {
+  "name": "卷六百五十七",
+  "poems": 40,
+  "top_author": "羅隱"
+ },
+ "658": {
+  "name": "卷六百五十八",
+  "poems": 39,
+  "top_author": "羅隱"
+ },
+ "659": {
+  "name": "卷六百五十九",
+  "poems": 51,
+  "top_author": "羅隱"
+ },
+ "660": {
+  "name": "卷六百六十",
+  "poems": 35,
+  "top_author": "羅隱"
+ },
+ "661": {
+  "name": "卷六百六十一",
+  "poems": 32,
+  "top_author": "羅隱"
+ },
+ "662": {
+  "name": "卷六百六十二",
+  "poems": 38,
+  "top_author": "羅隱"
+ },
+ "663": {
+  "name": "卷六百六十三",
+  "poems": 40,
+  "top_author": "羅隱"
+ },
+ "664": {
+  "name": "卷六百六十四",
+  "poems": 39,
+  "top_author": "羅隱"
+ },
+ "665": {
+  "name": "卷六百六十五",
+  "poems": 73,
+  "top_author": "羅隱"
+ },
+ "666": {
+  "name": "卷六百六十六",
+  "poems": 2,
+  "top_author": "羅虯"
+ },
+ "667": {
+  "name": "卷六百六十七",
+  "poems": 45,
+  "top_author": "翁洮"
+ },
+ "668": {
+  "name": "卷六百六十八",
+  "poems": 32,
+  "top_author": "高蟾"
+ },
+ "669": {
+  "name": "卷六百六十九",
+  "poems": 26,
+  "top_author": "章碣"
+ },
+ "670": {
+  "name": "卷六百七十",
+  "poems": 37,
+  "top_author": "秦韜玉"
+ },
+ "671": {
+  "name": "卷六百七十一",
+  "poems": 79,
+  "top_author": "唐彥謙"
+ },
+ "672": {
+  "name": "卷六百七十二",
+  "poems": 77,
+  "top_author": "唐彥謙"
+ },
+ "673": {
+  "name": "卷六百七十三",
+  "poems": 46,
+  "top_author": "周樸"
+ },
+ "674": {
+  "name": "卷六百七十四",
+  "poems": 97,
+  "top_author": "鄭穀"
+ },
+ "675": {
+  "name": "卷六百七十五",
+  "poems": 89,
+  "top_author": "鄭穀"
+ },
+ "676": {
+  "name": "卷六百七十六",
+  "poems": 101,
+  "top_author": "鄭穀"
+ },
+ "677": {
+  "name": "卷六百七十七",
+  "poems": 24,
+  "top_author": "鄭穀"
+ },
+ "678": {
+  "name": "卷六百七十八",
+  "poems": 20,
+  "top_author": "許彬"
+ },
+ "679": {
+  "name": "卷六百七十九",
+  "poems": 100,
+  "top_author": "崔塗"
+ },
+ "680": {
+  "name": "卷六百八十",
+  "poems": 56,
+  "top_author": "韓偓"
+ },
+ "681": {
+  "name": "卷六百八十一",
+  "poems": 82,
+  "top_author": "韓偓"
+ },
+ "682": {
+  "name": "卷六百八十二",
+  "poems": 84,
+  "top_author": "韓偓"
+ },
+ "683": {
+  "name": "卷六百八十三",
+  "poems": 92,
+  "top_author": "韓偓"
+ },
+ "684": {
+  "name": "卷六百八十四",
+  "poems": 80,
+  "top_author": "吳融"
+ },
+ "685": {
+  "name": "卷六百八十五",
+  "poems": 67,
+  "top_author": "吳融"
+ },
+ "686": {
+  "name": "卷六百八十六",
+  "poems": 79,
+  "top_author": "吳融"
+ },
+ "687": {
+  "name": "卷六百八十七",
+  "poems": 57,
+  "top_author": "吳融"
+ },
+ "688": {
+  "name": "卷六百八十八",
+  "poems": 25,
+  "top_author": "李沇"
+ },
+ "689": {
+  "name": "卷六百八十九",
+  "poems": 30,
+  "top_author": "陸希聲"
+ },
+ "690": {
+  "name": "卷六百九十",
+  "poems": 27,
+  "top_author": "吳仁璧"
+ },
+ "691": {
+  "name": "卷六百九十一",
+  "poems": 128,
+  "top_author": "杜荀鶴"
+ },
+ "692": {
+  "name": "卷六百九十二",
+  "poems": 141,
+  "top_author": "杜荀鶴"
+ },
+ "693": {
+  "name": "卷六百九十三",
+  "poems": 55,
+  "top_author": "杜荀鶴"
+ },
+ "694": {
+  "name": "卷六百九十四",
+  "poems": 44,
+  "top_author": "王轂"
+ },
+ "695": {
+  "name": "卷六百九十五",
+  "poems": 45,
+  "top_author": "韋莊"
+ },
+ "696": {
+  "name": "卷六百九十六",
+  "poems": 66,
+  "top_author": "韋莊"
+ },
+ "697": {
+  "name": "卷六百九十七",
+  "poems": 67,
+  "top_author": "韋莊"
+ },
+ "698": {
+  "name": "卷六百九十八",
+  "poems": 51,
+  "top_author": "韋莊"
+ },
+ "699": {
+  "name": "卷六百九十九",
+  "poems": 13,
+  "top_author": "韋莊"
+ },
+ "700": {
+  "name": "卷七百",
+  "poems": 70,
+  "top_author": "韋莊"
+ },
+ "701": {
+  "name": "卷七百零一",
+  "poems": 56,
+  "top_author": "王貞白"
+ },
+ "702": {
+  "name": "卷七百零二",
+  "poems": 101,
+  "top_author": "張蠙"
+ },
+ "703": {
+  "name": "卷七百零三",
+  "poems": 30,
+  "top_author": "翁承贊"
+ },
+ "704": {
+  "name": "卷七百零四",
+  "poems": 68,
+  "top_author": "黃滔"
+ },
+ "705": {
+  "name": "卷七百零五",
+  "poems": 75,
+  "top_author": "黃滔"
+ },
+ "706": {
+  "name": "卷七百零六",
+  "poems": 55,
+  "top_author": "黃滔"
+ },
+ "707": {
+  "name": "卷七百零七",
+  "poems": 28,
+  "top_author": "殷文圭"
+ },
+ "708": {
+  "name": "卷七百零八",
+  "poems": 76,
+  "top_author": "徐夤"
+ },
+ "709": {
+  "name": "卷七百零九",
+  "poems": 65,
+  "top_author": "徐夤"
+ },
+ "710": {
+  "name": "卷七百一十",
+  "poems": 73,
+  "top_author": "徐夤"
+ },
+ "711": {
+  "name": "卷七百一十一",
+  "poems": 31,
+  "top_author": "徐夤"
+ },
+ "712": {
+  "name": "卷七百一十二",
+  "poems": 7,
+  "top_author": "錢珝"
+ },
+ "713": {
+  "name": "卷七百一十三",
+  "poems": 18,
+  "top_author": "喻坦之"
+ },
+ "714": {
+  "name": "卷七百一十四",
+  "poems": 68,
+  "top_author": "崔道融"
+ },
+ "715": {
+  "name": "卷七百一十五",
+  "poems": 37,
+  "top_author": "盧延讓"
+ },
+ "716": {
+  "name": "卷七百一十六",
+  "poems": 66,
+  "top_author": "曹松"
+ },
+ "717": {
+  "name": "卷七百一十七",
+  "poems": 71,
+  "top_author": "曹松"
+ },
+ "718": {
+  "name": "卷七百一十八",
+  "poems": 29,
+  "top_author": "蘇拯"
+ },
+ "719": {
+  "name": "卷七百一十九",
+  "poems": 13,
+  "top_author": "路德延"
+ },
+ "720": {
+  "name": "卷七百二十",
+  "poems": 52,
+  "top_author": "裴說"
+ },
+ "721": {
+  "name": "卷七百二十一",
+  "poems": 48,
+  "top_author": "李洞"
+ },
+ "722": {
+  "name": "卷七百二十二",
+  "poems": 50,
+  "top_author": "李洞"
+ },
+ "723": {
+  "name": "卷七百二十三",
+  "poems": 69,
+  "top_author": "李洞"
+ },
+ "724": {
+  "name": "卷七百二十四",
+  "poems": 36,
+  "top_author": "唐求"
+ },
+ "725": {
+  "name": "卷七百二十五",
+  "poems": 34,
+  "top_author": "於鄴"
+ },
+ "726": {
+  "name": "卷七百二十六",
+  "poems": 18,
+  "top_author": "鄭良士"
+ },
+ "727": {
+  "name": "卷七百二十七",
+  "poems": 48,
+  "top_author": "任翻"
+ },
+ "728": {
+  "name": "卷七百二十八",
+  "poems": 115,
+  "top_author": "周曇"
+ },
+ "729": {
+  "name": "卷七百二十九",
+  "poems": 80,
+  "top_author": "周曇"
+ },
+ "730": {
+  "name": "卷七百三十",
+  "poems": 19,
+  "top_author": "李九齡"
+ },
+ "731": {
+  "name": "卷七百三十一",
+  "poems": 28,
+  "top_author": "胡宿"
+ },
+ "732": {
+  "name": "卷七百三十二",
+  "poems": 20,
+  "top_author": "捧劍僕"
+ },
+ "733": {
+  "name": "卷七百三十三",
+  "poems": 22,
+  "top_author": "孔德紹"
+ },
+ "734": {
+  "name": "卷七百三十四",
+  "poems": 27,
+  "top_author": "張袞"
+ },
+ "735": {
+  "name": "卷七百三十五",
+  "poems": 9,
+  "top_author": "和凝"
+ },
+ "736": {
+  "name": "卷七百三十六",
+  "poems": 15,
+  "top_author": "王仁裕"
+ },
+ "737": {
+  "name": "卷七百三十七",
+  "poems": 33,
+  "top_author": "盧士衡"
+ },
+ "738": {
+  "name": "卷七百三十八",
+  "poems": 20,
+  "top_author": "韓熙載"
+ },
+ "739": {
+  "name": "卷七百三十九",
+  "poems": 89,
+  "top_author": "李建勳"
+ },
+ "740": {
+  "name": "卷七百四十",
+  "poems": 30,
+  "top_author": "左偃"
+ },
+ "741": {
+  "name": "卷七百四十一",
+  "poems": 13,
+  "top_author": "江為"
+ },
+ "742": {
+  "name": "卷七百四十二",
+  "poems": 19,
+  "top_author": "張泌"
+ },
+ "743": {
+  "name": "卷七百四十三",
+  "poems": 20,
+  "top_author": "沈彬"
+ },
+ "744": {
+  "name": "卷七百四十四",
+  "poems": 22,
+  "top_author": "伍喬"
+ },
+ "745": {
+  "name": "卷七百四十五",
+  "poems": 48,
+  "top_author": "陳陶"
+ },
+ "746": {
+  "name": "卷七百四十六",
+  "poems": 62,
+  "top_author": "陳陶"
+ },
+ "747": {
+  "name": "卷七百四十七",
+  "poems": 91,
+  "top_author": "李中"
+ },
+ "748": {
+  "name": "卷七百四十八",
+  "poems": 83,
+  "top_author": "李中"
+ },
+ "749": {
+  "name": "卷七百四十九",
+  "poems": 70,
+  "top_author": "李中"
+ },
+ "750": {
+  "name": "卷七百五十",
+  "poems": 43,
+  "top_author": "李中"
+ },
+ "751": {
+  "name": "卷七百五十一",
+  "poems": 30,
+  "top_author": "徐鉉"
+ },
+ "752": {
+  "name": "卷七百五十二",
+  "poems": 52,
+  "top_author": "徐鉉"
+ },
+ "753": {
+  "name": "卷七百五十三",
+  "poems": 25,
+  "top_author": "徐鉉"
+ },
+ "754": {
+  "name": "卷七百五十四",
+  "poems": 43,
+  "top_author": "徐鉉"
+ },
+ "755": {
+  "name": "卷七百五十五",
+  "poems": 57,
+  "top_author": "徐鉉"
+ },
+ "756": {
+  "name": "卷七百五十六",
+  "poems": 47,
+  "top_author": "徐鉉"
+ },
+ "757": {
+  "name": "卷七百五十七",
+  "poems": 46,
+  "top_author": "徐鍇"
+ },
+ "758": {
+  "name": "卷七百五十八",
+  "poems": 31,
+  "top_author": "孟貫"
+ },
+ "759": {
+  "name": "卷七百五十九",
+  "poems": 20,
+  "top_author": "成彥雄"
+ },
+ "760": {
+  "name": "卷七百六十",
+  "poems": 18,
+  "top_author": "楊玢"
+ },
+ "761": {
+  "name": "卷七百六十一",
+  "poems": 25,
+  "top_author": "歐陽炯"
+ },
+ "762": {
+  "name": "卷七百六十二",
+  "poems": 53,
+  "top_author": "劉昭禹"
+ },
+ "763": {
+  "name": "卷七百六十三",
+  "poems": 24,
+  "top_author": "楊夔"
+ },
+ "764": {
+  "name": "卷七百六十四",
+  "poems": 40,
+  "top_author": "譚用之"
+ },
+ "765": {
+  "name": "卷七百六十五",
+  "poems": 53,
+  "top_author": "王周"
+ },
+ "766": {
+  "name": "卷七百六十六",
+  "poems": 73,
+  "top_author": "劉兼"
+ },
+ "767": {
+  "name": "卷七百六十七",
+  "poems": 75,
+  "top_author": "孫元晏"
+ },
+ "768": {
+  "name": "卷七百六十八",
+  "poems": 37,
+  "top_author": "韓溉"
+ },
+ "769": {
+  "name": "卷七百六十九",
+  "poems": 37,
+  "top_author": "楊希道"
+ },
+ "770": {
+  "name": "卷七百七十",
+  "poems": 47,
+  "top_author": "賀朝清"
+ },
+ "771": {
+  "name": "卷七百七十一",
+  "poems": 27,
+  "top_author": "蔣吉"
+ },
+ "772": {
+  "name": "卷七百七十二",
+  "poems": 18,
+  "top_author": "馬逢"
+ },
+ "773": {
+  "name": "卷七百七十三",
+  "poems": 26,
+  "top_author": "李暇"
+ },
+ "774": {
+  "name": "卷七百七十四",
+  "poems": 33,
+  "top_author": "吳商浩"
+ },
+ "775": {
+  "name": "卷七百七十五",
+  "poems": 29,
+  "top_author": "易思"
+ },
+ "776": {
+  "name": "卷七百七十六",
+  "poems": 29,
+  "top_author": "賈彥璋"
+ },
+ "777": {
+  "name": "卷七百七十七",
+  "poems": 21,
+  "top_author": "吳象之"
+ },
+ "778": {
+  "name": "卷七百七十八",
+  "poems": 19,
+  "top_author": "朱光弼"
+ },
+ "779": {
+  "name": "卷七百七十九",
+  "poems": 26,
+  "top_author": "石殷士"
+ },
+ "780": {
+  "name": "卷七百八十",
+  "poems": 29,
+  "top_author": "鄭蕡"
+ },
+ "781": {
+  "name": "卷七百八十一",
+  "poems": 18,
+  "top_author": "嚴巨川"
+ },
+ "782": {
+  "name": "卷七百八十二",
+  "poems": 23,
+  "top_author": "員南溟"
+ },
+ "783": {
+  "name": "卷七百八十三",
+  "poems": 19,
+  "top_author": "韓常侍"
+ },
+ "784": {
+  "name": "卷七百八十四",
+  "poems": 35,
+  "top_author": "吳越人"
+ },
+ "785": {
+  "name": "卷七百八十五",
+  "poems": 27,
+  "top_author": "無名氏"
+ },
+ "786": {
+  "name": "卷七百八十六",
+  "poems": 30,
+  "top_author": "無名氏"
+ },
+ "787": {
+  "name": "卷七百八十七",
+  "poems": 43,
+  "top_author": "無名氏"
+ },
+ "788": {
+  "name": "卷七百八十八",
+  "poems": 23,
+  "top_author": "顏真卿"
+ },
+ "789": {
+  "name": "卷七百八十九",
+  "poems": 17,
+  "top_author": "李益"
+ },
+ "790": {
+  "name": "卷七百九十",
+  "poems": 16,
+  "top_author": "裴度"
+ },
+ "791": {
+  "name": "卷七百九十一",
+  "poems": 16,
+  "top_author": "韓愈"
+ },
+ "792": {
+  "name": "卷七百九十二",
+  "poems": 21,
+  "top_author": "段成式"
+ },
+ "793": {
+  "name": "卷七百九十三",
+  "poems": 9,
+  "top_author": "皮日休"
+ },
+ "794": {
+  "name": "卷七百九十四",
+  "poems": 32,
+  "top_author": "皎然"
+ },
+ "795": {
+  "name": "卷七百九十五",
+  "poems": 141,
+  "top_author": "陳貺"
+ },
+ "796": {
+  "name": "卷七百九十六",
+  "poems": 103,
+  "top_author": "無名氏"
+ },
+ "797": {
+  "name": "卷七百九十七",
+  "poems": 13,
+  "top_author": "李舜弦"
+ },
+ "798": {
+  "name": "卷七百九十八",
+  "poems": 2,
+  "top_author": "花蕊夫人"
+ },
+ "799": {
+  "name": "卷七百九十九",
+  "poems": 54,
+  "top_author": "張夫人"
+ },
+ "800": {
+  "name": "卷八百",
+  "poems": 30,
+  "top_author": "晁采"
+ },
+ "801": {
+  "name": "卷八百零一",
+  "poems": 59,
+  "top_author": "梁瓊"
+ },
+ "802": {
+  "name": "卷八百零二",
+  "poems": 43,
+  "top_author": "史鳳"
+ },
+ "803": {
+  "name": "卷八百零三",
+  "poems": 77,
+  "top_author": "薛濤"
+ },
+ "804": {
+  "name": "卷八百零四",
+  "poems": 49,
+  "top_author": "魚玄機"
+ },
+ "805": {
+  "name": "卷八百零五",
+  "poems": 21,
+  "top_author": "李冶"
+ },
+ "806": {
+  "name": "卷八百零六",
+  "poems": 3,
+  "top_author": "寒山"
+ },
+ "807": {
+  "name": "卷八百零七",
+  "poems": 2,
+  "top_author": "拾得"
+ },
+ "808": {
+  "name": "卷八百零八",
+  "poems": 34,
+  "top_author": "義淨"
+ },
+ "809": {
+  "name": "卷八百零九",
+  "poems": 43,
+  "top_author": "靈一"
+ },
+ "810": {
+  "name": "卷八百一十",
+  "poems": 25,
+  "top_author": "靈澈"
+ },
+ "811": {
+  "name": "卷八百一十一",
+  "poems": 29,
+  "top_author": "法振"
+ },
+ "812": {
+  "name": "卷八百一十二",
+  "poems": 22,
+  "top_author": "清江"
+ },
+ "813": {
+  "name": "卷八百一十三",
+  "poems": 55,
+  "top_author": "無可"
+ },
+ "814": {
+  "name": "卷八百一十四",
+  "poems": 43,
+  "top_author": "無可"
+ },
+ "815": {
+  "name": "卷八百一十五",
+  "poems": 65,
+  "top_author": "皎然"
+ },
+ "816": {
+  "name": "卷八百一十六",
+  "poems": 59,
+  "top_author": "皎然"
+ },
+ "817": {
+  "name": "卷八百一十七",
+  "poems": 74,
+  "top_author": "皎然"
+ },
+ "818": {
+  "name": "卷八百一十八",
+  "poems": 77,
+  "top_author": "皎然"
+ },
+ "819": {
+  "name": "卷八百一十九",
+  "poems": 71,
+  "top_author": "皎然"
+ },
+ "820": {
+  "name": "卷八百二十",
+  "poems": 71,
+  "top_author": "皎然"
+ },
+ "821": {
+  "name": "卷八百二十一",
+  "poems": 47,
+  "top_author": "皎然"
+ },
+ "822": {
+  "name": "卷八百二十二",
+  "poems": 16,
+  "top_author": "廣宣"
+ },
+ "823": {
+  "name": "卷八百二十三",
+  "poems": 43,
+  "top_author": "棲白"
+ },
+ "824": {
+  "name": "卷八百二十四",
+  "poems": 24,
+  "top_author": "子蘭"
+ },
+ "825": {
+  "name": "卷八百二十五",
+  "poems": 40,
+  "top_author": "可止"
+ },
+ "826": {
+  "name": "卷八百二十六",
+  "poems": 39,
+  "top_author": "貫休"
+ },
+ "827": {
+  "name": "卷八百二十七",
+  "poems": 37,
+  "top_author": "貫休"
+ },
+ "828": {
+  "name": "卷八百二十八",
+  "poems": 40,
+  "top_author": "貫休"
+ },
+ "829": {
+  "name": "卷八百二十九",
+  "poems": 56,
+  "top_author": "貫休"
+ },
+ "830": {
+  "name": "卷八百三十",
+  "poems": 57,
+  "top_author": "貫休"
+ },
+ "831": {
+  "name": "卷八百三十一",
+  "poems": 48,
+  "top_author": "貫休"
+ },
+ "832": {
+  "name": "卷八百三十二",
+  "poems": 55,
+  "top_author": "貫休"
+ },
+ "833": {
+  "name": "卷八百三十三",
+  "poems": 50,
+  "top_author": "貫休"
+ },
+ "834": {
+  "name": "卷八百三十四",
+  "poems": 24,
+  "top_author": "貫休"
+ },
+ "835": {
+  "name": "卷八百三十五",
+  "poems": 35,
+  "top_author": "貫休"
+ },
+ "836": {
+  "name": "卷八百三十六",
+  "poems": 35,
+  "top_author": "貫休"
+ },
+ "837": {
+  "name": "卷八百三十七",
+  "poems": 56,
+  "top_author": "貫休"
+ },
+ "838": {
+  "name": "卷八百三十八",
+  "poems": 79,
+  "top_author": "齊己"
+ },
+ "839": {
+  "name": "卷八百三十九",
+  "poems": 79,
+  "top_author": "齊己"
+ },
+ "840": {
+  "name": "卷八百四十",
+  "poems": 78,
+  "top_author": "齊己"
+ },
+ "841": {
+  "name": "卷八百四十一",
+  "poems": 78,
+  "top_author": "齊己"
+ },
+ "842": {
+  "name": "卷八百四十二",
+  "poems": 64,
+  "top_author": "齊己"
+ },
+ "843": {
+  "name": "卷八百四十三",
+  "poems": 79,
+  "top_author": "齊己"
+ },
+ "844": {
+  "name": "卷八百四十四",
+  "poems": 79,
+  "top_author": "齊己"
+ },
+ "845": {
+  "name": "卷八百四十五",
+  "poems": 75,
+  "top_author": "齊己"
+ },
+ "846": {
+  "name": "卷八百四十六",
+  "poems": 79,
+  "top_author": "齊己"
+ },
+ "847": {
+  "name": "卷八百四十七",
+  "poems": 80,
+  "top_author": "齊己"
+ },
+ "848": {
+  "name": "卷八百四十八",
+  "poems": 60,
+  "top_author": "尚顏"
+ },
+ "849": {
+  "name": "卷八百四十九",
+  "poems": 44,
+  "top_author": "修睦"
+ },
+ "850": {
+  "name": "卷八百五十",
+  "poems": 28,
+  "top_author": "慕幽"
+ },
+ "851": {
+  "name": "卷八百五十一",
+  "poems": 20,
+  "top_author": "慈恩寺沙門"
+ },
+ "852": {
+  "name": "卷八百五十二",
+  "poems": 12,
+  "top_author": "陳寡言"
+ },
+ "853": {
+  "name": "卷八百五十三",
+  "poems": 73,
+  "top_author": "吳筠"
+ },
+ "854": {
+  "name": "卷八百五十四",
+  "poems": 29,
+  "top_author": "杜光庭"
+ },
+ "855": {
+  "name": "卷八百五十五",
+  "poems": 20,
+  "top_author": "鄭遨"
+ },
+ "856": {
+  "name": "卷八百五十六",
+  "poems": 4,
+  "top_author": "呂岩"
+ },
+ "857": {
+  "name": "卷八百五十七",
+  "poems": 4,
+  "top_author": "呂岩"
+ },
+ "858": {
+  "name": "卷八百五十八",
+  "poems": 48,
+  "top_author": "呂岩"
+ },
+ "859": {
+  "name": "卷八百五十九",
+  "poems": 35,
+  "top_author": "呂岩"
+ },
+ "860": {
+  "name": "卷八百六十",
+  "poems": 20,
+  "top_author": "許宣平"
+ },
+ "861": {
+  "name": "卷八百六十一",
+  "poems": 45,
+  "top_author": "伊用昌"
+ },
+ "862": {
+  "name": "卷八百六十二",
+  "poems": 39,
+  "top_author": "酒肆布衣"
+ },
+ "863": {
+  "name": "卷八百六十三",
+  "poems": 43,
+  "top_author": "蜀宮群仙"
+ },
+ "864": {
+  "name": "卷八百六十四",
+  "poems": 36,
+  "top_author": "水神"
+ },
+ "865": {
+  "name": "卷八百六十五",
+  "poems": 29,
+  "top_author": "虎丘石壁鬼"
+ },
+ "866": {
+  "name": "卷八百六十六",
+  "poems": 64,
+  "top_author": "韋璜"
+ },
+ "867": {
+  "name": "卷八百六十七",
+  "poems": 61,
+  "top_author": "不詳"
+ },
+ "868": {
+  "name": "卷八百六十八",
+  "poems": 31,
+  "top_author": "陳季卿"
+ },
+ "869": {
+  "name": "卷八百六十九",
+  "poems": 52,
+  "top_author": "權龍褒"
+ },
+ "870": {
+  "name": "卷八百七十",
+  "poems": 72,
+  "top_author": "蔣貽恭"
+ },
+ "871": {
+  "name": "卷八百七十一",
+  "poems": 24,
+  "top_author": "甘洽"
+ },
+ "872": {
+  "name": "卷八百七十二",
+  "poems": 33,
+  "top_author": "無名氏"
+ },
+ "873": {
+  "name": "卷八百七十三",
+  "poems": 16,
+  "top_author": "裴諝"
+ },
+ "874": {
+  "name": "卷八百七十四",
+  "poems": 30,
+  "top_author": "不詳"
+ },
+ "875": {
+  "name": "卷八百七十五",
+  "poems": 73,
+  "top_author": "不詳"
+ },
+ "876": {
+  "name": "卷八百七十六",
+  "poems": 90,
+  "top_author": "不詳"
+ },
+ "877": {
+  "name": "卷八百七十七",
+  "poems": 43,
+  "top_author": "不詳"
+ },
+ "878": {
+  "name": "卷八百七十八",
+  "poems": 60,
+  "top_author": "不詳"
+ },
+ "879": {
+  "name": "卷八百七十九",
+  "poems": 15,
+  "top_author": "不詳"
+ },
+ "880": {
+  "name": "卷八百八十",
+  "poems": 23,
+  "top_author": "不詳"
+ },
+ "881": {
+  "name": "卷八百八十一",
+  "poems": 1,
+  "top_author": "李瀚2"
+ },
+ "882": {
+  "name": "卷八百八十二",
+  "poems": 35,
+  "top_author": "皇甫冉"
+ },
+ "883": {
+  "name": "卷八百八十三",
+  "poems": 35,
+  "top_author": "張祜"
+ },
+ "884": {
+  "name": "卷八百八十四",
+  "poems": 52,
+  "top_author": "崔櫓"
+ },
+ "885": {
+  "name": "卷八百八十五",
+  "poems": 44,
+  "top_author": "唐彥謙"
+ },
+ "886": {
+  "name": "卷八百八十六",
+  "poems": 47,
+  "top_author": "孫魴"
+ },
+ "887": {
+  "name": "卷八百八十七",
+  "poems": 33,
+  "top_author": "文丙"
+ },
+ "888": {
+  "name": "卷八百八十八",
+  "poems": 18,
+  "top_author": "修睦"
+ },
+ "889": {
+  "name": "卷八百八十九",
+  "poems": 33,
+  "top_author": "李煜"
+ },
+ "890": {
+  "name": "卷八百九十",
+  "poems": 31,
+  "top_author": "李白"
+ },
+ "891": {
+  "name": "卷八百九十一",
+  "poems": 35,
+  "top_author": "溫庭筠"
+ },
+ "892": {
+  "name": "卷八百九十二",
+  "poems": 34,
+  "top_author": "韋莊"
+ },
+ "893": {
+  "name": "卷八百九十三",
+  "poems": 41,
+  "top_author": "毛文錫"
+ },
+ "894": {
+  "name": "卷八百九十四",
+  "poems": 28,
+  "top_author": "顧夐"
+ },
+ "895": {
+  "name": "卷八百九十五",
+  "poems": 33,
+  "top_author": "毛熙震"
+ },
+ "896": {
+  "name": "卷八百九十六",
+  "poems": 35,
+  "top_author": "歐陽炯"
+ },
+ "897": {
+  "name": "卷八百九十七",
+  "poems": 35,
+  "top_author": "孫光憲"
+ },
+ "898": {
+  "name": "卷八百九十八",
+  "poems": 47,
+  "top_author": "馮延巳"
+ },
+ "899": {
+  "name": "卷八百九十九",
+  "poems": 19,
+  "top_author": "無名氏"
+ },
+ "900": {
+  "name": "卷九百",
+  "poems": 18,
+  "top_author": "呂岩"
+ }
+}
