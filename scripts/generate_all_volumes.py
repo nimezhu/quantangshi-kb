@@ -49,8 +49,10 @@ def generate_index(vol_meta, t300):
         f'<span class="fp-author">{esc(f["author"])}</span></li>'
         for f in pop["famous_poems"][:24])
 
+    from urllib.parse import quote
     poets = "\n".join(
-        f'<span class="chip">{esc(a)}<small>三百首×{n}</small></span>'
+        f'<a class="chip" href="authors/{quote(a, safe="")}.html">{esc(a)}'
+        f'<small>三百首×{n}</small></a>'
         for a, n in pop["top_poets_by_300"][:12])
 
     groups = []
@@ -65,22 +67,49 @@ def generate_index(vol_meta, t300):
                       f'<div class="volume-grid">\n{cells}\n</div></details>')
 
     top_chars = "、".join(c for c, _ in wf["char_top"][:10])
-    body = f"""<div class="hero">
+    rhymes = json.loads((ANALYSIS_DIR / "rhymes.json").read_text(encoding="utf-8"))
+    form_chips = "".join(
+        f'<span class="chip">{esc(fm)}<small>{n:,}</small></span>'
+        for fm, n in list(rhymes["form_distribution"].items())[:8]
+        if fm not in ("無正文",))
+    body = f"""<nav class="chapter-nav">
+<a href="search.html">🔍 搜索</a>
+<a href="tang300.html">唐诗三百首</a>
+<a href="authors/index.html">诗人索引</a>
+<a href="entities/index.html">实体索引</a>
+</nav>
+<div class="hero">
 <h1>全唐詩</h1>
 <div class="subtitle">御定全唐詩 · 交互式阅读</div>
+<form class="hero-search" action="search.html" method="get" autocomplete="off">
+<input type="search" name="q" placeholder="搜索题目 / 作者 / 诗句（简繁均可）…">
+<div id="live-results" class="live-results"></div>
+</form>
 <div class="stats">900 卷 · {total_poems:,} 首 · {total_authors:,} 位诗人 ·
 {wf['total_chars']:,} 字 · 高频字：{top_chars}</div>
 </div>
-<h2 class="section-title">名篇（唐诗三百首）</h2>
+<div class="home-main">
+<div class="home-side">
+<div id="daily-card" class="daily-card"><div class="dp-foot">今日一诗加载中…</div></div>
+</div>
+<div class="home-rest">
+<h2 class="section-title">名篇 <a class="more-link" href="tang300.html">唐诗三百首全览 →</a></h2>
 <ul class="famous-list">
 {famous}
 </ul>
-<h2 class="section-title">名家</h2>
+</div>
+</div>
+<h2 class="section-title">名家 <a class="more-link" href="authors/index.html">诗人索引 →</a></h2>
 <div class="poet-chips">
 {poets}
 </div>
+<h2 class="section-title">诗体</h2>
+<div class="form-strip">
+{form_chips}
+</div>
 <h2 class="section-title">分卷浏览</h2>
 {"".join(groups)}
+<script defer src="js/tangshi-home.js"></script>
 """
     (DOCS_DIR / "index.html").write_text(
         page("全唐诗知识库", body, css_prefix="", home="index.html"), encoding="utf-8")

@@ -112,6 +112,32 @@ footer {
     background-color: #a5453b;
 }
 
+.badge-review {
+    color: #8a7040;
+    border: 1px dashed #c4b080;
+    background-color: #fbf6e8;
+}
+
+/* 底本阙字 □ */
+.lacuna {
+    color: #b8a878;
+    background: #faf6ea;
+    border: 1px dotted #d8c898;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+/* 联句诗行内作者标记（原文 ——作者） */
+.lianju-author {
+    font-size: 0.7em;
+    color: #8B4513;
+    background: #f7efe0;
+    border-radius: 8px;
+    padding: 1px 7px;
+    margin-left: 6px;
+    vertical-align: 0.15em;
+}
+
 /* 作者小传 / 校注（折叠） */
 details.biography, details.notes {
     background-color: #fffef0;
@@ -239,6 +265,217 @@ details.vol-group summary {
 .volume-grid a:hover { border-color: #B8860B; color: #8B4513; }
 
 .volume-grid .vg-num { color: #B8860B; font-weight: 600; margin-right: 6px; }
+
+/* ============ 搜索 ============ */
+
+.hero-search { margin: 1.2em auto 0 auto; max-width: 480px; }
+
+.hero-search input, .search-box input[type="search"] {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid #d9c98a;
+    border-radius: 20px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 0.95em;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.hero-search input:focus, .search-box input[type="search"]:focus {
+    border-color: #B8860B;
+}
+
+.search-box { margin: 1.5em 0 0.8em 0; }
+
+.search-box label {
+    display: block;
+    margin-top: 0.6em;
+    font-size: 0.85em;
+    color: #888;
+    cursor: pointer;
+}
+
+.search-status { color: #999; font-size: 0.85em; min-height: 1.5em; }
+
+.search-hit {
+    padding: 0.45em 0;
+    border-bottom: 1px dashed #f0ead6;
+    line-height: 1.8;
+}
+
+.search-snippet {
+    color: #777;
+    font-size: 0.88em;
+    padding-left: 2.5em;
+}
+
+.more-link {
+    font-size: 0.75em;
+    font-weight: normal;
+    margin-left: 10px;
+    color: #B8860B;
+    text-decoration: none;
+}
+
+.more-link:hover { text-decoration: underline; }
+
+.poet-chips a.chip:hover { border-color: #B8860B; }
+
+/* ============ 首页：今日一诗（竖排仿刻本）+ 即时搜索 ============ */
+
+.hero-search { position: relative; }
+
+.live-results {
+    display: none;
+    position: absolute;
+    left: 0; right: 0;
+    top: calc(100% + 4px);
+    background: #fff;
+    border: 1px solid #d9c98a;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(90, 74, 42, 0.15);
+    z-index: 50;
+    text-align: left;
+    overflow: hidden;
+}
+
+.live-results a {
+    display: block;
+    padding: 7px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #f5efdd;
+    line-height: 1.7;
+}
+
+.live-results a:hover, .live-results a:focus { background: #fdf9ea; outline: none; }
+
+.live-results b { font-weight: 600; color: #8B4513; }
+
+.live-results .lr-more {
+    color: #B8860B;
+    font-size: 0.85em;
+    border-bottom: none;
+    text-align: center;
+}
+
+.home-main {
+    display: flex;
+    gap: 2.2em;
+    align-items: flex-start;
+    margin-top: 1.2em;
+}
+
+.home-side { flex: 0 0 auto; }
+
+.home-rest { flex: 1 1 0; min-width: 0; }
+
+.home-rest .section-title:first-child { margin-top: 0.4em; }
+
+/* 竖排诗卡：writing-mode 右起竖排、去标点，仿御定刻本书叶 */
+.daily-card {
+    width: 264px;
+    background: #fbf8ee;
+    border: 1px solid #dccfa5;
+    border-radius: 3px;
+    box-shadow: 2px 3px 0 rgba(90, 74, 42, 0.07);
+    padding: 14px 16px;
+}
+
+.dp-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.dp-seal {
+    display: inline-block;
+    background: #9e2b25;
+    color: #fbf8ee;
+    font-size: 0.78em;
+    line-height: 1.25;
+    padding: 5px 6px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    user-select: none;
+}
+
+.dp-date {
+    color: #b09a50;
+    font-size: 0.78em;
+    padding-top: 4px;
+}
+
+.dp-body {
+    display: block;
+    writing-mode: vertical-rl;
+    height: 320px;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #2c2c2c;
+    line-height: 1;
+    letter-spacing: 0.12em;
+}
+
+.dp-body:hover .dp-line { color: #6b4a20; }
+
+.dp-line {
+    display: block;
+    margin-left: 0.7em;
+    font-size: 1.06em;
+    transition: color 0.25s ease;
+}
+
+.dp-title {
+    color: #8B0000;
+    font-weight: 600;
+    margin-left: 1.1em;
+}
+
+.dp-author {
+    color: #8B4513;
+    font-size: 0.85em;
+    margin-top: auto;
+    padding-top: 2em;
+}
+
+.dp-foot {
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
+}
+
+.dp-foot button {
+    border: none;
+    background: none;
+    color: #B8860B;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 0;
+}
+
+.dp-foot button:hover { text-decoration: underline; }
+
+/* 诗体分布条 */
+.form-strip { line-height: 2.4; margin: 0.4em 0 0 0; }
+
+.form-strip .chip { cursor: default; }
+
+.form-strip .chip small { color: #b09a50; margin-left: 4px; }
+
+@media (max-width: 720px) {
+    .home-main { flex-direction: column; }
+    .daily-card { width: 100%; max-width: 320px; margin: 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dp-line, .settings-toggle, .volume-grid a { transition: none; }
+}
 
 /* ============ 设置面板 ============ */
 

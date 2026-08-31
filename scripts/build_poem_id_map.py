@@ -38,11 +38,11 @@ def main():
             if p["paragraphs"]:
                 by_first[(ac, strip_punct(p["paragraphs"][0])[:5])].append(entry)
 
-    # ---- 逐首匹配 ----
+    # ---- 逐首匹配（必须用御定原始文本：本映射是 P9 文本修复的输入）----
     mapping = {}
     stats = {"title": 0, "group": 0, "firstline": 0, "unmatched": 0}
     total_yd = 0
-    for volume, poems in iter_yuding():
+    for volume, poems in iter_yuding(raw=True):
         for i, p in enumerate(poems, start=1):
             total_yd += 1
             key = poem_key(volume, i)

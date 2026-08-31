@@ -35,6 +35,8 @@
   - `notes`：校注；`no#` 是**字面量键名**（含 `#`），解析时注意
   - 组诗保持完整（如"帝京篇十首"是一条，多段 paragraphs）
 - 缺点：无唯一 id、无 tags，与 strains/rank 数据不直接对齐
+- **⚠️ 数据质量（2026-08-31 发现）**：上游抓取隔列丢失，约 1/4 诗缺文（长诗最重）。
+  已由 P9 管线用 poet.tang 文本修补（见 Phase 3c）；**正文权威 = poet.tang，结构权威 = 御定**
 
 ### 2.2 增强层：`全唐诗/`（poet.tang 系列）
 
@@ -89,7 +91,8 @@
 | P5 | **韵脚与声律分析** | `extract_polyphone_contexts.py`/`analyze_polyphone_*` 的读音管线思路 + pypinyin | 每首末字/偶句末字 × `strains/json/` 平仄 | `data/analysis/rhymes.json`（韵脚分组）、诗体判定（五绝/七律/古体…）→ 卷页诗体徽章、平仄着色 |
 | P6 | **热度榜单** | `rank/` 数据（chinese-poetry 自带）+ shiji 的"精品页"分级思想 | `rank/poet/*.json`（经 P2 映射） | `data/analysis/popularity.json` → 首页名篇榜、诗人页热度排序 |
 | P7 | **简繁映射质检** | `analyze_simp_trad_mapping.py` + opencc | 全部文本 | 简繁转换歧义字清单 → 决定前端转换 vs 预渲染双版本（§7） |
-| P8 | **名句/典故抽取**（延后） | `extract_chengyu.py`、`extract_citations.py` 模式 | 热度数据 + LLM | `data/analysis/famous_lines.json` → 名句页；属 LLM 管线，随 Phase 5 一起做 |
+| P8 | **实体索引（古人/地名/邦国族群/时节）** ✅ | **shiji-kb 的 `kg/entity_index.json` 词表直接复用**（person/place/tribe，按史记引用数过滤）+ 唐代补充词表（年号/节令/唐代邦国/唐诗地名） | 全部题目+正文，简体空间最长匹配 | `data/entities/entity_poem_index.json` → 实体页 `docs/entities/`（史记实体附 wiki 互链） |
+| P9 | **名句/典故抽取**（延后） | `extract_chengyu.py`、`extract_citations.py` 模式 | 热度数据 + LLM | `data/analysis/famous_lines.json` → 名句页；属 LLM 管线，随 Phase 5 一起做 |
 
 **方法论一并借鉴**：每条管线一个脚本、输出进 `data/analysis/`（JSON 机读 + MD 人读成对，沿用 shiji 的 `X.json`+`X.md` 惯例）；跑完人工抽检 5–10%；发现系统性错误改脚本重跑（反思循环 `SKILL_03c_按章反思.md` 的精神，但 P1–P7 是纯规则管线，不烧 token）。
 
@@ -195,10 +198,68 @@ quantangshi-kb/
 - [x] `lint_html.py`：900 卷诗数与源一致、锚点唯一、PN/导航/名篇链接可达、资产齐全 —— 全绿
 - [x] 验收：浏览器实测通过 —— 首页→卷页导航、`#p19` 锚点直达（靜夜思 165-19 带双徽章）、繁简切换全页即时生效；站点总体积 27MB
 
-### Phase 3 — 诗人页与搜索（1–2 天）
-- [ ] 诗人页生成（P1 的 `authors_merged.json` + P4 交游节 + P6 热度排序）+ 卷页作者名挂链
-- [ ] `build_search_index.py`：一级索引（题目+作者，全量 ~4.9 万题，单 JSON 预计 3–5 MB，可接受）；全文索引按卷分片 900 个小 JSON，搜索页按需加载
-- [ ] 三百首精选页（`唐诗三百首.json` 的 tags 做标签筛选）
+### Phase 3 — 诗人页与搜索（1–2 天）✅ 2026-08-31 完成
+- [x] `build_author_pages.py`：**2,608 个诗人页** + 诗人索引页（按作品数三档分组）。每页含小传（御定 biography + authors.tang desc）、统计、P4 交游 chips（悬停示样例诗题）、按卷分组的全部作品链接（带三百首徽章）；卷页作者名已挂链（URL-quote 中文文件名）
+- [x] `build_search_index.py` + `tangshi-search.js` + `search.html`：一级索引（题目+作者+诗体，2.5MB）常驻；全文索引按 **100 卷/片 ×9**（843–1390KB）勾选后懒加载并缓存。简繁均可命中：查询词与索引都经 T2S_MAP 折叠成简体再比较（P7 结论的应用）；命中带上下文摘要；支持 `?q=` 直达；首页 Hero 加搜索框
+- [x] `build_tang300_page.py`：三百首精选页（321 首按 P5 诗体分组、组内按 P6 榜排序、tags 展示、作者互链）
+- [x] `lint_html.py` 扩展：诗人页数量核对、卷页作者链接可达性、tang300/搜索资产齐全 —— 全绿；`build_site.sh` 一键重建站点
+- [x] 验收：浏览器实测 —— 李白页（896 首/41 卷/三百首 40/交游 杜甫×9）、简体查询"静夜思"命中繁体题、全文搜索"床前看月光"命中靜夜思并带摘要；站点 54MB
+
+### Phase 3b — 实体分析与索引（P8，借史记词表）✅ 2026-08-31 完成
+- [x] `build_entity_index.py`：词表 961 条 —— **直接复用 shiji-kb 实体词表**（古人 3,004 → 过滤取名实体、地名、族群）+ 唐代人工补充（39 年号、17 节令、16 唐代邦国、39 唐诗地名）。匹配在简体折叠空间做（`fold_t2s`，P7 安全方向），最长匹配，展示名取语料最常见繁体表面形式
+- [x] 结果：**681 实体、17,601 次命中**（古人 325、地名 252、邦国族群 49、时节 55）；Top：長安 958 诗、相如 139、屈原 25、韓信 23 —— 实为「唐诗中的史记典故引用榜」
+- [x] 噪声治理：两轮停用词迭代（公子/中行/無知/如意/白馬 等泛化词剔除）；词表法局限写入报告，逐字精标留给 Phase 5
+- [x] `build_entity_pages.py`：**426 个实体页** + 实体索引页（四类 chips）；史记词表实体附 **shiji-kb wiki 互链**（`wiki/#实体名`，跨库典故网络第一步）；首页加顶部导航
+- [x] lint 扩展（实体链接可达 + 诗锚点抽查）全绿；站点 58MB
+
+### Phase 3c — P9 文本修复：御定缺行修补 ✅ 2026-08-31 完成
+
+**诊断**（用户发现"有诗缺句"，经查属实且系统性）：御定 JSON 上游抓取按刻本**隔列丢失**
+（keep-3-drop-3 句式），33,500 首 1:1 对照中 8,260 首缺文、7,791 首缺 ≥10 字，
+長恨歌等长诗恰缺一半；7,622 首齐言诗呈奇数句。另有 □ 阙字 607 处、联句 `——作者` 内嵌 152 首。
+
+**修复**（覆盖层方案，原始数据不动）：
+- [x] `build_clean_corpus.py`（P9）：匹配诗正文权威切换为 poet.tang（同书完整抓取），
+  御定保留卷结构/小传/题序；安全闸（更长 + 首句 3/5 相符）不过则保留待审
+- [x] 产出 `data/corpus_patch.json`（4MB 覆盖层）：**修补 10,227 首，找回 324,577 字（+14.2%）**；
+  688 首双源存疑待审（`mismatch_kept`，页面挂"文本待审"徽章）；odd_lines 7,622 → **430**（-94%）
+- [x] `lib_qts.iter_yuding()/load_volume()` 默认应用覆盖层（P2 对齐固定用 raw）；全管线+全站重建
+- [x] 渲染升级：□ 阙字样式化、联句 `——作者` 转为行内作者标签
+- [x] 修复的连锁验证：**七律从榜外跃升至 6,993 首**（截断时被误判为七絕/古體）；
+  实体命中 17,601 → 19,197；全文搜索索引覆盖找回的文本
+- [x] 报告：`data/analysis/corpus_cleaning_report.md`；残留：1,644 首无匹配（缺文无从考订，
+  留待维基文库第三源仲裁）
+- [x] **拉丁乱码修复**（2026-08-31 追加）：御定罕用字（gaiji）被上游转成字母数字乱码
+  （玉z1↔玉䪥、醴z0↔𨣧、接z5↔䍦），涉及 343 首正文 + 20 个题目；poet.tang 全库零乱码，
+  以其为对照做前后文对齐/题目锚定正则，**找回真字 245 处**，无对照的 209 处以 □ 阙字占位
+  （flag=latin_fixed / latin_title_fixed）；覆盖层新增 title 字段；全库拉丁字符清零；
+  连锁效应：雜言 3,279→3,070（乱码曾破坏齐言判定）
+
+### Phase 3d — 自索引后端与诗歌 API（P10）✅ 2026-08-31 完成
+- [x] `build_search_db.py`（P10）：`data/poems.db`（SQLite + **FTS5**，54.9MB，.gitignore）——
+  全部 43,103 首（修复后正文+来源+旗标+诗体+三百首标签）+ 诗人表；中文检索用
+  **逐字空格分词 + 简体折叠** 短语匹配（任意长度子串、简繁均可）
+- [x] `server/api_server.py` + `./api.sh`：零第三方依赖（stdlib http.server + sqlite3，
+  对标 shiji-kb serve.py 模式），同时服务静态站与 `/api/*`：
+  ping / poem（prev-next）/ volume / author / search（5 种 mode + bm25 加权排序 + 原文摘要）/ stats
+- [x] **自索引**：启动时检测 poems.db 缺失或旧于语料（corpus_patch/rhymes/authors_merged）
+  自动重建 —— 后端自己维护自己的索引；修 http.server 裸 UTF-8 查询编码
+- [x] 搜索页渐进增强：探测 `/api/ping` → 走后端（免下载索引，状态栏示"后端索引"）；
+  无后端（GitHub Pages）回退静态分片索引，两条路径共存
+- [x] 验收：curl 全端点 + 浏览器实测（明月 meta 25 首 / 全文 874 首带摘要；简繁查询均命中）
+
+### Phase 3e — 首页 API 化重设计 ✅ 2026-08-31 完成
+- [x] **今日一诗**（首页签名元素）：按日期从三百首确定一首，**竖排右起、去标点**渲染
+  （仿御定刻本书叶版式——语料本身就是竖排刻本），朱色「今日一詩」印章 + 日期 +
+  题目朱字首列 + 作者落款列；「换一首」随机再抽；点击进全诗
+- [x] 数据双路：API 在线走 `/api/poem`（权威库），离线用构建烘焙的
+  `data/tang300_poems.json`（321 首全文，build_tang300_page.py 生成）——GitHub Pages 同样可用
+- [x] **Hero 即时搜索**：API 在线时输入即出下拉（`/api/search mode=meta limit=8`，
+  180ms 防抖、过期响应丢弃、Esc/点外关闭、"全部结果 →"直达搜索页）；无 API 保持表单跳转
+- [x] 新增诗体分布 chips 行（P5 数据）；名篇/今日一诗 双栏布局，移动端堆叠；
+  prefers-reduced-motion 支持
+- [x] `js/tangshi-home.js` + CSS（竖排卡、印章、下拉）；lint 资产扩充；
+  浏览器实测：API 模式（"登高"下拉 8 条+54 总数）与纯静态模式（卡片同样渲染）均通过
 
 ### Phase 4 — 增强展示（1 天）
 - [ ] `enrich_poems.py`：热度徽章（P6）、三百首徽章挂到卷页

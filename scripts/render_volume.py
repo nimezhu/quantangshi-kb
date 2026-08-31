@@ -10,9 +10,10 @@ import html
 import json
 import re
 import sys
+from urllib.parse import quote
 
 from config import YUDING_DIR, VOLUMES_DIR
-from lib_qts import poem_key
+from lib_qts import canonical_author, load_volume, poem_key
 
 SENT = re.compile(r"[^。！？]+[。！？]*")
 
@@ -50,9 +51,28 @@ def nav_bar(volume, vol_names):
     if volume > 1:
         parts.append(f'<a href="{volume-1:03d}.html">← 上一卷</a>')
     parts.append('<a class="nav-home" href="../index.html">🏠 目录</a>')
+    parts.append('<a href="../search.html">🔍 搜索</a>')
     if volume < 900:
         parts.append(f'<a href="{volume+1:03d}.html">下一卷 →</a>')
     return '<nav class="chapter-nav">' + "\n".join(parts) + "</nav>"
+
+
+def author_link(raw_author, prefix="../"):
+    """作者名 → 诗人页链接（每位御定作者都有页面，见 build_author_pages）。"""
+    canon = canonical_author(raw_author)
+    return (f'<a href="{prefix}authors/{quote(canon, safe="")}.html">'
+            f'{esc(raw_author)}</a>')
+
+
+LIANJU = re.compile(r"——([^，。！？；：、\s—]{2,7})")
+
+
+def decorate_line(sent):
+    """行内标记：□ 阙字样式；联句 ——作者 → 作者标签。"""
+    out = esc(sent)
+    out = out.replace("□", '<span class="lacuna" title="底本阙字">□</span>')
+    out = LIANJU.sub(r'<span class="lianju-author" title="联句作者">\1</span>', out)
+    return out
 
 
 def render_poem(volume, idx, p, forms, t300):
@@ -65,22 +85,25 @@ def render_poem(volume, idx, p, forms, t300):
     if key in t300:
         tags = "、".join(t300[key][:3])
         badges += f'<span class="badge badge-300" title="{esc(tags)}">三百首</span>'
+    if "mismatch_kept" in p.get("flags", []):
+        badges += ('<span class="badge badge-review" '
+                   'title="双源文本存疑，保留御定原文待审">文本待审</span>')
     lines = []
     for para in p.get("paragraphs", []):
         for sent in SENT.findall(para):
-            lines.append(f'<div class="line">{esc(sent)}</div>')
+            lines.append(f'<div class="line">{decorate_line(sent)}</div>')
     return (
         f'<div class="poem" id="{anchor}">\n'
         f'<h3 class="poem-title"><a class="para-num" href="#{anchor}">（{key}）</a>'
         f'{esc(p["title"])}{badges}</h3>\n'
-        f'<div class="poem-author">{esc(p["author"])}</div>\n'
+        f'<div class="poem-author">{author_link(p["author"])}</div>\n'
         "{bio}"
         f'<div class="poem-body">\n' + "\n".join(lines) + "\n</div>\n</div>"
     )
 
 
 def render_volume(volume, forms, t300, vol_names):
-    poems = json.loads((YUDING_DIR / f"{volume:03d}.json").read_text(encoding="utf-8"))
+    poems = load_volume(volume)   # 应用 P9 文本修复覆盖层
     vol_name = poems[0].get("volume", f"卷{volume}") if poems else f"卷{volume}"
     seen_bio = set()
     blocks = []

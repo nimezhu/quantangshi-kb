@@ -47,10 +47,39 @@ def canonical_author(name: str) -> str:
     return aliases.get(norm, norm)
 
 
-def iter_yuding():
-    """按卷序迭代御定全唐诗：yield (volume:int, poems:list[dict])。"""
+@lru_cache(maxsize=1)
+def load_corpus_patch() -> dict:
+    """P9 文本修复覆盖层：poem_key → {paragraphs?, text_source, flags}。"""
+    from config import CORPUS_PATCH
+    if CORPUS_PATCH.exists():
+        return json.loads(CORPUS_PATCH.read_text(encoding="utf-8"))
+    return {}
+
+
+def load_volume(volume: int, raw: bool = False) -> list:
+    """读取一卷。默认应用 P9 修复覆盖层；raw=True 读御定原始数据。"""
+    poems = json.loads((YUDING_DIR / f"{volume:03d}.json").read_text(encoding="utf-8"))
+    if raw:
+        return poems
+    patch = load_corpus_patch()
+    if patch:
+        for i, p in enumerate(poems, start=1):
+            entry = patch.get(poem_key(volume, i))
+            if entry:
+                if "paragraphs" in entry:
+                    p["paragraphs"] = entry["paragraphs"]
+                if "title" in entry:
+                    p["title"] = entry["title"]
+                p["text_source"] = entry.get("text_source", "yuding")
+                p["flags"] = entry.get("flags", [])
+    return poems
+
+
+def iter_yuding(raw: bool = False):
+    """按卷序迭代御定全唐诗：yield (volume:int, poems:list[dict])。
+    默认应用 P9 文本修复覆盖层（data/corpus_patch.json，存在时）；raw=True 读原始。"""
     for f in sorted(YUDING_DIR.glob("*.json")):
-        yield int(f.stem), json.loads(f.read_text(encoding="utf-8"))
+        yield int(f.stem), load_volume(int(f.stem), raw=raw)
 
 
 def iter_tang_shards():
@@ -77,3 +106,25 @@ def strip_punct(text: str) -> str:
 def poem_key(volume: int, idx: int) -> str:
     """卷内永久编号：001-01 （卷 1 第 1 首，1 起）。"""
     return f"{volume:03d}-{idx:02d}"
+
+
+_T2S_MAP = {}
+
+
+def fold_t2s(text: str) -> str:
+    """逐字繁→简折叠（安全方向，见 P7），保证长度不变。惰性建字表并缓存。"""
+    from opencc import OpenCC
+    global _T2S_MAP
+    if not _T2S_MAP:
+        _T2S_MAP["_cc"] = OpenCC("t2s")
+    cc = _T2S_MAP["_cc"]
+    out = []
+    for ch in text:
+        s = _T2S_MAP.get(ch)
+        if s is None:
+            s = cc.convert(ch)
+            if len(s) != 1:
+                s = ch
+            _T2S_MAP[ch] = s
+        out.append(s)
+    return "".join(out)

@@ -20,6 +20,7 @@ DOCS_DIR = PROJECT_ROOT / "docs"
 VOLUMES_DIR = DOCS_DIR / "volumes"
 
 AUTHOR_ALIASES = DATA_DIR / "author_aliases.json"
+CORPUS_PATCH = DATA_DIR / "corpus_patch.json"   # P9 文本修复覆盖层
 AUTHORS_MERGED = DATA_DIR / "authors_merged.json"
 POEM_ID_MAP = DATA_DIR / "poem_id_map.json"
 VOLUME_TITLES = DATA_DIR / "volume_titles.json"

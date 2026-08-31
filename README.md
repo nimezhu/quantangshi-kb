@@ -8,6 +8,21 @@
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-bash scripts/run_all_analysis.sh   # 重跑全部分析管线
-./serve.sh 8000                    # 本地预览 docs/（Phase 2 起可用）
+bash scripts/run_all_analysis.sh   # 重跑全部分析管线（P1-P9）
+bash scripts/build_site.sh         # 重建静态站 + lint
+./serve.sh 8000                    # 纯静态预览 docs/
+./api.sh 8787                      # 自索引后端（静态站 + API；首次自动建库）
 ```
+
+## API（`./api.sh`，SQLite FTS5 自索引后端）
+
+启动时若 `data/poems.db` 缺失或旧于语料自动重建；搜索页自动探测后端并切换（无后端时回退静态索引，GitHub Pages 不受影响）。JSON/UTF-8/CORS。
+
+| 端点 | 说明 |
+|---|---|
+| `GET /api/ping` | 存活探测 |
+| `GET /api/poem/435-19` | 单诗全文（修复后正文、来源、旗标、prev/next、三百首标签） |
+| `GET /api/volume/165` | 一卷目录 |
+| `GET /api/author/李白?limit=100` | 诗人信息 + 作品 |
+| `GET /api/search?q=明月&mode=meta` | 搜索：`meta`(题目+作者，默认) / `all` / `title` / `author` / `text`；`&limit=`≤100、`&offset=`；简繁均可，`text`/`all` 带上下文摘要 |
+| `GET /api/stats` | 总量/诗体分布/修复统计 |
