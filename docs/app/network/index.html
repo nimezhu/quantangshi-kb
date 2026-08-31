@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>诗人交游网络 - 全唐诗</title>
+<link rel="stylesheet" href="../../css/tangshi-styles.css">
+<link rel="stylesheet" href="../../css/chapter-nav.css">
+<link rel="icon" href="../../favicon.svg">
+<style>
+body { max-width: none; padding: 12px 20px; }
+#wrap { position: relative; border: 1px solid #e8e2d0; border-radius: 8px;
+        background: #fffdf8; overflow: hidden; }
+#net { display: block; width: 100%; height: 78vh; cursor: grab; }
+#net.dragging { cursor: grabbing; }
+#tip { position: absolute; display: none; background: #fff; border: 1px solid #d9c98a;
+       border-radius: 6px; padding: 6px 12px; font-size: 0.85em; pointer-events: none;
+       box-shadow: 0 2px 8px rgba(90,74,42,0.15); max-width: 300px; z-index: 5; }
+#tip b { color: #8B4513; }
+#tip .eg { color: #999; font-size: 0.9em; }
+.viz-bar { display: flex; gap: 14px; align-items: center; margin: 8px 0;
+           font-size: 0.88em; color: #8a7040; flex-wrap: wrap; }
+.viz-bar input[type=search] { padding: 3px 12px; border: 1px solid #d9c98a;
+           border-radius: 14px; font-family: inherit; outline: none; }
+.viz-bar label { cursor: pointer; user-select: none; }
+</style>
+</head>
+<body>
+<nav class="chapter-nav"><a class="nav-home" href="../../index.html">🏠 目录</a>
+<a href="../timeline/index.html">诗人长河</a></nav>
+<h1>诗人交游网络<span class="vol-count" id="stats"></span></h1>
+<div class="viz-bar">
+<span>据诗题「赠/酬/送/寄…」抽取（P4 管线）· 节点大小 = 往来次数 · 红色 = 三百首诗人 · 拖拽平移 / 滚轮缩放 / 点击进诗人页</span>
+<input type="search" id="q" placeholder="定位诗人…">
+<label><input type="checkbox" id="showall"> 显示全部（含仅一次往来）</label>
+</div>
+<div id="wrap">
+<canvas id="net"></canvas>
+<div id="tip"></div>
+</div>
+<footer>数据源：诗题社交网络抽取（quantangshi-kb P4）· 设计借鉴 <a href="https://github.com/baojie/shiji-kb">shiji-kb</a> 史记地铁图</footer>
+<script defer src="network.js"></script>
+</body>
+</html>

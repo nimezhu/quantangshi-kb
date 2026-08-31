@@ -96,24 +96,57 @@ def main():
         (AUTHORS_DIR / f"{key}.html").write_text(
             page(f"{rec['display']} - 全唐诗", body), encoding="utf-8")
 
-    # 诗人索引页
-    tiers = [("百首以上", 100, 10 ** 9), ("十首以上", 10, 100), ("十首以下", 1, 10)]
-    sections = []
+    # 诗人索引页：名家卡片 → 百首/十首分层 → 长尾折叠
     ranked = sorted(poets.items(), key=lambda x: -x[1]["poem_count_yuding"])
-    for label, lo, hi in tiers:
-        chips = "".join(
-            f'<a class="chip" href="{author_href(k)}">{esc(r["display"])}'
-            f'<small>{r["poem_count_yuding"]}</small></a>'
-            for k, r in ranked if lo <= r["poem_count_yuding"] < hi)
-        sections.append(f'<h2 class="section-title">{label}</h2>'
-                        f'<div class="poet-chips">{chips}</div>')
-    body = (f'<nav class="chapter-nav"><a class="nav-home" href="../index.html">🏠 目录</a></nav>\n'
-            f'<h1>诗人索引<span class="vol-count">{len(poets)} 人</span></h1>\n'
-            + "\n".join(sections))
-    # 索引页在 authors/ 目录下，chip 链接需相对本目录
-    body = body.replace('href="authors/', 'href="')
+    t300_of = dict(pop.get("top_poets_by_300", []))
+
+    def href(k):
+        return f"{quote(k, safe='')}.html"
+
+    FEATURED = 24
+    NOT_A_POET = {"不詳", "無名氏", "佚名", "無名", "闕名"}
+    cards = []
+    featured = [(k, r) for k, r in ranked if r["display"] not in NOT_A_POET][:FEATURED]
+    for k, r in featured:
+        n300 = t300_of.get(k, 0)
+        badge = f'<span class="pc-300">三百首×{n300}</span>' if n300 else ""
+        cards.append(
+            f'<a class="poet-card" href="{href(k)}">{badge}'
+            f'<span class="pc-name">{esc(r["display"])}</span>'
+            f'<span class="pc-stats">{r["poem_count_yuding"]} 首 · '
+            f'{len(r["volumes"])} 卷</span></a>')
+
+    def col_links(items):
+        return "".join(
+            f'<a href="{href(k)}">{esc(r["display"])}'
+            f'<span class="cnt">{r["poem_count_yuding"]}</span></a>'
+            for k, r in items)
+
+    featured_keys = {k for k, _ in featured}
+    hundred = [(k, r) for k, r in ranked
+               if r["poem_count_yuding"] >= 100 and k not in featured_keys]
+    ten = [(k, r) for k, r in ranked if 10 <= r["poem_count_yuding"] < 100]
+    tail = [(k, r) for k, r in ranked if r["poem_count_yuding"] < 10]
+
+    body = (
+        '<nav class="chapter-nav"><a class="nav-home" href="../index.html">🏠 目录</a>'
+        '<a href="../search.html">🔍 搜索</a>'
+        '<a href="#t100">百首以上</a><a href="#t10">十首以上</a><a href="#tail">其余</a></nav>\n'
+        f'<h1>诗人索引<span class="vol-count">{len(poets)} 人 · 按存诗数</span></h1>\n'
+        '<h2 class="section-title">名家</h2>\n'
+        f'<div class="poet-card-grid">{"".join(cards)}</div>\n'
+        f'<h2 class="section-title" id="t100">百首以上'
+        f'<span class="vol-count">{len(hundred)} 人</span></h2>\n'
+        f'<div class="poet-cols cols-wide">{col_links(hundred)}</div>\n'
+        f'<h2 class="section-title" id="t10">十首以上'
+        f'<span class="vol-count">{len(ten)} 人</span></h2>\n'
+        f'<div class="poet-cols">{col_links(ten)}</div>\n'
+        f'<h2 class="section-title" id="tail">十首以下</h2>\n'
+        f'<details class="tail-fold"><summary>展开 {len(tail)} 位存诗较少的诗人</summary>'
+        f'<div class="poet-cols cols-dense">{col_links(tail)}</div></details>')
     (AUTHORS_DIR / "index.html").write_text(page("诗人索引 - 全唐诗", body), encoding="utf-8")
-    print(f"author pages: {len(poets)} + index.html")
+    print(f"author pages: {len(poets)} + index.html "
+          f"(featured {FEATURED}, 100+ {len(hundred)}, 10+ {len(ten)}, tail {len(tail)})")
 
 
 if __name__ == "__main__":

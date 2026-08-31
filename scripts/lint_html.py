@@ -101,7 +101,9 @@ def main():
     for a in ("css/tangshi-styles.css", "css/chapter-nav.css", "js/purple-numbers.js",
               "js/t2s-map.js", "js/tangshi-settings.js", "js/tangshi-search.js",
               "js/tangshi-home.js", "data/tang300_poems.json",
-              "search.html", "data/search_index.json",
+              "search.html", "data/search_index.json", "data/strains/001.json", "data/strains/900.json",
+              "app/network/index.html", "app/network/network.js", "app/network/data.json",
+              "app/timeline/index.html",
               *(f"data/fulltext_{g}.json" for g in range(9))):
         if not (DOCS_DIR / a).exists():
             errors.append(f"缺少资产 {a}")

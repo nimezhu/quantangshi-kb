@@ -13,9 +13,50 @@ import sys
 from urllib.parse import quote
 
 from config import YUDING_DIR, VOLUMES_DIR
-from lib_qts import canonical_author, load_volume, poem_key
+from lib_qts import canonical_author, fold_t2s, load_volume, poem_key
 
 SENT = re.compile(r"[^。！？]+[。！？]*")
+
+# Phase 5：词表实体行内高亮（P8 索引中有独立页面的实体；由 generate_all 注入）
+_ENT_LEX = {}
+_ENT_MAXLEN = 0
+
+
+def set_entity_lexicon(lex):
+    """lex: {折叠简体名: (type, 实体键)}，仅含有页面的实体。"""
+    global _ENT_LEX, _ENT_MAXLEN
+    _ENT_LEX = lex
+    _ENT_MAXLEN = max((len(k) for k in lex), default=0)
+
+
+def wrap_entities(sent):
+    """句内实体标注：最长匹配折叠空间，命中片段包成实体链接（原字展示）。"""
+    if not _ENT_LEX:
+        return decorate_line(sent)
+    folded = fold_t2s(sent)
+    out, plain, pos = [], [], 0
+    while pos < len(folded):
+        hit = None
+        for ln in range(min(_ENT_MAXLEN, len(folded) - pos), 1, -1):
+            frag = folded[pos:pos + ln]
+            if frag in _ENT_LEX:
+                hit = (ln, *_ENT_LEX[frag])
+                break
+        if hit:
+            if plain:
+                out.append(decorate_line("".join(plain)))
+                plain = []
+            ln, typ, ekey = hit
+            out.append(f'<a class="ent ent-{typ}" '
+                       f'href="../entities/{typ}_{quote(ekey, safe="")}.html">'
+                       f'{esc(sent[pos:pos + ln])}</a>')
+            pos += ln
+        else:
+            plain.append(sent[pos])
+            pos += 1
+    if plain:
+        out.append(decorate_line("".join(plain)))
+    return "".join(out)
 
 
 def esc(s):
@@ -91,7 +132,7 @@ def render_poem(volume, idx, p, forms, t300):
     lines = []
     for para in p.get("paragraphs", []):
         for sent in SENT.findall(para):
-            lines.append(f'<div class="line">{decorate_line(sent)}</div>')
+            lines.append(f'<div class="line">{wrap_entities(sent)}</div>')
     return (
         f'<div class="poem" id="{anchor}">\n'
         f'<h3 class="poem-title"><a class="para-num" href="#{anchor}">（{key}）</a>'

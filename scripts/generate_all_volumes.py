@@ -13,7 +13,25 @@ from render_volume import esc, page, render_volume
 def load_ctx():
     rhymes = json.loads((ANALYSIS_DIR / "rhymes.json").read_text(encoding="utf-8"))
     pop = json.loads((ANALYSIS_DIR / "popularity.json").read_text(encoding="utf-8"))
+    _install_entity_lexicon()
     return rhymes["per_poem"], pop["tang300"]
+
+
+def _install_entity_lexicon():
+    """把 P8 实体索引中有独立页面（诗数≥5）的实体注入渲染器做行内高亮。"""
+    from config import DATA_DIR
+    from render_volume import set_entity_lexicon
+    idx_path = DATA_DIR / "entities" / "entity_poem_index.json"
+    if not idx_path.exists():
+        return
+    idx = json.loads(idx_path.read_text(encoding="utf-8"))
+    lex = {}
+    for typ, ents in idx.items():
+        for name, e in ents.items():
+            if e["poem_count"] >= 5 and name not in lex:
+                lex[name] = (typ, name)
+    set_entity_lexicon(lex)
+    print(f"  entity highlight lexicon: {len(lex)} entries")
 
 
 def build_t2s_map():
@@ -77,6 +95,8 @@ def generate_index(vol_meta, t300):
 <a href="tang300.html">唐诗三百首</a>
 <a href="authors/index.html">诗人索引</a>
 <a href="entities/index.html">实体索引</a>
+<a href="app/network/index.html">交游网络</a>
+<a href="app/timeline/index.html">诗人长河</a>
 </nav>
 <div class="hero">
 <h1>全唐詩</h1>
